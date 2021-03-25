@@ -2,7 +2,25 @@
     color: #4b9cff;
     font-size: 30px;
 }
-.sub-title{
+
+.sub-title {
     color: #8a898d;
     font-size: 20px;
+}
+
+.con-title {
+    font-size: 20px;
+}
+
+.exp-time {
+    line-height: 28px;
+}
+li {
+    font-size: 15px;
+}
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
 }
