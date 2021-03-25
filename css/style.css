@@ -15,12 +15,42 @@
 .exp-time {
     line-height: 28px;
 }
+
 li {
     font-size: 15px;
+    padding-bottom: 3px;
 }
-a{
+
+a {
     color: black;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
+}
+
+.language-tag {
+    border: #8ac5ff solid 1px;
+    padding: 0 5px 1px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #8ac5ff;
+    margin-right: 4px;
+}
+
+.language-tag.selected {
+    background-color: #8ac5ff;
+    padding: 0 5px 1px 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.project-name {
+    margin-right: 5px;
+}
+
+.logo-img {
+    vertical-align: text-bottom;
 }
