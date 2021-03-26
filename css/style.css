@@ -14,6 +14,7 @@
 
 .exp-time {
     line-height: 28px;
+    font-weight: 300;
 }
 
 li {
@@ -49,6 +50,7 @@ a:hover {
 
 .project-name {
     margin-right: 5px;
+    /*font-weight: bold;*/
 }
 
 .logo-img {
