@@ -5,7 +5,7 @@
 .title {
     color: #4b9cff;
     font-size: 30px;
-    border-top: #d0cfd3 solid 0.5px;
+    border-top: #d0cfd3 solid 1px;
     padding-top: 45px;
 }
 
@@ -23,6 +23,7 @@
 .exp-time {
     line-height: 28px;
     font-weight: 300;
+    margin-top: 5px;
 }
 
 li {
@@ -64,4 +65,10 @@ a:hover {
 
 .logo-img {
     vertical-align: text-bottom;
+}
+
+@media (max-width: 991px){
+    .mobile-border {
+        border-top: #d0cfd3 dashed 1px;
+    }
 }
