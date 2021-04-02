@@ -227,6 +227,7 @@
                     <li>Remote Monster 라이브러리를 사용하여 VoIP 음성채팅을 구현</li>
                     <li>자신의 목소리를 프로필로 등록할수 있는 녹음 기능 추가</li>
                     <li>활동시 필요한 포인트를 위해 인앱 결제 구현</li>
+                    <li>javascript bridge를 사용해 웹과 앱의 통신 구현</li>
                 </ul>
             </ul>
         </div>
@@ -245,10 +246,14 @@
             </div>
             <ul>
                 <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag" onclick="clickTag(this)">swift</span></li>
-                <li>핸드폰의 주소록을 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송하는 어플 입니다. iOS는 공개 채팅방 기능만 있습니다.</li>
+                <li>핸드폰의 연락처를 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송 또는 앱에서 문자전송이 가능한 어플입니다. 또 공개 채팅방 기능이 있어 앱 사용자들끼리 채팅 할 수 있습니다. (iOS는 채팅만 구현)</li>
                 <ul>
-                    <li>문자 전송 기능 (android)</li>
-                    <li>공개 채팅방 기능</li>
+                    <li>Android앱 연락처의 전화번호, 이름, 그룹, 즐겨찾기 가져오기 구현 <a href="https://github.com/Elpoco/ContactsList/blob/master/app/src/main/java/com/tsolution/excontact/MainActivity.java">[Github]</a></li>
+                    <li>웹에서 문자 전송시 앱으로 알림 수신하여 데이터를 분석후 문자 전송 구현</li>
+                    <li>Thread를 사용해 메세지 전송, 예약전송, 단체메세지 전송 기능 구현</li>
+                    <li>BroadcaseReceiver를 사용하여 문자를 수신하면 데이터를 가져와 DB에 저장 구현</li>
+                    <li>네트워크 문제로 문자수신데이터를 놓쳤을때 일정시간마다 확인후 DB에 저장 구현</li>
+                    <li>Firebase Storage를 사용해 공개채팅방 / 강퇴 / 공지사항 / 비공개방 개발</li>
                 </ul>
             </ul>
         </div>
@@ -264,8 +269,10 @@
             </div>
             <ul>
                 <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                <li>게임 정보를 서로 공유하는 어플 입니다.</li>
-                <li>개인 프로젝트</li>
+                <li>게임 컨텐츠의 정보들을 유저끼리 공유 할 수 있는 어플입니다.</li>
+                <li>HTML parser를 이용해 웹데이터를 가져와 앱에서 볼수 있는 기능 개발</li>
+                <li>dothome 웹호스팅을 사용해 게시판 개발</li>
+                <li>Firebase FCM 을 사용해 게시판 댓글 알림 개발</li>
             </ul>
         </div>
     </div>
