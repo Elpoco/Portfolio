@@ -96,7 +96,7 @@
                 <li><span class="language-tag" onclick="clickTag(this)">php</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">javascript</span></li>
                 <li>사용자들이 글을 읽고 글쓰기를 하면 첨삭선생님들이 사용자들의 글을 첨삭 해주는 웹사이트 입니다.</li>
                 <ul>
-                    <li>결제</li>
+                    <li>아임포트 라이브러리를 사용하여 결제 구현</li>
                     <li>구독 시스템 개발</li>
                     <li>글쓰기 후 아이템 차감</li>
                     <li>알림 (app)</li>
@@ -201,11 +201,10 @@
                 <li><span class="language-tag" onclick="clickTag(this)">php</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">javascript</span></li>
                 <li>여행자들에게 플래너가 계획을 세워주고 여행을 도와주는 사이트 입니다.</li>
                 <ul>
-                    <li>SNS 로그인</li>
-                    <li>언어 변환 (영어-한글)</li>
-                    <li>컨텐츠 등록</li>
-                    <li>Speech-to-Text를 사용하여 여행 예약 신청하기 개발</li>
-                    <li>여행 예약/결제</li>
+                    <li>SNS(Apple, Facebook) 로그인 구현</li>
+                    <li>Google Maps 라이브러리를 사용하여 여행지의 위치를 정확하게 구할 수 있도록 만듦</li>
+                    <li>Google Speech-to-Text를 사용하여 음성으로 여행 예약기능 개발</li>
+                    <li>국내/해외 결제를위해 EXIMBAY 라이브러리 사용해 결제 구현</li>
                 </ul>
             </ul>
         </div>
@@ -225,8 +224,8 @@
                 <li>이성의 매칭을 도와주는 데이팅 앱입니다. 하이브리드형 앱으로 웹뷰로 동작합니다.</li>
                 <ul>
                     <li>Remote Monster 라이브러리를 사용하여 VoIP 음성채팅을 구현</li>
-                    <li>자신의 목소리를 프로필로 등록할수 있는 녹음 기능 추가</li>
-                    <li>활동시 필요한 포인트를 위해 인앱 결제 구현</li>
+                    <li>자신의 목소리를 프로필로 등록할 수 있는 녹음 기능 추가</li>
+                    <li>활동 시 필요한 포인트 구매를 위해 구글/애플 인앱 결제 구현</li>
                     <li>javascript bridge를 사용해 웹과 앱의 통신 구현</li>
                 </ul>
             </ul>
@@ -248,12 +247,12 @@
                 <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag" onclick="clickTag(this)">swift</span></li>
                 <li>핸드폰의 연락처를 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송 또는 앱에서 문자전송이 가능한 어플입니다. 또 공개 채팅방 기능이 있어 앱 사용자들끼리 채팅 할 수 있습니다. (iOS는 채팅만 구현)</li>
                 <ul>
-                    <li>Android앱 연락처의 전화번호, 이름, 그룹, 즐겨찾기 가져오기 구현 <a href="https://github.com/Elpoco/ContactsList/blob/master/app/src/main/java/com/tsolution/excontact/MainActivity.java">[Github]</a></li>
-                    <li>웹에서 문자 전송시 앱으로 알림 수신하여 데이터를 분석후 문자 전송 구현</li>
-                    <li>Thread를 사용해 메세지 전송, 예약전송, 단체메세지 전송 기능 구현</li>
+                    <li>Android 앱 연락처의 전화번호, 이름, 그룹, 즐겨찾기 가져오기 구현<!-- <a href="https://github.com/Elpoco/ContactsList/blob/master/app/src/main/java/com/tsolution/excontact/MainActivity.java">[Github]</a>--></li>
+                    <li>웹에서 문자 전송 시 앱으로 알림 수신하여 데이터를 분석 후 문자 전송 구현</li>
+                    <li>Thread를 사용해 메시지 전송, 예약전송, 단체메시지 전송 기능 구현</li>
                     <li>BroadcaseReceiver를 사용하여 문자를 수신하면 데이터를 가져와 DB에 저장 구현</li>
-                    <li>네트워크 문제로 문자수신데이터를 놓쳤을때 일정시간마다 확인후 DB에 저장 구현</li>
-                    <li>Firebase Storage를 사용해 공개채팅방 / 강퇴 / 공지사항 / 비공개방 개발</li>
+                    <li>문자 수신 시 네트워크 문제로 문자수신데이터를 놓쳤을 때 Thread를 사용해 일정 시간마다 확인 후 DB에 저장 기능 개발</li>
+                    <li>Firebase Storage를 사용해 공개채팅방 / 강제퇴장 / 공지사항 / 비공개방 개발</li>
                 </ul>
             </ul>
         </div>
@@ -269,10 +268,13 @@
             </div>
             <ul>
                 <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                <li>게임 컨텐츠의 정보들을 유저끼리 공유 할 수 있는 어플입니다.</li>
-                <li>HTML parser를 이용해 웹데이터를 가져와 앱에서 볼수 있는 기능 개발</li>
-                <li>dothome 웹호스팅을 사용해 게시판 개발</li>
-                <li>Firebase FCM 을 사용해 게시판 댓글 알림 개발</li>
+                <li>게임 콘텐츠의 정보들을 사용자끼리 공유할 수 있는 앱입니다.</li>
+                <ul>
+                    <li>HTML parser를 이용해 웹 데이터를 가져와 앱에서 볼 수 있는 기능 개발</li>
+                    <li>dothome 웹호스팅을 사용해 게시판 개발</li>
+                    <li>Firebase FCM 을 사용해 게시판 댓글 알림 개발</li>
+                    <li>Google AdMob을 사용해 앱 내 광고 구현</li>
+                </ul>
             </ul>
         </div>
     </div>
