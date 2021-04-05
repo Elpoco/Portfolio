@@ -34,10 +34,11 @@ li {
 
 a {
     color: black;
+    text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: none;
+    color: #000;
 }
 
 .language-tag {
@@ -71,4 +72,8 @@ a:hover {
     .mobile-border {
         border-top: #d0cfd3 dashed 1px;
     }
+}
+
+.project-personnel {
+    font-size: 14px;
 }
