@@ -77,3 +77,7 @@ a:hover {
 .project-personnel {
     font-size: 14px;
 }
+
+.email-link {
+    cursor: pointer;
+}
