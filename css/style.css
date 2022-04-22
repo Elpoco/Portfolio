@@ -9,10 +9,34 @@
 
 body {
     font-family: notoRegular, serif;
+    background: ghostwhite;
+}
+
+li {
+    font-size: 15px;
+    padding-bottom: 3px;
+    margin-top: 5px;
+}
+
+a {
+    color: black;
+    /* text-decoration: underline; */
+}
+
+a:hover {
+    color: #000;
 }
 
 .intro {
     font-weight: bold;
+}
+
+.info-icon {
+    vertical-align: bottom;
+}
+
+.info-text {
+    vertical-align: bottom;
 }
 
 .title {
@@ -20,6 +44,8 @@ body {
     font-size: 30px;
     border-top: #d0cfd3 solid 1px;
     padding-top: 45px;
+    margin-bottom: 30px;
+    margin-top: 35px;
 }
 
 .sub-title {
@@ -37,21 +63,6 @@ body {
     line-height: 28px;
     font-weight: 300;
     margin-top: 5px;
-}
-
-li {
-    font-size: 15px;
-    padding-bottom: 3px;
-    margin-top: 5px;
-}
-
-a {
-    color: black;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #000;
 }
 
 .language-tag {
@@ -93,4 +104,9 @@ a:hover {
 
 .email-link {
     cursor: pointer;
+}
+
+.project-movie{
+    margin: 15px;
+    margin-top: 10px;
 }
