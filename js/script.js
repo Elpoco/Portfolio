@@ -31,6 +31,18 @@ window.addEventListener('scroll', () => {
     movingPhone();
 });
 
+window.onbeforeprint = function() {
+    $('.container').before(
+        '<div class="text-center" id="printLink">이력서 주소: '+
+        '<a class="print-msg" href="https://elpoco.github.io/Portfolio/">'+
+        'https://elpoco.github.io/Portfolio/</a></div>'
+    );
+};
+
+window.onafterprint = function() {
+    $('#printLink').remove();
+};
+
 function movingTitle(){
     if(defaultTitleY < window.scrollY) {
         titlePercent = defaultTitleY /  window.scrollY;
