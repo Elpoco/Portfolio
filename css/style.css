@@ -111,7 +111,15 @@ a:hover {
     cursor: pointer;
 }
 
-.project-movie{
+.project-movie {
     margin: 15px;
     margin-top: 10px;
+}
+
+#title, #phone {
+    z-index: 100;
+}
+
+.card-body {
+    background-color: ghostwhite;
 }
