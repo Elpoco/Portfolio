@@ -63,6 +63,7 @@ function movingTitle(){
     if(defaultTitleY > window.scrollY && isMoveTitle)
     {
         isMoveTitle = false;
+
         title.css("background", "none");
         title.animate({
             top: window.scrollY,
@@ -90,12 +91,13 @@ function movingPhone(){
             phone.css("background", "ghostwhite");
         });
     }
-
-    if(defaultPhoneY > window.scrollY && isMovePhone) {
+    
+    if(defaultTitleY > window.scrollY && isMovePhone) {
         isMovePhone = false;
-        title.css("background", "none");
+
+        phone.css("background", "none");
         phone.animate({
-            top: window.scrollY,
+            top: defaultPhoneY,
             left: defaultPhoneX,
         }, function() {
             phone.css("position", "inherit");
