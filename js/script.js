@@ -1,25 +1,27 @@
 var windowWidth;
 
 var title;
+var isMoveTitle;
 var defaultTitleX;
 var defaultTitleY;
 var defaultTitleFontSize;
-var titlePercent;
 
 var phone;
+var isMovePhone;
 var defaultPhoneX;
 var defaultPhoneY;
-var phonePercent;
 
 $(function() {
     windowWidth = $( window ).width();
 
     title = $('#title');
+    isMoveTitle = false;
     defaultTitleX = title.offset().left;
     defaultTitleY = title.offset().top;
     defaultTitleFontSize = parseInt(title.css("font-size"));
 
     phone = $('#phone');
+    isMovePhone = false;
     defaultPhoneX = phone.offset().left;
     defaultPhoneY = phone.offset().top;
 });
@@ -44,42 +46,60 @@ window.onafterprint = function() {
 };
 
 function movingTitle(){
-    if(defaultTitleY < window.scrollY) {
-        titlePercent = defaultTitleY /  window.scrollY;
+    if(defaultTitleY < window.scrollY && !isMoveTitle) {
+        isMoveTitle = true;
 
         title.css("position", "fixed");
-        title.css("background", "ghostwhite");
-        title.offset({
-            left: defaultTitleX + 600 * (1 - titlePercent), 
-            top: window.scrollY + 8 * (1 - titlePercent)
+        title.css("top", 0);
+        title.animate({
+            top: 8,
+            left: 1395,
+            fontSize: 20
+        }, function(){
+            title.css("background", "ghostwhite");
         });
-
-        if(titlePercent > 0.5) {
-            title.css("font-size", defaultTitleFontSize * titlePercent);
-        }
-        else {
-            title.css("font-size", 20);
-        }
     }
-    else {
-        title.css("position", "inherit");
-        title.css("font-size", defaultTitleFontSize);
+    
+    if(defaultTitleY > window.scrollY && isMoveTitle)
+    {
+        isMoveTitle = false;
+        title.css("background", "none");
+        title.animate({
+            top: window.scrollY,
+            left: defaultTitleX,
+        }, function() {
+            title.css("position", "inherit");
+            title.animate({
+                fontSize: defaultTitleFontSize,
+            });
+        });
     }
+    
 }
 
 function movingPhone(){
-    if(defaultPhoneY < window.scrollY) {
-        phonePercent = defaultPhoneY /  window.scrollY;
+    if(defaultPhoneY < window.scrollY && !isMovePhone) {
+        isMovePhone = true;
 
         phone.css("position", "fixed");
-        phone.css("background", "ghostwhite");
-        phone.offset({
-            left: defaultPhoneX  + 850 * (1 - phonePercent), 
-            top: window.scrollY + 38 * (1 - phonePercent)
+        phone.css("top", 0);
+        phone.animate({
+            top: 35,
+            left: 1341,
+        }, function(){
+            phone.css("background", "ghostwhite");
         });
     }
-    else {
-        phone.css("position", "inherit");
+
+    if(defaultPhoneY > window.scrollY && isMovePhone) {
+        isMovePhone = false;
+        title.css("background", "none");
+        phone.animate({
+            top: window.scrollY,
+            left: defaultPhoneX,
+        }, function() {
+            phone.css("position", "inherit");
+        });
     }
 }
 

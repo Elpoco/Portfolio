@@ -62,6 +62,7 @@ a:hover {
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 5px;
+    font-weight: bold;
 }
 
 .exp-time {
@@ -122,4 +123,10 @@ a:hover {
 
 .card-body {
     background-color: ghostwhite;
+}
+
+.dreaming {
+    font-weight: bold;
+    font-size: 28px;
+    display: block;
 }
