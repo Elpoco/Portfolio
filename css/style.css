@@ -13,7 +13,7 @@ body {
 }
 
 li {
-    font-size: 15px;
+    font-size: 16px;
     padding-bottom: 3px;
     margin-top: 5px;
 }
@@ -129,4 +129,13 @@ a:hover {
     font-weight: bold;
     font-size: 28px;
     display: block;
+}
+
+.introduce-text {
+    line-height: 1.4; 
+    font-size: 17px;
+}
+
+.introduce {
+    font-size: 17px;
 }

@@ -130,3 +130,10 @@ function clickEmail(){
     document.execCommand("copy");
     document.body.removeChild(tempElem);
 }
+
+function clickDungreedTag(idx) {
+    $('#Dungreed').collapse('show');
+    var arrTime = ['8', '159', '206','227', '328', '599', '906'];
+    var link = "https://www.youtube.com/embed/2GJa40E7roc?autoplay=1&start=";
+    $('#dungreedYoutube').attr("src", link+arrTime[idx]);
+}
