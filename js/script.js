@@ -24,6 +24,8 @@ $(function() {
     isMovePhone = false;
     defaultPhoneX = phone.offset().left;
     defaultPhoneY = phone.offset().top;
+
+    $('#age').html(new Date().getFullYear() - 1996 + 1);
 });
 
 
@@ -34,6 +36,10 @@ window.addEventListener('scroll', () => {
 });
 
 window.onbeforeprint = function() {
+    title.css("position", "inherit");
+    title.css("font-size", defaultTitleFontSize);
+    phone.css("position", "inherit");
+    window.scrollTo(0, 0);
     $('.container').before(
         '<div class="text-center" id="printLink">이력서 주소: '+
         '<a class="print-msg" href="https://elpoco.github.io/Portfolio/">'+
@@ -47,21 +53,22 @@ window.onafterprint = function() {
 
 function movingTitle(){
     if(defaultTitleY < window.scrollY && !isMoveTitle) {
+        title.stop();
         isMoveTitle = true;
 
         title.css("position", "fixed");
         title.css("top", 0);
         title.animate({
             top: 8,
-            left: 1395,
+            left: window.innerWidth * 0.85,
             fontSize: 20
         }, function(){
             title.css("background", "ghostwhite");
         });
     }
     
-    if(defaultTitleY > window.scrollY && isMoveTitle)
-    {
+    if(defaultTitleY > window.scrollY && isMoveTitle) {
+        title.stop();
         isMoveTitle = false;
 
         title.css("background", "none");
@@ -80,19 +87,21 @@ function movingTitle(){
 
 function movingPhone(){
     if(defaultPhoneY < window.scrollY && !isMovePhone) {
+        phone.stop();
         isMovePhone = true;
 
         phone.css("position", "fixed");
         phone.css("top", 0);
         phone.animate({
             top: 35,
-            left: 1341,
+            left: window.innerWidth * 0.85 - 54,
         }, function(){
             phone.css("background", "ghostwhite");
         });
     }
     
     if(defaultTitleY > window.scrollY && isMovePhone) {
+        phone.stop();
         isMovePhone = false;
 
         phone.css("background", "none");
@@ -136,4 +145,8 @@ function clickDungreedTag(idx) {
     var arrTime = ['8', '159', '206','227', '328', '599', '906'];
     var link = "https://www.youtube.com/embed/2GJa40E7roc?autoplay=1&start=";
     $('#dungreedYoutube').attr("src", link+arrTime[idx]);
+}
+
+function changeImage(obj) {
+    obj.attr("src", "assets/images/jjh.jpg");
 }
