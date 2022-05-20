@@ -146,3 +146,11 @@ a:hover {
 .introduce {
     font-size: 17px;
 }
+
+.tec-doc-img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain;
+    cursor: pointer;
+    margin-bottom: 5px;
+}

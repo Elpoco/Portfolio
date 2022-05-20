@@ -29,7 +29,8 @@
     </div>
     <div class="row mt-5">
         <div class="col-sm-12 col-lg-3 text-center pb-3">
-            <img style="width: 225px; height: 300px; object-fit: cover;" src="assets/images/jjh2.jpg" onmouseenter="changeImage(this)">
+            <img style="width: 225px; height: 300px; object-fit: cover;" src="assets/images/jjh0.jpg" 
+            onmouseenter="changeImage(this, 1)" onmouseleave="changeImage(this, 0)">
         </div>
 
         <div class="col-sm-12 col-lg-9">
@@ -347,7 +348,7 @@
     <!-- ############ Portfolio ############ -->
     <!-- ############ Portfolio ############ -->
     <div class="mt-5 text-center text-md-start title">Portfolio</div>
- 
+
     <!-- 던그리드 -->
     <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
@@ -425,8 +426,18 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/camera.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/check_camera.png">
+                        <img class="tec-doc-img" src="assets/images/Code/interface.png" onclick="clickImage(this)">
+                    </div>
+                    <div class="col-5">
+                        <span style="word-break: keep-all; font-size: 17px">GDI와 GDI+를 편하게 사용하기 위해 인터페이스를 만들었습니다.</span>
+                    </div>
+                </div>
+                
+                <hr>
+                <div class="row">
+                    <div class="col-7">
+                        <img class="tec-doc-img" src="assets/images/Code/camera.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/check_camera.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px">모든 오브젝트는 카메라에서 렌더를 관리합니다.<br>화면에 렌더를 하기전에 화면안에 있는 오브젝트만 렌더하도록 하였습니다.</span>
@@ -434,7 +445,7 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/tile_code.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/tile_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">타일의 경우 현재 렌더되고있는 카메라 좌표를 계산해 표시되는 타일을 선정하여 렌더하였습니다.</span>
@@ -442,7 +453,7 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/bullet_code.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bullet_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">충돌 연산량을 줄이기 위해 화면 밖 총알은 플레이어와 충돌체크를 하지 않도록 하였습니다.</span>
@@ -452,8 +463,8 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/item.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/item_code.png">
+                        <img class="tec-doc-img" src="assets/images/Code/item.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" src="assets/images/Code/item_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">아이템은 크게 종류별로 분류를 하고 아이템코드에 따라 아이템이 설정되도록 하였습니다.</span>
@@ -461,8 +472,8 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/skill_code.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/skill_code2.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code2.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">아이템에 스킬이 있을경우 스킬 클래스가 생성됩니다.</span>
@@ -472,8 +483,8 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/acc.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/acc_code.png">
+                        <img class="tec-doc-img" src="assets/images/Code/acc.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" src="assets/images/Code/acc_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">악세서리는 장착시 설정된 능력치가 플레이어매니저를 통해 적용됩니다.</span>
@@ -483,8 +494,8 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/minimap.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/minimap_code.png">
+                        <img class="tec-doc-img" src="assets/images/Code/minimap.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" src="assets/images/Code/minimap_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">미니맵은 표시할 오브젝트의 위치 정보를 가져와서 연산 후 미니맵 사이즈에 맞게 표시 해주었습니다.</span>
@@ -492,7 +503,7 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/minimap_door.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/minimap_door.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">맵의 테두리를 검사해 비어있는 곳을 맵의 입구로 찾도록 했습니다.</span>
@@ -502,7 +513,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/enemy_code.png">
+                        <img class="tec-doc-img" src="assets/images/Code/enemy_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">몬스터는 미리 정의해둔 코드별로 클래스를 생성해서 추가시켜줍니다.</span>
@@ -510,7 +521,7 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/bat_code.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bat_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">같은 몬스터지만 여러 타입일 경우 코드를 확인해 한번더 분류해 주었습니다.</span>
@@ -520,7 +531,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/db_code.png">
+                        <img class="tec-doc-img" src="assets/images/Code/db_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">각종 정보를 미리 정의해서 사용 할 수 있게 하였습니다.</span>
@@ -528,7 +539,7 @@
                 </div>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/enemy_db_code.png">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/enemy_db_code.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">코드번호를 인덱스로 사용하여 데이터를 설정하였습니다.</span>
@@ -538,8 +549,8 @@
                 <hr>
                 <div class="row">
                     <div class="col-7">
-                        <img style="width: 100%; height: auto; object-fit: contain;" src="assets/images/Code/ui1.png">
-                        <img style="width: 100%; height: auto; object-fit: contain;" class="mt-1" src="assets/images/Code/ui2.png">
+                        <img class="tec-doc-img" src="assets/images/Code/ui1.png" onclick="clickImage(this)">
+                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/ui2.png" onclick="clickImage(this)">
                     </div>
                     <div class="col-5">
                         <span style="word-break: keep-all; font-size: 17px;">아이템 정보가 길어지게 되면 단어의 길이를 확인해 줄바꿈 하였습니다.</span>
@@ -548,8 +559,8 @@
                 <div class="row">
                     <div class="col-7">
                         <div class="row">
-                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui2.png">
-                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui3.png">
+                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui2.png" onclick="clickImage(this)">
+                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui3.png" onclick="clickImage(this)">
                         </div>
                     </div>
                     <div class="col-5">
@@ -981,6 +992,23 @@
         <!-- ############ Project ############ -->
         <!-- ############ Project ############ -->
         <!-- ############ Project ############ -->
+
+        <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 100%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img style="width: 100%; height: 100%;" src="assets/images/Code/interface.png" id="imgDetail">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- ############ Footer ############ -->
         <!-- ############ Footer ############ -->

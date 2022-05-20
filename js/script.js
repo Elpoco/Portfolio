@@ -26,6 +26,9 @@ $(function() {
     defaultPhoneY = phone.offset().top;
 
     $('#age').html(new Date().getFullYear() - 1996 + 1);
+
+    $("#imgModal").on("shown.bs.modal", function () { $("#imgModal").focus(); });
+
 });
 
 
@@ -147,6 +150,11 @@ function clickDungreedTag(idx) {
     $('#dungreedYoutube').attr("src", link+arrTime[idx]);
 }
 
-function changeImage(obj) {
-    obj.attr("src", "assets/images/jjh.jpg");
+function changeImage(obj, idx) {
+    //$(obj).attr("src", "assets/images/jjh"+idx+".jpg");
+}
+
+function clickImage(obj) {
+    $('#imgDetail').attr("src", $(obj).attr("src"));
+    $('#imgModal').modal("show");
 }
