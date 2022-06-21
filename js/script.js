@@ -28,7 +28,6 @@ $(function() {
     $('#age').html(new Date().getFullYear() - 1996 + 1);
 
     $("#imgModal").on("shown.bs.modal", function () { $("#imgModal").focus(); });
-
 });
 
 
@@ -145,7 +144,7 @@ function clickEmail(){
 
 function clickDungreedTag(idx) {
     $('#Dungreed').collapse('show');
-    var arrTime = ['8', '159', '206','227', '328', '599', '906'];
+    var arrTime = ['8', '159', '206','227', '328', '599', '907'];
     var link = "https://www.youtube.com/embed/2GJa40E7roc?autoplay=1&start=";
     $('#dungreedYoutube').attr("src", link+arrTime[idx]);
 }
@@ -157,4 +156,23 @@ function changeImage(obj, idx) {
 function clickImage(obj) {
     $('#imgDetail').attr("src", $(obj).attr("src"));
     $('#imgModal').modal("show");
+}
+
+function clickShowModal(idx) {
+    return;
+    var json = $.parseJSON(data);
+    var cntImg = json[idx].img.length;
+
+    $('#modalImage').children().remove();
+    $('#modalText').children().remove();
+
+    for (var i = 0; i < cntImg; i++) {
+        var html = '<img class="tec-doc-img" src="';
+        html += json[idx].img[i];
+        html += '" onclick="clickImage(this)">';
+        $('#modalImage').append(html);
+    }
+    $('#modalText').append(json[idx].text);
+    
+    $('#dungreedModal').modal("show");
 }

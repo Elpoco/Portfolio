@@ -154,3 +154,17 @@ a:hover {
     cursor: pointer;
     margin-bottom: 5px;
 }
+
+.tec-doc-text {
+    /* cursor: pointer;  */
+    /* text-decoration: underline; */
+}
+
+.video-time {
+    color: #4b9cff;
+    cursor: pointer; 
+}
+
+.video-time:hover {
+    text-decoration: underline;
+}
