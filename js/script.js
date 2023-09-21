@@ -33,8 +33,8 @@ $(function() {
 
 window.addEventListener('scroll', () => {
     if(windowWidth < 1000) return;
-    movingTitle();
-    movingPhone();
+    // movingTitle();
+    // movingPhone();
 });
 
 window.onbeforeprint = function() {
