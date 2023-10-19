@@ -25,7 +25,7 @@ $(function() {
     defaultPhoneX = phone.offset().left;
     defaultPhoneY = phone.offset().top;
 
-    $('#age').html(new Date().getFullYear() - 1996 + 1);
+    $('#age').html(new Date().getFullYear() - 1996);
 
     $("#imgModal").on("shown.bs.modal", function () { $("#imgModal").focus(); });
 });
