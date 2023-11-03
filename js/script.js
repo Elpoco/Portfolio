@@ -32,6 +32,9 @@ $(function() {
 
 
 window.addEventListener('scroll', () => {
+    if(document.documentElement.scrollTop >= 200) $('#header').show();
+    else $('#header').hide();
+
     if(windowWidth < 1000) return;
     // movingTitle();
     // movingPhone();
