@@ -4,1167 +4,458 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>정지현 | 개발자 포트폴리오</title>
+    <title>Elpoco | 정지현 포트폴리오</title>
 
-    <script src="js/json_data.js"></script>
+    <!-- Google Fonts for Premium Gaming/Tech Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css?v=2" rel="stylesheet">
+
+    <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/script.js"></script>
-
+    <script src="js/projects_data.js"></script>
+    <script src="js/script.js?v=2"></script>
     <link rel="shortcut icon" href="favicon.ico">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css?v=1" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
-    <div class="container">
-        <!-- ############ Header ############ -->
-        <!-- ############ Header ############ -->
-        <!-- ############ Header ############ -->
-        <div class="text-center" id="header"
-            style="position: fixed; display: none; left: 0px; right: 0px; top: 0px; background-color: ghostwhite; padding: 30px; z-index: 99;">
-            <span class="intro">정지현 010-8990-4721</span>
-        </div>
-        <div class="text-center mt-5">
-            <span class="intro">개발자 </span>
-            <span class="intro" id="title">정지현</span>
-            <span class="intro"> 입니다.</span>
-        </div>
-        <div class="row mt-5">
-            <div class="col-sm-12 col-lg-3 text-center pb-3">
-                <img style="width: 225px; height: 300px; object-fit: cover;" src="assets/images/jjh2.jpg"
-                    onmouseenter="changeImage(this, 1)" onmouseleave="changeImage(this, 0)">
-            </div>
+    <div id="steam-app">
+        <!-- ############ Steam Header / Top Bar ############ -->
+        <header id="steam-header">
 
-            <div class="col-sm-12 col-lg-9">
-                <div class="mt-2">
-                    <div class="mt-1">
-                        <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span class="info-text">서울
-                            광진구 화양동</span>
+
+            <!-- Navigation Area -->
+            <div class="steam-nav-bar">
+                <!-- Navigation Arrows -->
+                <!-- <div class="steam-arrows">
+                    <button class="nav-arrow-btn" id="btn-back" onclick="historyBack()" disabled>
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                    <button class="nav-arrow-btn" id="btn-forward" onclick="historyForward()" disabled>
+                        <i class="material-icons">arrow_forward</i>
+                    </button>
+                </div> -->
+
+                <!-- Main Tabs -->
+                <nav class="steam-nav-tabs">
+                    <span class="nav-tab active" data-target="store">HOME</span>
+                    <span class="nav-tab" data-target="library">LIBRARY</span>
+                    <!-- <span class="nav-tab" data-target="community">COMMUNITY</span> -->
+                    <span class="nav-tab" data-target="about">ABOUT ME</span>
+                </nav>
+
+                <!-- Profile Badge -->
+                <div class="steam-profile-badge" onclick="switchTab('about')">
+                    <div class="avatar-container">
+                        <img src="assets/images/jjh2.jpg" alt="Profile Avatar" class="profile-avatar">
+                        <span class="online-indicator"></span>
                     </div>
-                    <div class="mt-1">
-                        <img src="assets/icons/phone-24px.svg" class="me-2 info-icon"><span class="info-text"
-                            id="phone">010-8990-4721</span>
+                    <div class="profile-info">
+                        <span class="profile-name">Elpoco</span>
+                        <div class="profile-status">
+                            <!-- <span class="status-badge">Lv.96</span> -->
+                            <span class="status-text">Online</span>
+                        </div>
                     </div>
-                    <div class="mt-1">
-                        <img src="assets/icons/cake_black_24dp.svg" class="me-2 info-icon"><span
-                            class="info-text">1996.11.25 (<span id="age"></span>)</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ############ Steam App Body ############ -->
+        <main id="steam-body">
+            <!-- LEFT SIDEBAR (Visible primarily in LIBRARY tab, but handles navigation) -->
+            <aside id="steam-sidebar">
+                <!-- <div class="sidebar-header">
+                    <span class="sidebar-title">MY CAREER</span>
+                    <div class="search-box-container">
+                        <input type="text" id="search-input" placeholder="Search projects by name or stack..."
+                            oninput="handleSearch()">
+                        <i class="material-icons search-icon">search</i>
                     </div>
-                    <div class="mt-1">
-                        <span class="info-text email-link " onclick="clickEmail()"><img
-                                src="assets/icons/email-24px.svg" class="me-2 info-icon">wjdwlgus96@gmail.com</span>
+                </div> -->
+
+                <div class="sidebar-scrollable">
+                    <!-- Library Home Link -->
+                    <div class="sidebar-item home-item active" onclick="showLibraryHome()">
+                        <i class="material-icons sidebar-item-icon">home</i>
+                        <span class="sidebar-item-name">ALL PROJECTS</span>
+                        <span class="sidebar-count" id="all-projects-count">19</span>
                     </div>
-                    <div class="mt-1">
-                        <a href="https://github.com/Elpoco" target="_blank">
-                            <img src="assets/icons/github.svg" class="me-2 info-icon"><span
-                                class="info-text">https://github.com/Elpoco</span>
+
+                    <!-- Chronological Work Experience List -->
+                    <div class="sidebar-group">
+                        <div class="sidebar-group-title">EXPERIENCE</div>
+                        <div class="sidebar-group-list" id="experience-list">
+                            <!-- Dynamic Content Inserted by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Education Group -->
+                    <div class="sidebar-group">
+                        <div class="sidebar-group-title">EDUCATION</div>
+                        <div class="sidebar-group-list" id="education-list">
+                            <!-- Dynamic Content Inserted by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Technical Tech Stack Filters -->
+                    <div class="sidebar-group">
+                        <div class="sidebar-group-title">SKILLS</div>
+                        <div class="sidebar-group-list tech-filter-list" id="tech-filters">
+                            <!-- Dynamic Content Inserted by JS -->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT AREA -->
+            <section id="steam-content">
+
+                <!-- 1. STORE PAGE (Introduction & Highlight Summary) -->
+                <div class="content-panel active" id="store-page">
+                    <div class="store-hero">
+                        <div class="store-hero-overlay"></div>
+                        <div class="store-hero-content">
+                            <!-- <span class="store-badge">NEW RELEASE</span> -->
+                            <h1>정지현 | 클라이언트 & 서버 개발자</h1>
+                            <p class="store-hero-sub">끊임없이 배우고 한계를 극복하며 매력적인 게임과 안정적인 서비스를 개발합니다.</p>
+                            <!-- <div class="store-hero-actions">
+                                <button class="btn-steam-primary" onclick="switchTab('library')">
+                                    <i class="material-icons">play_arrow</i> 라이브러리 가기 (프로젝트 감상)
+                                </button>
+                                <button class="btn-steam-secondary" onclick="copyEmail()">
+                                    <i class="material-icons">email</i> 이메일 복사하기
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- Featured Section -->
+                    <div class="store-section">
+                        <h2 class="store-section-title">PROJECTS</h2>
+                        <div class="featured-grid" id="store-featured-projects">
+                            <!-- JS inserts featured items here -->
+                        </div>
+                    </div>
+
+                    <!-- Store Main Columns -->
+                    <div class="store-section">
+                        <div class="row">
+                            <!-- Left Column: About Me Intro -->
+                            <div class="col-lg-8">
+                                <div class="store-panel-card">
+                                    <h3>ABOUT ME (소개)</h3>
+                                    <p class="intro-long-text">
+                                        안녕하세요! 코딩이 즐거운 개발자 <strong>정지현</strong>입니다.<br>
+                                        2019년부터 다양한 모바일/하이브리드 앱과 웹, 백엔드 서버 개발을 시작으로, 현재는 유니티(Unity) 엔진을 활용한 3D 방치형 RPG,
+                                        하이퍼 캐주얼 게임 및 스팀 출시작까지 아우르는 <strong>클라이언트 & 서버 개발자</strong>로 활약하고 있습니다.
+                                    </p>
+                                    <p class="intro-long-text">
+                                        문제를 끝까지 해결하려는 끈기와 새로운 기술을 빠르게 습득하는 학습 능력을 강점으로 가지고 있습니다. 게임의 재미와 사용자 경험을 중요하게
+                                        생각하며, 안정적이고 확장 가능한 시스템을 구현하기 위해 항상 더 나은 구조와 방법을 고민합니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Right Column: Quick Contacts Info -->
+                            <div class="col-lg-4">
+                                <div class="store-panel-card side-info">
+                                    <h3>GAME SPECS (기본 정보)</h3>
+                                    <ul class="spec-list">
+                                        <li><strong>개발자명:</strong> 정지현</li>
+                                        <li><strong>생년월일:</strong> 1996.11.25 (<span class="dynamic-age"></span>세)</li>
+                                        <li><strong>연락처:</strong> 010-8990-4721</li>
+                                        <li><strong>이메일:</strong> <span class="click-email-text"
+                                                onclick="copyEmail()">wjdwlgus96@gmail.com</span></li>
+                                        <li><strong>거주지:</strong> 서울 광진구 화양동</li>
+                                        <li><strong>주요 분야:</strong> Game Client, Server, Mobile App</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. LIBRARY HOME (Projects Grid Layout) -->
+                <div class="content-panel" id="library-home">
+                    <!-- Library Controls Header -->
+                    <div class="library-header">
+                        <div class="library-title-bar">
+                            <h2>All Projects (<span id="filtered-projects-count">19</span>)</h2>
+                            <div class="library-display-options">
+                                <button class="display-btn active" id="display-grid"
+                                    onclick="setLibraryDisplay('grid')">
+                                    <i class="material-icons">grid_on</i> Grid
+                                </button>
+                                <button class="display-btn" id="display-list" onclick="setLibraryDisplay('list')">
+                                    <i class="material-icons">view_list</i> List
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Active filters tracker -->
+                        <div class="active-filters-tracker" id="active-filters-container" style="display: none;">
+                            <span class="filter-label">Active Filters:</span>
+                            <span id="active-filters-badges"></span>
+                            <span class="clear-filters-btn" onclick="clearAllFilters()">Clear All</span>
+                        </div>
+                    </div>
+
+                    <!-- Projects Grid Container -->
+                    <div class="projects-grid-view" id="projects-container">
+                        <!-- Dynamic Grid Cards Inserted by JS -->
+                    </div>
+                </div>
+
+                <!-- 3. PROJECT DETAIL PAGE (Detailed View for Single Project) -->
+                <div class="content-panel" id="project-details">
+                    <!-- Detail Hero Banner -->
+                    <div class="detail-hero" id="detail-banner">
+                        <div class="detail-hero-overlay"></div>
+                        <div class="detail-hero-content">
+                            <span class="detail-project-type" id="detail-type">Commercial Game</span>
+                            <h1 id="detail-title">Rope Up!</h1>
+                            <div class="detail-actions">
+                                <a href="#" target="_blank" class="btn-play" id="detail-play-btn">
+                                    <i class="material-icons">play_arrow</i> PLAY NOW
+                                </a>
+                                <a href="#" target="_blank" class="btn-github" id="detail-github-btn">
+                                    <img src="assets/icons/github.svg" class="github-icon-white" alt="GitHub"> SOURCE
+                                    CODE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details Content Grid -->
+                    <div class="detail-layout">
+                        <!-- Left Block: Game Overview, Video, and Responsibilities -->
+                        <div class="detail-main">
+                            <!-- Description Block -->
+                            <div class="detail-card">
+                                <h3>ABOUT THIS PROJECT</h3>
+                                <p class="project-desc-text" id="detail-description">프로젝트 상세 설명글이 위치합니다.</p>
+                            </div>
+
+                            <!-- Youtube Trailer Embed Container -->
+                            <div class="detail-media" id="detail-media-container">
+                                <!-- Dynamic iframe or video element -->
+                            </div>
+
+                            <!-- Responsibilities Block -->
+                            <div class="detail-card">
+                                <h3>KEY DEVELOPMENTS (주요 개발 사항)</h3>
+                                <ul class="responsibilities-list" id="detail-responsibilities">
+                                    <!-- Dynamic points loaded by JS -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Block: Sidebar Game Specs & Achievements -->
+                        <div class="detail-side">
+                            <!-- Game Info Spec -->
+                            <div class="detail-card spec-card">
+                                <h3>PROJECT DETAILS</h3>
+                                <table class="detail-spec-table">
+                                    <tr>
+                                        <td>Release Period</td>
+                                        <td id="detail-spec-period">2025.03 ~ 2026.05</td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>Developer</td>
+                                        <td>Elpoco (정지현)</td>
+                                    </tr> -->
+                                    <tr>
+                                        <td>Platforms</td>
+                                        <td id="detail-spec-platforms">
+                                            <!-- Icons -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tech Stack</td>
+                                        <td id="detail-spec-tech">
+                                            <!-- Tags -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Achievements Block (도전 과제) -->
+                            <div class="detail-card achievements-card" style="display: none;">
+                                <h3>ACHIEVEMENTS (도전 과제)</h3>
+                                <div class="achievements-grid" id="detail-achievements">
+                                    <!-- Dynamic achievements badges loaded by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Requirements (System specs) -->
+                    <!-- <div class="detail-card system-reqs">
+                        <h3>SYSTEM REQUIREMENTS (기술 사양)</h3>
+                        <div class="row">
+                            <div class="col-md-6 req-column">
+                                <div class="req-title">MINIMUM (개발 환경):</div>
+                                <ul class="req-list">
+                                    <li><strong>Engine/Framework:</strong> <span id="detail-req-engine">Unity
+                                            2022+</span></li>
+                                    <li><strong>Language:</strong> <span id="detail-req-lang">C# / .NET</span></li>
+                                    <li><strong>IDE:</strong> Visual Studio / JetBrains Rider</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 req-column">
+                                <div class="req-title">RECOMMENDED (핵심 적용 기술):</div>
+                                <ul class="req-list" id="detail-req-tech-points">
+                                    <li>FSM 상태 머신 기반 AI 최적화</li>
+                                    <li>UI 툴킷 기반 고성능 UI/UX 설계</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Back to library button -->
+                    <!-- <div class="detail-footer-nav text-center py-4">
+                        <button class="btn-steam-secondary" onclick="showLibraryHome()">
+                            <i class="material-icons">arrow_back</i> Back to Projects Library
+                        </button>
+                    </div> -->
+                </div>
+
+                <!-- 4. COMPANY DETAIL PAGE (Experience/Education Details) -->
+                <div class="content-panel" id="company-details">
+                    <div class="company-header-banner">
+                        <div class="company-banner-overlay"></div>
+                        <div class="company-header-info">
+                            <span class="company-tag" id="company-type-label">COMPANY</span>
+                            <h1 id="company-name">파이어슈라이크게임즈</h1>
+                            <span class="company-period" id="company-period">2022.06 ~ 2026.01</span>
+                        </div>
+                    </div>
+
+                    <div class="company-body">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="store-panel-card">
+                                    <h3>ROLE & RESPONSIBILITIES (담당 직무 및 개요)</h3>
+                                    <h4 class="company-role-title" id="company-role">유니티 클라이언트 및 서버 개발</h4>
+                                    <p class="company-desc" id="company-description">회사에 대한 상세 설명 및 전반적인 업무 요약이 위치합니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="store-panel-card side-info" id="company-quick-specs">
+                                    <h3>OVERVIEW SPECS</h3>
+                                    <ul class="spec-list">
+                                        <li><strong>소속/교육 기관:</strong> <span id="spec-company-title">파이어슈라이크게임즈</span>
+                                        </li>
+                                        <li><strong>수행 기간:</strong> <span id="spec-company-period">43개월 (약 3년
+                                                7개월)</span></li>
+                                        <li><strong>역할:</strong> <span id="spec-company-role">풀스택 클라이언트 프로그래머</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects Under This Company -->
+                        <div class="store-section mt-5">
+                            <h3 class="store-section-title">PROJECTS</h3>
+                            <div class="projects-grid-view" id="company-projects-container">
+                                <!-- Cards inserted by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. COMMUNITY PAGE (Skills & General Achievements) -->
+                <div class="content-panel" id="community-page">
+                    <div class="community-banner">
+                        <div class="community-banner-overlay"></div>
+                        <div class="community-banner-content">
+                            <h1>COMMUNITY ACTIVITY Showcase</h1>
+                            <p>개발자 정지현의 핵심 보유 기술 및 전체 프로젝트 도전 과제(업적)를 통합하여 표시합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Skills Matrix -->
+                    <div class="store-section">
+                        <h2 class="store-section-title">TECHNICAL INVENTORY (보유 기술 스택)</h2>
+                        <div class="skills-grid" id="community-skills-list">
+                            <!-- Skill Cards loaded by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Cumulative Achievements -->
+                    <div class="store-section">
+                        <h2 class="store-section-title">CUMULATIVE ACHIEVEMENTS (통합 도전 과제)</h2>
+                        <div class="all-achievements-grid" id="community-achievements-list">
+                            <!-- All project achievements listed in grid -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. ABOUT ME FULL RESUME PAGE -->
+                <div class="content-panel" id="about-page">
+                    <div class="about-header">
+                        <img src="assets/images/jjh2.jpg" alt="정지현 사진" class="about-photo">
+                        <div class="about-header-text">
+                            <h1>정지현 | Elpoco</h1>
+                            <p class="about-title-role">Client Game Developer & Software Engineer</p>
+                            <p class="about-quote">"게임을 플레이하는 유저와 동료 개발자 모두에게 기쁨을 주는 튼튼한 코드를 작성합니다."</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="store-panel-card">
+                                <h3>CONTACT PROFILE (연락처 및 링크)</h3>
+                                <ul class="spec-list">
+                                    <li><i class="material-icons info-icon-small">phone</i> <strong>Phone:</strong>
+                                        010-8990-4721</li>
+                                    <li><i class="material-icons info-icon-small">email</i> <strong>Email:</strong>
+                                        <span class="click-email-text" onclick="copyEmail()">wjdwlgus96@gmail.com</span>
+                                    </li>
+                                    <li><i class="material-icons info-icon-small">code</i> <strong>GitHub:</strong> <a
+                                            href="https://github.com/Elpoco" target="_blank">github.com/Elpoco</a></li>
+                                    <li><i class="material-icons info-icon-small">web</i> <strong>Blog:</strong> <a
+                                            href="https://elpoco.tistory.com" target="_blank">elpoco.tistory.com</a>
+                                    </li>
+                                    <li><i class="material-icons info-icon-small">place</i> <strong>Location:</strong>
+                                        서울 광진구 화양동</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="store-panel-card">
+                                <h3>CAREER MISSION (핵심 비전)</h3>
+                                <p class="intro-long-text">
+                                    유니티 게임 엔진과 C++ 언어에 강점을 가지고 있으며, 비동기 데이터 처리 및 모바일 인앱 정산 로직 등 서비스 핵심 기능의 무결성을 지키는 데 자신
+                                    있습니다.
+                                    새로운 최적화 기법에 호기심이 많고, 코드를 더 가독성 높고 유지보수하기 편리하게 구조화(Refactoring)하는 것을 생활화합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="store-section text-center py-5">
+                        <button class="btn-steam-primary px-5 py-3" onclick="copyEmail()">
+                            <i class="material-icons">content_copy</i> 이메일 주소 복사하기
+                        </button>
+                        <a href="mailto:wjdwlgus96@gmail.com" class="btn-steam-secondary px-5 py-3 ms-2">
+                            <i class="material-icons">send</i> 메일 보내기
                         </a>
                     </div>
-                    <div class="mt-1">
-                        <a href="https://elpoco.tistory.com" target="_blank">
-                            <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span
-                                class="info-text">https://elpoco.tistory.com</span>
-                        </a>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- ############ Header ############ -->
-        <!-- ############ Header ############ -->
-        <!-- ############ Header ############ -->
 
-        <!-- ############ Experience ############ -->
-        <!-- ############ Experience ############ -->
-        <!-- ############ Experience ############ -->
-        <div class="mt-5 text-center text-md-start title">Experience</div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2022.06 ~ 2026.01
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    파이어슈라이크게임즈
-                    <!-- <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a> -->
-                </div>
-                <ul>
-                    <li>유니티 클라이언트 및 서버 개발</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2021.11 ~ 2022.06
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    경일 게임 아카데미
-                </div>
-                <ul>
-                    <li>C++ / 유니티 프로그래밍</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2021.06 ~ 2021.08
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    뱅코
-                    <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
-                            class="logo-img"></a>
-                </div>
-                <ul>
-                    <li>백엔드 개발</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2019.08 ~ 2021.04
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    톡솔루션
-                    <a href="https://toksol.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
-                            class="logo-img"></a>
-                </div>
-                <ul>
-                    <li>앱 / 웹 개발, 백엔드 개발</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2019.05 ~ 2019.07
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    위고 컴퍼니
-                    <a href="https://wegochain.io/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
-                            class="logo-img"></a>
-                </div>
-                <ul>
-                    <li>안드로이드 앱 개발</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2018.09 ~ 2019.06
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    미래능력 개발 교육원
-                </div>
-                <ul>
-                    <li>안드로이드 앱 프로그래밍</li>
-                </ul>
-            </div>
-        </div>
-        <!-- ############ Experience ############ -->
-        <!-- ############ Experience ############ -->
-        <!-- ############ Experience ############ -->
-
-        <!-- ############ Skill ############ -->
-        <!-- ############ Skill ############ -->
-        <!-- ############ Skill ############ -->
-        <div class="text-center text-md-start title">Skill</div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title">
-            </div>
-            <div class="col-sm-12 col-lg-3">
-                <ul>
-                    <li><span class="language-tag"
-                            onclick="clickTag(this)">Unity</span><!-- <span class="language-tag" onclick="clickTag(this)">C#</span> -->
-                    </li>
-                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">PHP</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">MySQL</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                    <li><span class="language-tag" onclick="clickTag(this)">Swift</span></li>
-                </ul>
-            </div>
-            <!-- <div class="row col-sm-12 col-lg-6">
-            <div class="col-4">
-                <img style="width: 150px; height: 150px; object-fit: contain; background-color: #f8f8ff;" src="assets/images/unity-iocn.png">
-                <div style="width: 150px; height: 20px; background-color: #a7cfff;" class="mt-2">
-                    <div style="width: 120px; height: 20px; background-color: #4b9cff;" class="mt-2"></div>
-                </div>
-            </div>
-            <div class="col-4">
-                <img style="width: 150px; height: 150px; object-fit: contain; background-color: #f8f8ff;" src="assets/images/cs-icon.png">
-                <div style="width: 150px; height: 20px; background-color: #a7cfff;" class="mt-2">
-                    <div style="width: 110px; height: 20px; background-color: #4b9cff;" class="mt-2"></div>
-                </div>
-            </div>
-            <div class="col-4">
-                <img style="width: 150px; height: 150px; object-fit: contain; background-color: #f8f8ff;" src="assets/images/cpp-icon.png">
-                <div style="width: 150px; height: 20px; background-color: #a7cfff;" class="mt-2">
-                    <div style="width: 100px; height: 20px; background-color: #4b9cff;" class="mt-2"></div>
-                </div>
-            </div>
-        </div> -->
-        </div>
-        <!-- ############ Skill ############ -->
-        <!-- ############ Skill ############ -->
-        <!-- ############ Skill ############ -->
-
-        <!-- ############ Ability ############ -->
-        <!-- ############ Ability ############ -->
-        <!-- ############ Ability ############ -->
-        <!-- <div class="mt-5 text-center text-md-start title">Ability</div> -->
-        <!-- ############ Ability ############ -->
-        <!-- ############ Ability ############ -->
-        <!-- ############ Ability ############ -->
-
-        <div class="mt-5 text-center text-md-start title">Project</div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2025.03 ~ 2026.05
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">Rope Up!</span>
-                    <a href="https://store.steampowered.com/app/4595740/Rope_Up/?l=koreana&curator_clanid=34659241"
-                        class="me-1" target="_blank"><img src="assets/icons/steam_logo.svg" class="logo-img"></a>
-                    <!-- <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a> -->
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>캐주얼 RPG 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="FantasyHunter">[내용보기]</a> -->
-                    <div class="collapse show" id="FantasyHunter">
-                        <ul>
-                            <li>스킬 개발</li>
-                            <li>몬스터</li>
-                        </ul>
-                    </div>
-                </ul>
-                <iframe id="ropeupYoutube" width="100%" height="600px" src="https://www.youtube.com/watch?v=O7HDu78Jo4k"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-        <div style="margin-bottom: 5px;"></div>
-        <!-- 코로나 대구 지킴이 -->
-        <!-- <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div> -->
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2025.07 ~ 2026.01
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">FANTASYxHUNTERS</span>
-                    <a href="https://play.google.com/store/search?q=fantasy+hunters&c=apps&hl=ko" class="me-1"
-                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <!-- <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a> -->
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>캐주얼 RPG 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="FantasyHunter">[내용보기]</a> -->
-                    <div class="collapse show" id="FantasyHunter">
-                        <ul>
-                            <li>메인 캐릭터 스킬 개발</li>
-                            <li>몬스터 추가 및 스킬 개발</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-        </div>
-
-        <!-- <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div> -->
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2024.12 ~ 2025.06
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">카페 라이프: 레스토랑 게임 (Cafe Life)</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h2&hl=ko" class="me-1"
-                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko"
-                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>하이퍼 캐주얼 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="CafeLife">[내용보기]</a> -->
-                    <div class="collapse show" id="CafeLife">
-                        <ul>
-                            <li>게임 시스템 개발</li>
-                            <li>주기적인 콘텐츠 업데이트</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-        </div>
-
-        <!-- <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div> -->
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2024.07 ~ 2024.11
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">My Food Street</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h1&hl=ko" class="me-1"
-                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://apps.apple.com/us/app/my-food-street/id6736931912?l=ko" class="me-2"
-                        target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>하이퍼 캐주얼 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="MyFoodStreet">[내용보기]</a> -->
-                    <div class="collapse show" id="MyFoodStreet">
-                        <ul>
-                            <li>게임 시스템 개발</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-        </div>
-
-        <!-- <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div> -->
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2023.09 ~ 2024.04
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">나노스페이스</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko" class="me-1"
-                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445"
-                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>3D 방치형 키우기 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="NanoSpace">[내용보기]</a> -->
-                    <div class="collapse show" id="NanoSpace">
-                        <ul>
-                            <li>캐릭터 스킬 개발</li>
-                            <li>몬스터 추가 및 스킬 개발</li>
-                            <li>던전 클라, 백엔드 작업</li>
-                            <li>레이드 클라, 백엔드 작업</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-        </div>
-
-        <!-- <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div> -->
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2022.06 ~ 2023.08
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">별빛기사 키우기</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko" class="me-1"
-                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445"
-                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                    <li>3D 방치형 키우기 게임</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="StellarKnight">[내용보기]</a> -->
-                    <div class="collapse show" id="StellarKnight">
-                        <ul>
-                            <li>캐릭터 스킬 개발</li>
-                            <li>몬스터 추가 및 스킬 개발</li>
-                            <li>던전 클라, 백엔드 작업</li>
-                            <li>레이드 클라, 백엔드 작업</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-        </div>
-
-        <!-- ############ Portfolio ############ -->
-        <!-- ############ Portfolio ############ -->
-        <!-- ############ Portfolio ############ -->
-        <div class="mt-5 text-center text-md-start title">Portfolio</div>
-
-        <!-- 던그리드 -->
-        <div class="mb-3">
-            <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;"
-                src="assets/images/DungreedBanner.png">
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2022.03 ~ 2022.04
-                <div class="project-personnel">1인 개발</div>
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">Dungreed 모작</span>
-                    <a href="https://youtu.be/2GJa40E7roc" target="_blank"><img src="assets/icons/play.svg"
-                            class="logo-img"></a>
-                    <a href="https://github.com/Elpoco/CPP_Dungreed" target="_blank"><img src="assets/icons/github.svg"
-                            class="me-2 info-icon"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                    <li>C++ Win API를 사용하여 만든 게임입니다.</li>
-                    <li>로그라이크 게임입니다.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse show" id="Dungreed">
-            <div class="card card-body">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <iframe id="dungreedYoutube" width="100%" height="600px"
-                            src="https://www.youtube.com/embed/2GJa40E7roc" title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-sm-12 col-lg-12 pe-4" style="font-size: 18px;">
-                        <ul>
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <li>
-                                        <span onclick="clickDungreedTag(0)" class="video-time">00:08</span>&nbsp;
-                                        <span onclick="clickShowModal(0)" class="tec-doc-text">맵툴</span>
-                                    </li>
-                                    <li>
-                                        <span onclick="clickDungreedTag(1)" class="video-time">02:39</span>&nbsp;
-                                        <span onclick="clickShowModal(1)" class="tec-doc-text">상점</span>
-                                    </li>
-                                    <li>
-                                        <span onclick="clickDungreedTag(2)" class="video-time">03:26</span>&nbsp;
-                                        <span class="tec-doc-text">어빌리티</span>
-                                    </li>
-                                </div>
-                                <div class="col-lg-2">
-                                    <li>
-                                        <span onclick="clickDungreedTag(3)" class="video-time">03:47</span>&nbsp;
-                                        <span class="tec-doc-text">아이템</span>
-                                    </li>
-                                    <li>
-                                        <span onclick="clickDungreedTag(4)" class="video-time">05:28</span>&nbsp;
-                                        <span class="tec-doc-text">스킬</span>
-                                    </li>
-                                    <li>
-                                        <span onclick="clickDungreedTag(5)" class="video-time">09:59</span>&nbsp;
-                                        <span class="tec-doc-text">월드맵</span>
-                                    </li>
-                                </div>
-                                <div class="col-lg-2">
-                                    <li><span onclick="clickDungreedTag(6)" class="video-time">15:07</span>&nbsp;
-                                        <span class="tec-doc-text">보스 2종</span>
-                                    </li>
-                                    <li>
-                                        <span class="tec-doc-text">몬스터</span>
-                                    </li>
-                                    <li>
-                                        <span class="tec-doc-text">미니맵</span>
-                                    </li>
-                                </div>
-                                <div class="col-lg-2">
-                                    <li>
-                                        <span class="tec-doc-text">인벤토리</span>
-                                    </li>
-                                    <li>
-                                        <span class="tec-doc-text">NPC</span>
-                                    </li>
-                                </div>
-                            </div>
-                        </ul>
-                        <!-- <li><a data-bs-toggle="modal" data-bs-target="#dungreedModal" href="#">기술문서</a></li> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- dungreedModal -->
-        <div class="modal fade" id="dungreedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 800px;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Dungreed 기술문서</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-7" id="modalImage">
-                                <img class="tec-doc-img" src="assets/images/Code/interface.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5" id="modalText">
-                                <span style="word-break: keep-all; font-size: 17px">GDI와 GDI+를 편하게 사용하기 위해 인터페이스를
-                                    만들었습니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/camera.png" onclick="clickImage(this)">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/check_camera.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px">모든 오브젝트는 카메라에서 렌더를 관리합니다.<br>화면에 렌더를
-                                    하기전에 화면안에 있는 오브젝트만 렌더하도록 하였습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/tile_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">타일의 경우 현재 렌더되고있는 카메라 좌표를 계산해 표시되는
-                                    타일을 선정하여 렌더하였습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bullet_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">충돌 연산량을 줄이기 위해 화면 밖 총알은 플레이어와 충돌체크를
-                                    하지 않도록 하였습니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/item.png" onclick="clickImage(this)">
-                                <img class="tec-doc-img" src="assets/images/Code/item_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">아이템은 크게 종류별로 분류를 하고 아이템코드에 따라 아이템이
-                                    설정되도록 하였습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code.png"
-                                    onclick="clickImage(this)">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code2.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">아이템에 스킬이 있을경우 스킬 클래스가 생성됩니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/acc.png" onclick="clickImage(this)">
-                                <img class="tec-doc-img" src="assets/images/Code/acc_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">악세서리는 장착시 설정된 능력치가 플레이어매니저를 통해
-                                    적용됩니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/minimap.png"
-                                    onclick="clickImage(this)">
-                                <img class="tec-doc-img" src="assets/images/Code/minimap_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">미니맵은 표시할 오브젝트의 위치 정보를 가져와서 연산 후 미니맵
-                                    사이즈에 맞게 표시 해주었습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/minimap_door.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">맵의 테두리를 검사해 비어있는 곳을 맵의 입구로 찾도록
-                                    했습니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/enemy_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">몬스터는 미리 정의해둔 코드별로 클래스를 생성해서
-                                    추가시켜줍니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bat_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">같은 몬스터지만 여러 타입일 경우 코드를 확인해 한번더 분류해
-                                    주었습니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/db_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">각종 정보를 미리 정의해서 사용 할 수 있게
-                                    하였습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/enemy_db_code.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">코드번호를 인덱스로 사용하여 데이터를
-                                    설정하였습니다.</span>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <div class="row">
-                            <div class="col-7">
-                                <img class="tec-doc-img" src="assets/images/Code/ui1.png" onclick="clickImage(this)">
-                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/ui2.png"
-                                    onclick="clickImage(this)">
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">아이템 정보가 길어지게 되면 단어의 길이를 확인해 줄바꿈
-                                    하였습니다.</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <div class="row">
-                                    <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6"
-                                        src="assets/images/Code/ui2.png" onclick="clickImage(this)">
-                                    <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6"
-                                        src="assets/images/Code/ui3.png" onclick="clickImage(this)">
-                                </div>
-                            </div>
-                            <div class="col-5">
-                                <span style="word-break: keep-all; font-size: 17px;">아이템에 특수 옵션이 있으면 UI길이를 길어지게
-                                    하였습니다.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 할로우나이트 -->
-        <div class="mt-5 mb-3">
-            <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;"
-                src="assets/images/Hollow_Knight.jpg">
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2022.01
-                <div class="project-personnel">1인 개발</div>
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">Hollow knight 모작</span>
-                    <a class="me-1" data-bs-toggle="collapse" href="#Hollowknight" role="button" aria-expanded="false"
-                        aria-controls="Hollowknight"><img src="assets/icons/play.svg" class="logo-img"></a>
-                    <a href="https://github.com/Elpoco/CPP_HollowKnight" target="_blank"><img
-                            src="assets/icons/github.svg" class="me-2 info-icon"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                    <li>C++ Win API를 사용하여 만들었습니다.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse show" id="Hollowknight">
-            <div class="card card-body">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <iframe width="100%" height="600px" src="https://www.youtube.com/embed/WpeY7VANATY"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ############ Portfolio ############ -->
-        <!-- ############ Portfolio ############ -->
-        <!-- ############ Portfolio ############ -->
-
-        <!-- ############ Project ############ -->
-        <!-- ############ Project ############ -->
-        <!-- ############ Project ############ -->
-        <div class="mt-5 text-center text-md-start title">Project</div>
-        <!-- 보라비트 -->
-        <div class="row mobile-border">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2021.06 ~ 2021.08
-                <div class="project-personnel">유지보수</div>
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">보라비트, 메타벡스, NFEX</span>
-                    <a href="https://www.borabit.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
-                            class="logo-img"></a>
-                </div>
-                <ul>
-                    <li>
-                        <span class="language-tag" onclick="clickTag(this)">PHP</span>
-                        <span class="language-tag" onclick="clickTag(this)">MySQL</span>
-                        <span class="language-tag" onclick="clickTag(this)">JavaScript</span>
-                    </li>
-                    <li>가상화폐 거래소입니다.</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#banco" role="button" aria-expanded="false" aria-controls="banco">[내용보기]</a> -->
-                    <div class="collapse show" id="banco">
-                        <ul>
-                            <li>개인정보 암호화/복호화 작업 진행</li>
-                            <li>메타벡스 개인정보 암호화 작업 확인 후 보완</li>
-                            <li>NFEX 시스템 운영 확인 후 수정</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 이지펜 -->
-        <div class="row mobile-border">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2021.02 ~ 2021.03
-                <div class="project-personnel">1인 개발</div>
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">이지펜</span>
-                    <a href="https://ezpen.co.kr/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
-                            class="logo-img"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.ezpen" class="me-1" target="_blank"><img
-                            src="assets/icons/android_logo.svg" class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
-                            onclick="clickTag(this)">MySQL</span><span class="language-tag"
-                            onclick="clickTag(this)">JavaScript</span></li>
-                    <li>사용자들이 글을 읽고 글쓰기를 하면 첨삭선생님들이 사용자들의 글을 첨삭 해주는 웹사이트 입니다.</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#ezpen" role="button" aria-expanded="false" aria-controls="ezpen">[내용보기]</a> -->
-                    <div class="collapse show" id="ezpen">
-                        <ul>
-                            <li>아임포트를 사용하여 결제 구현</li>
-                            <ul>
-                                <li>구독/아이템 구매</li>
-                            </ul>
-                            <li>OneSignal을 사용해 알림 구현</li>
-                            <li>글쓰기 임시저장/제출 기능 개발</li>
-                            <li>첨삭 상태에 따라 보여주는 데이터 변경</li>
-                            <li>웹앱 개발</li>
-                            <li>RESTful API형식으로 서버와 통신</li>
-                            <li>DB구조 설계</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 마이풀 -->
-        <div class="row mobile-border">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                2020.10 ~ 2021.01
-                <div class="project-personnel">1인 개발</div>
-            </div>
-            <div class="col-sm-12 col-lg-9">
-                <div class="con-title">
-                    <span class="project-name">마이풀</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.mypool" class="me-1" target="_blank"><img
-                            src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://url.kr/j6q4a3" class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg"
-                            class="logo-img"></a>
-                </div>
-                <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
-                    <li>영어, 중국어, 토익강의를 시청하고 문제를 풀 수 있는 앱입니다.</li>
-                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#mypool" role="button" aria-expanded="false" aria-controls="mypool">[내용보기]</a> -->
-                    <div class="collapse show" id="mypool">
-                        <ul>
-                            <li>RESTful API형식으로 서버와 통신</li>
-                            <li>DB구조 설계</li>
-                            <li>SNS(Naver, Kakao, Apple) 로그인 구현</li>
-                            <li>튜토리얼 문제 채점후 점수, 영역별로 부족한 강의 추천기능 개발</li>
-                            <li>OneSignal을 사용해 알림 구현</li>
-                            <li>IAPHUB를 사용하여 인앱결제 구현</li>
-                            <li>구독한 사용자들만 강의 시청기능 개발</li>
-                            <li>사용자가 설정한 관심사에 따라 해당하는 강의영상 추천하기 기능 개발</li>
-                            <li>강의시청/문제풀이 기능 개발</li>
-                            <li>커뮤니티/출석체크 기능 개발</li>
-                            <li>학습시간에따라 격려 메시지 변경기능 개발</li>
-                            <li>시청한 강의의 종류를 확인해 사용자의 학습분석기능 개발</li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-        </div>
-
-        <!-- <div class="row">
-            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                
-            </div>
-            <div class="col-sm-12 col-lg-9 mt-2 mb-2">
-                <a class="me-1" data-bs-toggle="collapse" href="#moreProject" role="button" aria-expanded="false" aria-controls="moreProject"
-                style="font-weight: bold;">[프로젝트 더보기]</a>
-            </div>
-        </div> -->
-
-        <div class="collapse show" id="moreProject">
-            <!-- 마찾사_admin -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2020.09
-                    <div class="project-personnel">1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">마찾사 관리자 페이지</span>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
-                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
-                                onclick="clickTag(this)">JavaScript</span></li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#machasa_admin" role="button" aria-expanded="false" aria-controls="machasa_admin">[내용보기]</a> -->
-                        <div class="collapse show" id="machasa_admin">
-                            <ul>
-                                <li>RESTful API형식으로 서버와 통신</li>
-                                <li>DB구조 설계</li>
-                                <li>회원 정보확인 기능</li>
-                                <li>매장등록 기능</li>
-                                <li>매장 계약 관리 기능</li>
-                                <ul>
-                                    <li>계약 일수 확인</li>
-                                    <li>계약 연장 기능</li>
-                                </ul>
-                                <li>앱내 팝업을 생성하는 기능 개발</li>
-                                <li>매장별 이벤트등록을 하여 후기 이벤트 기능 추가</li>
-                                <li>블랙리스트를 등록하여 모든 매장이 확인할 수 있는 기능 개발</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 마찾사 -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2020.07 ~ 2020.08
-                    <div class="project-personnel">1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">마찾사</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.toksol.machasa" class="me-1"
-                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716" class="me-2"
-                            target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
-                        <li>전국의 마사지 매장의 정보를 제공해주는 앱 입니다.</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#machasa" role="button" aria-expanded="false" aria-controls="machasa">[내용보기]</a> -->
-                        <div class="collapse show" id="machasa">
-                            <ul>
-                                <li>RESTful API형식으로 서버와 통신</li>
-                                <li>DB구조 설계</li>
-                                <li>사용자의 현재 위도, 경도를 구해 매장별로 등록된 위치를 계산하여 거리순으로 보여주는 기능 개발</li>
-                                <li>사용자가 원하는 위치와 가까운 매장을 검색할 수 있는 기능 개발</li>
-                                <li>지역별/종류별 매장 리스트 보여주기 기능 추가</li>
-                                <li>매장 결제 후 후기를 남길 수 있는 기능 추가</li>
-                                <li>이벤트 팝업창 개발</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 터치만파 -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2020.07
-                    <div class="project-personnel">Android App 1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">터치만파</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.system.vingo" class="me-1"
-                            target="_blank"><img src="assets/icons/android_logo.svg"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                        <li>차량에 부착된 차대번호를 앱으로 스캔하면 정보를 읽고 차에 관련된 부품들을 보여주는 웹앱 입니다.</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#manpa" role="button" aria-expanded="false" aria-controls="manpa">[내용보기]</a> -->
-                        <div class="collapse show" id="manpa">
-                            <ul>
-                                <li>openCV를 사용한 스캐너 기능 구현</li>
-                                <li>구글에서 제공하는 ZXing을 사용하여 바코드 인식기능 구현</li>
-                                <li>Google Vision API (OCR)을 사용하여 스캔한 문자를 구하는 기능 구현</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Only1Trip_admin -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2020.05
-                    <div class="project-personnel">1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">Only1Trip 관리자 페이지</span>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
-                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
-                                onclick="clickTag(this)">JavaScript</span></li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#Only1Trip_admin" role="button" aria-expanded="false" aria-controls="Only1Trip_admin">[내용보기]</a> -->
-                        <div class="collapse show" id="Only1Trip_admin">
-                            <ul>
-                                <li>RESTful API형식으로 서버와 통신</li>
-                                <li>DB구조 설계</li>
-                                <li>회원관리 기능</li>
-                                <ul>
-                                    <li>회원정보 수정</li>
-                                    <li>PHPMailer를 이용하여 메일 전송 기능</li>
-                                    <li>플래너 신청 관리</li>
-                                </ul>
-                                <li>여행 관리 기능</li>
-                                <ul>
-                                    <li>여행상품 삭제/내리기</li>
-                                    <li>여행후기 삭제</li>
-                                </ul>
-                                <li>공지사항, FAQ 기능</li>
-                                <li>결제내역, 결제취소 기능</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Only1Trip -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2020.02 ~ 2020.04
-                    <div class="project-personnel">1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">Only1Trip</span>
-                        <a href="https://www.only1trip.com/" class="me-1" target="_blank"><img
-                                src="assets/icons/web_logo.svg" class="logo-img"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
-                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
-                                onclick="clickTag(this)">JavaScript</span></li>
-                        <li>여행자들에게 플래너가 계획을 세워주고 여행을 도와주는 사이트 입니다.</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#Only1Trip" role="button" aria-expanded="false" aria-controls="Only1Trip">[내용보기]</a> -->
-                        <div class="collapse show" id="Only1Trip">
-                            <ul>
-                                <li>RESTful API형식으로 서버와 통신</li>
-                                <li>DB구조 설계</li>
-                                <li>SNS(Apple, Facebook) 로그인 구현</li>
-                                <li>Google Maps를 사용하여 여행지의 위치를 보여주고 위도, 경도를 구하는 기능 구현</li>
-                                <li>국내/해외 결제를위해 EXIMBAY 라이브러리 사용해 결제 구현</li>
-                                <li>Google Speech-to-Text를 사용하여 음성으로 여행 예약기능 개발</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 스마트썸 -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2019.11 ~ 2020.01
-                    <div class="project-personnel">Android / iOS App 1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">스마트썸</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.toksolution.mine" class="me-1"
-                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%8D%B8/id1486294292"
-                            class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag"
-                                onclick="clickTag(this)">Swift</span></li>
-                        <li>이성의 매칭을 도와주는 데이팅 앱입니다.</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#smartsome" role="button" aria-expanded="false" aria-controls="smartsome">[내용보기]</a> -->
-                        <div class="collapse show" id="smartsome">
-                            <ul>
-                                <li>RESTful API 방식으로 서버와 통신</li>
-                                <li>OneSignal을 사용해 알림 기능 구현</li>
-                                <li>Remote Monster 라이브러리를 사용하여 VoIP 음성채팅을 구현</li>
-                                <li>자신의 목소리를 프로필로 등록할 수 있는 녹음 기능 추가</li>
-                                <li>활동 시 필요한 포인트 구매를 위해 구글/애플 인앱 결제 구현</li>
-                                <li>javascript bridge를 사용해 웹과 앱의 통신 구현</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 문톡 -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3">
-                    <div class="text-start text-lg-right sub-title exp-time">
-                        2019.08 ~ 2019.10
-                        <div class="project-personnel">Android / iOS App 1인 개발</div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">문톡</span>
-                        <a href="https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000743106&scYn=Y"
-                            class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926" class="me-2"
-                            target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag"
-                                onclick="clickTag(this)">Swift</span></li>
-                        <li>핸드폰의 연락처를 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송 또는 앱에서 문자전송이 가능한 어플입니다. <br>또 공개 채팅방 기능이 있어 앱
-                            사용자들끼리 채팅 할 수 있습니다. (iOS는 채팅만 구현)</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#moontalk" role="button" aria-expanded="false" aria-controls="moontalk">[내용보기]</a> -->
-                        <div class="collapse show" id="moontalk">
-                            <ul>
-                                <li>RESTful API 방식으로 서버와 통신</li>
-                                <li>Android 앱 연락처의 전화번호, 이름, 그룹, 즐겨찾기 가져오기 구현</li>
-                                <li>웹에서 문자 전송 시 앱으로 알림 수신하여 데이터를 분석 후 문자 전송 구현</li>
-                                <li>Thread를 사용해 메시지 전송, 예약전송, 단체메시지 전송 기능 구현</li>
-                                <li>BroadcaseReceiver를 사용하여 문자를 수신하면 데이터를 가져와 DB에 저장 구현</li>
-                                <li>문자 수신 시 네트워크 문제로 문자수신데이터를 놓쳤을 때 Thread를 사용해 일정 시간마다 확인 후 DB에 저장 기능 개발</li>
-                                <li>Firebase Storage를 사용하여 공개채팅방 / 강제퇴장 / 공지사항 / 비공개방 개발</li>
-                                <li>Firebase FCM을 사용하여 채팅방 알림 구현</li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 로아망원경 -->
-            <div class="row mobile-border">
-                <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-                    2019.02 ~ 2019.03
-                    <div class="project-personnel">1인 개발</div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="con-title">
-                        <span class="project-name">로아 망원경</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder" class="me-1"
-                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    </div>
-                    <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                        <li>게임 콘텐츠의 정보들을 사용자끼리 공유할 수 있는 앱입니다.</li>
-                        <!-- <a class="me-1" data-bs-toggle="collapse" href="#loa" role="button" aria-expanded="false" aria-controls="loa">[내용보기]</a> -->
-                        <div class="collapse show" id="loa">
-                            <ul>
-                                <li>HTML parser를 이용해 웹 데이터를 가져와 앱에서 볼 수 있는 기능 개발</li>
-                                <li>dothome 웹호스팅을 사용해 게시판 개발</li>
-                                <li>Firebase FCM 을 사용해 게시판 댓글 알림 개발</li>
-                                <li>Google AdMob을 사용해 앱 내 광고 구현</li>
-                                <li><a target="_blank" href="assets/file/기술서.pdf">[프로젝트 기술서 보기]</a></li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- ############ Project ############ -->
-        <!-- ############ Project ############ -->
-        <!-- ############ Project ############ -->
-
-        <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 100%;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img style="width: 100%; height: 100%;" src="assets/images/Code/interface.png" id="imgDetail">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ############ Footer ############ -->
-        <!-- ############ Footer ############ -->
-        <!-- ############ Footer ############ -->
-        <div class="col-sm-12 mt-5 text-center">
-            <div>
-                <img src="assets/icons/person_black_24dp.svg" class="me-2">
-                <!-- 코딩을 즐기는  -->
-                <span style="font-weight: bold;">정지현</span>
-            </div>
-            <div><img src="assets/icons/phone-24px.svg" class="me-2">010-8990-4721</div>
-            <div><span class="email-link" onclick="clickEmail()"><img src="assets/icons/email-24px.svg"
-                        class="me-2">wjdwlgus96@google.com</span></div>
-            <div><img src="assets/icons/emoji_people_black_24dp.svg" class="me-2">감사합니다.</div>
-        </div>
-        <div class="mb-5 pb-5"></div>
-        <!-- ############ Footer ############ -->
-        <!-- ############ Footer ############ -->
-        <!-- ############ Footer ############ -->
+            </section>
+        </main>
     </div>
 </body>
 
