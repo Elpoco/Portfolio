@@ -141,7 +141,7 @@ function renderStorePage() {
     $featuredContainer.empty();
 
     // Select first 3 projects as Featured
-    const featuredProjects = portfolioData.projects.slice(0, 3);
+    const featuredProjects = portfolioData.projects.slice(0, 8);
 
     featuredProjects.forEach(proj => {
         // Build tech tag string
