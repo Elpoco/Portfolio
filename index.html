@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,169 +15,181 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css?v=1" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
-<div class="container">
-    <!-- ############ Header ############ --> 
-    <!-- ############ Header ############ -->
-    <!-- ############ Header ############ -->
-    <div class="text-center" id="header" 
-    style="position: fixed; display: none; left: 0px; right: 0px; top: 0px; background-color: ghostwhite; padding: 30px; z-index: 99;">
-        <span class="intro">정지현 010-8990-4721</span>
-    </div>
-    <div class="text-center mt-5">
-        <span class="intro">개발자 </span>
-        <span class="intro" id="title">정지현</span>
-        <span class="intro"> 입니다.</span>
-    </div>
-    <div class="row mt-5">
-        <div class="col-sm-12 col-lg-3 text-center pb-3">
-            <img style="width: 225px; height: 300px; object-fit: cover;" src="assets/images/jjh2.jpg" 
-            onmouseenter="changeImage(this, 1)" onmouseleave="changeImage(this, 0)">
+    <div class="container">
+        <!-- ############ Header ############ -->
+        <!-- ############ Header ############ -->
+        <!-- ############ Header ############ -->
+        <div class="text-center" id="header"
+            style="position: fixed; display: none; left: 0px; right: 0px; top: 0px; background-color: ghostwhite; padding: 30px; z-index: 99;">
+            <span class="intro">정지현 010-8990-4721</span>
         </div>
+        <div class="text-center mt-5">
+            <span class="intro">개발자 </span>
+            <span class="intro" id="title">정지현</span>
+            <span class="intro"> 입니다.</span>
+        </div>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-lg-3 text-center pb-3">
+                <img style="width: 225px; height: 300px; object-fit: cover;" src="assets/images/jjh2.jpg"
+                    onmouseenter="changeImage(this, 1)" onmouseleave="changeImage(this, 0)">
+            </div>
 
-        <div class="col-sm-12 col-lg-9">
-            <div class="mt-2">
-                <div class="mt-1">
-                    <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span class="info-text">서울 광진구 화양동</span>
-                </div>
-                <div class="mt-1">
-                    <img src="assets/icons/phone-24px.svg" class="me-2 info-icon"><span class="info-text" id="phone">010-8990-4721</span>
-                </div>
-                <div class="mt-1">
-                    <img src="assets/icons/cake_black_24dp.svg" class="me-2 info-icon"><span class="info-text">1996.11.25 (<span id="age"></span>)</span>
-                </div>
-                <div class="mt-1">
-                    <span class="info-text email-link " onclick="clickEmail()"><img src="assets/icons/email-24px.svg" class="me-2 info-icon">wjdwlgus96@gmail.com</span>
-                </div>
-                <div class="mt-1">
-                    <a href="https://github.com/Elpoco" target="_blank">
-                        <img src="assets/icons/github.svg" class="me-2 info-icon"><span class="info-text">https://github.com/Elpoco</span>
-                    </a>
-                </div>
-                <div class="mt-1">
-                    <a href="https://elpoco.tistory.com" target="_blank">
-                        <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span class="info-text">https://elpoco.tistory.com</span>
-                    </a>
+            <div class="col-sm-12 col-lg-9">
+                <div class="mt-2">
+                    <div class="mt-1">
+                        <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span class="info-text">서울
+                            광진구 화양동</span>
+                    </div>
+                    <div class="mt-1">
+                        <img src="assets/icons/phone-24px.svg" class="me-2 info-icon"><span class="info-text"
+                            id="phone">010-8990-4721</span>
+                    </div>
+                    <div class="mt-1">
+                        <img src="assets/icons/cake_black_24dp.svg" class="me-2 info-icon"><span
+                            class="info-text">1996.11.25 (<span id="age"></span>)</span>
+                    </div>
+                    <div class="mt-1">
+                        <span class="info-text email-link " onclick="clickEmail()"><img
+                                src="assets/icons/email-24px.svg" class="me-2 info-icon">wjdwlgus96@gmail.com</span>
+                    </div>
+                    <div class="mt-1">
+                        <a href="https://github.com/Elpoco" target="_blank">
+                            <img src="assets/icons/github.svg" class="me-2 info-icon"><span
+                                class="info-text">https://github.com/Elpoco</span>
+                        </a>
+                    </div>
+                    <div class="mt-1">
+                        <a href="https://elpoco.tistory.com" target="_blank">
+                            <img src="assets/icons/home_black_24dp.svg" class="me-2 info-icon"><span
+                                class="info-text">https://elpoco.tistory.com</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ############ Header ############ -->
-    <!-- ############ Header ############ -->
-    <!-- ############ Header ############ -->
+        <!-- ############ Header ############ -->
+        <!-- ############ Header ############ -->
+        <!-- ############ Header ############ -->
 
-    <!-- ############ Experience ############ -->
-    <!-- ############ Experience ############ -->
-    <!-- ############ Experience ############ -->
-    <div class="mt-5 text-center text-md-start title">Experience</div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2022.06 ~ 2026.01
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                파이어슈라이크게임즈
-                <!-- <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a> -->
+        <!-- ############ Experience ############ -->
+        <!-- ############ Experience ############ -->
+        <!-- ############ Experience ############ -->
+        <div class="mt-5 text-center text-md-start title">Experience</div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2022.06 ~ 2026.01
             </div>
-            <ul>
-                <li>유니티 클라이언트 및 서버 개발</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2021.11 ~ 2022.06
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                경일 게임 아카데미
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    파이어슈라이크게임즈
+                    <!-- <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a> -->
+                </div>
+                <ul>
+                    <li>유니티 클라이언트 및 서버 개발</li>
+                </ul>
             </div>
-            <ul>
-                <li>C++ / 유니티 프로그래밍</li>
-            </ul>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2021.06 ~ 2021.08
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                뱅코
-                <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2021.11 ~ 2022.06
             </div>
-            <ul>
-                <li>백엔드 개발</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2019.08 ~ 2021.04
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                톡솔루션
-                <a href="https://toksol.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    경일 게임 아카데미
+                </div>
+                <ul>
+                    <li>C++ / 유니티 프로그래밍</li>
+                </ul>
             </div>
-            <ul>
-                <li>앱 / 웹 개발, 백엔드 개발</li>
-            </ul>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2019.05 ~ 2019.07
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                위고 컴퍼니
-                <a href="https://wegochain.io/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2021.06 ~ 2021.08
             </div>
-            <ul>
-                <li>안드로이드 앱 개발</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2018.09 ~ 2019.06
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                미래능력 개발 교육원
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    뱅코
+                    <a href="https://www.banco.id/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
+                            class="logo-img"></a>
+                </div>
+                <ul>
+                    <li>백엔드 개발</li>
+                </ul>
             </div>
-            <ul>
-                <li>안드로이드 앱 프로그래밍</li>
-            </ul>
         </div>
-    </div>
-    <!-- ############ Experience ############ -->
-    <!-- ############ Experience ############ -->
-    <!-- ############ Experience ############ -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2019.08 ~ 2021.04
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    톡솔루션
+                    <a href="https://toksol.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
+                            class="logo-img"></a>
+                </div>
+                <ul>
+                    <li>앱 / 웹 개발, 백엔드 개발</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2019.05 ~ 2019.07
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    위고 컴퍼니
+                    <a href="https://wegochain.io/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
+                            class="logo-img"></a>
+                </div>
+                <ul>
+                    <li>안드로이드 앱 개발</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2018.09 ~ 2019.06
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    미래능력 개발 교육원
+                </div>
+                <ul>
+                    <li>안드로이드 앱 프로그래밍</li>
+                </ul>
+            </div>
+        </div>
+        <!-- ############ Experience ############ -->
+        <!-- ############ Experience ############ -->
+        <!-- ############ Experience ############ -->
 
-    <!-- ############ Skill ############ -->
-    <!-- ############ Skill ############ -->
-    <!-- ############ Skill ############ -->
-    <div class="text-center text-md-start title">Skill</div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title">
-        </div>
-        <div class="col-sm-12 col-lg-3">
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span><!-- <span class="language-tag" onclick="clickTag(this)">C#</span> --></li>
-                <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">PHP</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">MySQL</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
-                <li><span class="language-tag" onclick="clickTag(this)">Swift</span></li>
-            </ul>
-        </div>
-        <!-- <div class="row col-sm-12 col-lg-6">
+        <!-- ############ Skill ############ -->
+        <!-- ############ Skill ############ -->
+        <!-- ############ Skill ############ -->
+        <div class="text-center text-md-start title">Skill</div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title">
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <ul>
+                    <li><span class="language-tag"
+                            onclick="clickTag(this)">Unity</span><!-- <span class="language-tag" onclick="clickTag(this)">C#</span> -->
+                    </li>
+                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">PHP</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">MySQL</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">Swift</span></li>
+                </ul>
+            </div>
+            <!-- <div class="row col-sm-12 col-lg-6">
             <div class="col-4">
                 <img style="width: 150px; height: 150px; object-fit: contain; background-color: #f8f8ff;" src="assets/images/unity-iocn.png">
                 <div style="width: 150px; height: 20px; background-color: #a7cfff;" class="mt-2">
@@ -196,460 +209,540 @@
                 </div>
             </div>
         </div> -->
-    </div>
-    <!-- ############ Skill ############ -->
-    <!-- ############ Skill ############ -->
-    <!-- ############ Skill ############ -->
+        </div>
+        <!-- ############ Skill ############ -->
+        <!-- ############ Skill ############ -->
+        <!-- ############ Skill ############ -->
 
-    <!-- ############ Ability ############ -->
-    <!-- ############ Ability ############ -->
-    <!-- ############ Ability ############ -->
-    <!-- <div class="mt-5 text-center text-md-start title">Ability</div> -->
-    <!-- ############ Ability ############ -->
-    <!-- ############ Ability ############ -->
-    <!-- ############ Ability ############ -->
-    
-    <div class="mt-5 text-center text-md-start title">Project</div>
-    <!-- 코로나 대구 지킴이 -->
-    <!-- <div class="mb-3">
+        <!-- ############ Ability ############ -->
+        <!-- ############ Ability ############ -->
+        <!-- ############ Ability ############ -->
+        <!-- <div class="mt-5 text-center text-md-start title">Ability</div> -->
+        <!-- ############ Ability ############ -->
+        <!-- ############ Ability ############ -->
+        <!-- ############ Ability ############ -->
+
+        <div class="mt-5 text-center text-md-start title">Project</div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2025.03 ~ 2026.05
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">Rope Up!</span>
+                    <a href="https://store.steampowered.com/app/4595740/Rope_Up/?l=koreana&curator_clanid=34659241"
+                        class="me-1" target="_blank"><img src="assets/icons/steam_logo.svg" class="logo-img"></a>
+                    <!-- <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a> -->
+                </div>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>캐주얼 RPG 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="FantasyHunter">[내용보기]</a> -->
+                    <div class="collapse show" id="FantasyHunter">
+                        <ul>
+                            <li>스킬 개발</li>
+                            <li>몬스터</li>
+                        </ul>
+                    </div>
+                </ul>
+                <iframe id="ropeupYoutube" width="100%" height="600px" src="https://www.youtube.com/watch?v=O7HDu78Jo4k"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div style="margin-bottom: 5px;"></div>
+        <!-- 코로나 대구 지킴이 -->
+        <!-- <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
     </div> -->
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2025.07 ~ 2026.01
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">판타지 블레이드</span>
-                <!-- <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h2&hl=ko" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a> -->
-                <!-- <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a> -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2025.07 ~ 2026.01
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                <li>캐주얼 RPG 게임</li>
-                <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="FantasyHunter">[내용보기]</a> -->
-                <div class="collapse show" id="FantasyHunter">
-                    <ul>
-                        <li>스킬 개발</li>
-                        <li>몬스터</li>
-                    </ul>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">FANTASYxHUNTERS</span>
+                    <a href="https://play.google.com/store/search?q=fantasy+hunters&c=apps&hl=ko" class="me-1"
+                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <!-- <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a> -->
                 </div>
-            </ul>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>캐주얼 RPG 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="FantasyHunter">[내용보기]</a> -->
+                    <div class="collapse show" id="FantasyHunter">
+                        <ul>
+                            <li>메인 캐릭터 스킬 개발</li>
+                            <li>몬스터 추가 및 스킬 개발</li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
         </div>
-        <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-    </div>
 
-    <!-- <div class="mb-3">
+        <!-- <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
     </div> -->
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2024.12 ~ 2025.06
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">카페 라이프: 레스토랑 게임 (Cafe Life)</span>
-                <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h2&hl=ko" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2024.12 ~ 2025.06
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                <li>하이퍼 캐주얼 게임</li>
-                <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="CafeLife">[내용보기]</a> -->
-                <div class="collapse show" id="CafeLife">
-                    <ul>
-                        <li>게임 시스템 개발</li>
-                        <li>주기적인 콘텐츠 업데이트</li>
-                    </ul>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">카페 라이프: 레스토랑 게임 (Cafe Life)</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h2&hl=ko" class="me-1"
+                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko"
+                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                 </div>
-            </ul>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>하이퍼 캐주얼 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="CafeLife">[내용보기]</a> -->
+                    <div class="collapse show" id="CafeLife">
+                        <ul>
+                            <li>게임 시스템 개발</li>
+                            <li>주기적인 콘텐츠 업데이트</li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
         </div>
-        <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-    </div>
 
-    <!-- <div class="mb-3">
+        <!-- <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
     </div> -->
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2024.07 ~ 2024.11
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">My Food Street</span>
-                <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h1&hl=ko" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                <a href="https://apps.apple.com/us/app/my-food-street/id6736931912?l=ko" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2024.07 ~ 2024.11
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                <li>하이퍼 캐주얼 게임</li>
-                <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="MyFoodStreet">[내용보기]</a> -->
-                <div class="collapse show" id="MyFoodStreet">
-                    <ul>
-                        <li>게임 시스템 개발</li>
-                    </ul>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">My Food Street</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.fireshrike.h1&hl=ko" class="me-1"
+                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://apps.apple.com/us/app/my-food-street/id6736931912?l=ko" class="me-2"
+                        target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                 </div>
-            </ul>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>하이퍼 캐주얼 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="MyFoodStreet">[내용보기]</a> -->
+                    <div class="collapse show" id="MyFoodStreet">
+                        <ul>
+                            <li>게임 시스템 개발</li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
         </div>
-        <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-    </div>
 
-    <!-- <div class="mb-3">
+        <!-- <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
     </div> -->
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2023.09 ~ 2024.04
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">나노스페이스</span>
-                <a href="https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2023.09 ~ 2024.04
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                <li>3D 방치형 게임입니다.</li>
-                <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="NanoSpace">[내용보기]</a> -->
-                <div class="collapse show" id="NanoSpace">
-                    <ul>
-                        <li>캐릭터 스킬 개발</li>
-                        <li>몬스터 추가 및 스킬 개발</li>
-                        <li>던전 클라, 백엔드 작업</li>
-                        <li>레이드 클라, 백엔드 작업</li>
-                    </ul>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">나노스페이스</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko" class="me-1"
+                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445"
+                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                 </div>
-            </ul>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>3D 방치형 키우기 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="NanoSpace">[내용보기]</a> -->
+                    <div class="collapse show" id="NanoSpace">
+                        <ul>
+                            <li>캐릭터 스킬 개발</li>
+                            <li>몬스터 추가 및 스킬 개발</li>
+                            <li>던전 클라, 백엔드 작업</li>
+                            <li>레이드 클라, 백엔드 작업</li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
         </div>
-        <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-    </div>
 
-    <!-- <div class="mb-3">
+        <!-- <div class="mb-3">
         <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
     </div> -->
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2022.06 ~ 2023.08
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">별빛기사 키우기</span>
-                <a href="https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2022.06 ~ 2023.08
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
-                <li>3D 방치형 게임입니다.</li>
-                <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="StellarKnight">[내용보기]</a> -->
-                <div class="collapse show" id="StellarKnight">
-                    <ul>
-                        <li>캐릭터 스킬 개발</li>
-                        <li>몬스터 추가 및 스킬 개발</li>
-                        <li>던전 클라, 백엔드 작업</li>
-                        <li>레이드 클라, 백엔드 작업</li>
-                    </ul>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">별빛기사 키우기</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko" class="me-1"
+                        target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445"
+                        class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                 </div>
-            </ul>
-        </div>
-        <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
-    </div>
-
-    <!-- ############ Portfolio ############ -->
-    <!-- ############ Portfolio ############ -->
-    <!-- ############ Portfolio ############ -->
-    <div class="mt-5 text-center text-md-start title">Portfolio</div>
-
-    <!-- 던그리드 -->
-    <div class="mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/DungreedBanner.png">
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2022.03 ~ 2022.04
-            <div class="project-personnel">1인 개발</div>
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">Dungreed 모작</span>
-                <a href="https://youtu.be/2GJa40E7roc" target="_blank"><img src="assets/icons/play.svg" class="logo-img"></a>
-                <a href="https://github.com/Elpoco/CPP_Dungreed" target="_blank"><img src="assets/icons/github.svg" class="me-2 info-icon"></a>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">Unity</span></li>
+                    <li>3D 방치형 키우기 게임</li>
+                    <!-- <a class="me-1" data-bs-toggle="collapse" href="#StellarKnight" role="button" aria-expanded="false" aria-controls="StellarKnight">[내용보기]</a> -->
+                    <div class="collapse show" id="StellarKnight">
+                        <ul>
+                            <li>캐릭터 스킬 개발</li>
+                            <li>몬스터 추가 및 스킬 개발</li>
+                            <li>던전 클라, 백엔드 작업</li>
+                            <li>레이드 클라, 백엔드 작업</li>
+                        </ul>
+                    </div>
+                </ul>
             </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                <li>C++ Win API를 사용하여 만든 게임입니다.</li>
-                <li>로그라이크 게임입니다.</li>
-            </ul>
+            <!-- <div style="border: none; border-top: 5px dotted gray;"></div> -->
         </div>
-    </div>
 
-    <div class="collapse show" id="Dungreed">
-        <div class="card card-body">
-            <div class="row">
-                <div class="col-lg-12 col-sm-12">
-                    <iframe id="dungreedYoutube" width="100%" height="600px" src="https://www.youtube.com/embed/2GJa40E7roc" title="YouTube video player" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- ############ Portfolio ############ -->
+        <!-- ############ Portfolio ############ -->
+        <!-- ############ Portfolio ############ -->
+        <div class="mt-5 text-center text-md-start title">Portfolio</div>
+
+        <!-- 던그리드 -->
+        <div class="mb-3">
+            <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;"
+                src="assets/images/DungreedBanner.png">
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2022.03 ~ 2022.04
+                <div class="project-personnel">1인 개발</div>
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">Dungreed 모작</span>
+                    <a href="https://youtu.be/2GJa40E7roc" target="_blank"><img src="assets/icons/play.svg"
+                            class="logo-img"></a>
+                    <a href="https://github.com/Elpoco/CPP_Dungreed" target="_blank"><img src="assets/icons/github.svg"
+                            class="me-2 info-icon"></a>
                 </div>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
+                    <li>C++ Win API를 사용하여 만든 게임입니다.</li>
+                    <li>로그라이크 게임입니다.</li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="col-sm-12 col-lg-12 pe-4" style="font-size: 18px;">
-                    <ul>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <li>
-                                    <span onclick="clickDungreedTag(0)" class="video-time">00:08</span>&nbsp;
-                                    <span onclick="clickShowModal(0)" class="tec-doc-text">맵툴</span>
-                                </li>
-                                <li>
-                                    <span onclick="clickDungreedTag(1)" class="video-time">02:39</span>&nbsp;
-                                    <span onclick="clickShowModal(1)" class="tec-doc-text">상점</span>
-                                </li>
-                                <li>
-                                    <span onclick="clickDungreedTag(2)" class="video-time">03:26</span>&nbsp;
-                                    <span class="tec-doc-text">어빌리티</span>
-                                </li>
-                            </div>
-                            <div class="col-lg-2">
-                                <li>
-                                    <span onclick="clickDungreedTag(3)" class="video-time">03:47</span>&nbsp;
-                                    <span class="tec-doc-text">아이템</span>
+        <div class="collapse show" id="Dungreed">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <iframe id="dungreedYoutube" width="100%" height="600px"
+                            src="https://www.youtube.com/embed/2GJa40E7roc" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-12 pe-4" style="font-size: 18px;">
+                        <ul>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <li>
+                                        <span onclick="clickDungreedTag(0)" class="video-time">00:08</span>&nbsp;
+                                        <span onclick="clickShowModal(0)" class="tec-doc-text">맵툴</span>
                                     </li>
-                                <li>
-                                    <span onclick="clickDungreedTag(4)" class="video-time">05:28</span>&nbsp;
-                                    <span class="tec-doc-text">스킬</span>
-                                </li>
-                                <li>
-                                    <span onclick="clickDungreedTag(5)" class="video-time">09:59</span>&nbsp;
-                                    <span class="tec-doc-text">월드맵</span>
-                                </li>
+                                    <li>
+                                        <span onclick="clickDungreedTag(1)" class="video-time">02:39</span>&nbsp;
+                                        <span onclick="clickShowModal(1)" class="tec-doc-text">상점</span>
+                                    </li>
+                                    <li>
+                                        <span onclick="clickDungreedTag(2)" class="video-time">03:26</span>&nbsp;
+                                        <span class="tec-doc-text">어빌리티</span>
+                                    </li>
+                                </div>
+                                <div class="col-lg-2">
+                                    <li>
+                                        <span onclick="clickDungreedTag(3)" class="video-time">03:47</span>&nbsp;
+                                        <span class="tec-doc-text">아이템</span>
+                                    </li>
+                                    <li>
+                                        <span onclick="clickDungreedTag(4)" class="video-time">05:28</span>&nbsp;
+                                        <span class="tec-doc-text">스킬</span>
+                                    </li>
+                                    <li>
+                                        <span onclick="clickDungreedTag(5)" class="video-time">09:59</span>&nbsp;
+                                        <span class="tec-doc-text">월드맵</span>
+                                    </li>
+                                </div>
+                                <div class="col-lg-2">
+                                    <li><span onclick="clickDungreedTag(6)" class="video-time">15:07</span>&nbsp;
+                                        <span class="tec-doc-text">보스 2종</span>
+                                    </li>
+                                    <li>
+                                        <span class="tec-doc-text">몬스터</span>
+                                    </li>
+                                    <li>
+                                        <span class="tec-doc-text">미니맵</span>
+                                    </li>
+                                </div>
+                                <div class="col-lg-2">
+                                    <li>
+                                        <span class="tec-doc-text">인벤토리</span>
+                                    </li>
+                                    <li>
+                                        <span class="tec-doc-text">NPC</span>
+                                    </li>
+                                </div>
                             </div>
-                            <div class="col-lg-2">
-                                <li><span onclick="clickDungreedTag(6)" class="video-time">15:07</span>&nbsp;
-                                    <span class="tec-doc-text">보스 2종</span>
-                                </li>
-                                <li>
-                                    <span class="tec-doc-text">몬스터</span>
-                                </li>
-                                <li>
-                                    <span class="tec-doc-text">미니맵</span>
-                                </li>
-                            </div>
-                            <div class="col-lg-2">
-                                <li>
-                                    <span class="tec-doc-text">인벤토리</span>
-                                </li>
-                                <li>
-                                    <span class="tec-doc-text">NPC</span>
-                                </li>
-                            </div>
-                        </div>
-                    </ul>
+                        </ul>
                         <!-- <li><a data-bs-toggle="modal" data-bs-target="#dungreedModal" href="#">기술문서</a></li> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- dungreedModal -->
-    <div class="modal fade" id="dungreedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Dungreed 기술문서</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-7" id="modalImage">
-                        <img class="tec-doc-img" src="assets/images/Code/interface.png" onclick="clickImage(this)">
+        <!-- dungreedModal -->
+        <div class="modal fade" id="dungreedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Dungreed 기술문서</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="col-5" id="modalText">
-                        <span style="word-break: keep-all; font-size: 17px">GDI와 GDI+를 편하게 사용하기 위해 인터페이스를 만들었습니다.</span>
-                    </div>
-                </div>
-                
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/camera.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/check_camera.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px">모든 오브젝트는 카메라에서 렌더를 관리합니다.<br>화면에 렌더를 하기전에 화면안에 있는 오브젝트만 렌더하도록 하였습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/tile_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">타일의 경우 현재 렌더되고있는 카메라 좌표를 계산해 표시되는 타일을 선정하여 렌더하였습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bullet_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">충돌 연산량을 줄이기 위해 화면 밖 총알은 플레이어와 충돌체크를 하지 않도록 하였습니다.</span>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/item.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" src="assets/images/Code/item_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">아이템은 크게 종류별로 분류를 하고 아이템코드에 따라 아이템이 설정되도록 하였습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code2.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">아이템에 스킬이 있을경우 스킬 클래스가 생성됩니다.</span>
-                    </div>
-                </div>
-               
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/acc.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" src="assets/images/Code/acc_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">악세서리는 장착시 설정된 능력치가 플레이어매니저를 통해 적용됩니다.</span>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/minimap.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" src="assets/images/Code/minimap_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">미니맵은 표시할 오브젝트의 위치 정보를 가져와서 연산 후 미니맵 사이즈에 맞게 표시 해주었습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/minimap_door.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">맵의 테두리를 검사해 비어있는 곳을 맵의 입구로 찾도록 했습니다.</span>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/enemy_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">몬스터는 미리 정의해둔 코드별로 클래스를 생성해서 추가시켜줍니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bat_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">같은 몬스터지만 여러 타입일 경우 코드를 확인해 한번더 분류해 주었습니다.</span>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/db_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">각종 정보를 미리 정의해서 사용 할 수 있게 하였습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/enemy_db_code.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">코드번호를 인덱스로 사용하여 데이터를 설정하였습니다.</span>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col-7">
-                        <img class="tec-doc-img" src="assets/images/Code/ui1.png" onclick="clickImage(this)">
-                        <img class="tec-doc-img" class="mt-1" src="assets/images/Code/ui2.png" onclick="clickImage(this)">
-                    </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">아이템 정보가 길어지게 되면 단어의 길이를 확인해 줄바꿈 하였습니다.</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
+                    <div class="modal-body">
                         <div class="row">
-                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui2.png" onclick="clickImage(this)">
-                            <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6" src="assets/images/Code/ui3.png" onclick="clickImage(this)">
+                            <div class="col-7" id="modalImage">
+                                <img class="tec-doc-img" src="assets/images/Code/interface.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5" id="modalText">
+                                <span style="word-break: keep-all; font-size: 17px">GDI와 GDI+를 편하게 사용하기 위해 인터페이스를
+                                    만들었습니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/camera.png" onclick="clickImage(this)">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/check_camera.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px">모든 오브젝트는 카메라에서 렌더를 관리합니다.<br>화면에 렌더를
+                                    하기전에 화면안에 있는 오브젝트만 렌더하도록 하였습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/tile_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">타일의 경우 현재 렌더되고있는 카메라 좌표를 계산해 표시되는
+                                    타일을 선정하여 렌더하였습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bullet_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">충돌 연산량을 줄이기 위해 화면 밖 총알은 플레이어와 충돌체크를
+                                    하지 않도록 하였습니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/item.png" onclick="clickImage(this)">
+                                <img class="tec-doc-img" src="assets/images/Code/item_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">아이템은 크게 종류별로 분류를 하고 아이템코드에 따라 아이템이
+                                    설정되도록 하였습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code.png"
+                                    onclick="clickImage(this)">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/skill_code2.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">아이템에 스킬이 있을경우 스킬 클래스가 생성됩니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/acc.png" onclick="clickImage(this)">
+                                <img class="tec-doc-img" src="assets/images/Code/acc_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">악세서리는 장착시 설정된 능력치가 플레이어매니저를 통해
+                                    적용됩니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/minimap.png"
+                                    onclick="clickImage(this)">
+                                <img class="tec-doc-img" src="assets/images/Code/minimap_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">미니맵은 표시할 오브젝트의 위치 정보를 가져와서 연산 후 미니맵
+                                    사이즈에 맞게 표시 해주었습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/minimap_door.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">맵의 테두리를 검사해 비어있는 곳을 맵의 입구로 찾도록
+                                    했습니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/enemy_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">몬스터는 미리 정의해둔 코드별로 클래스를 생성해서
+                                    추가시켜줍니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/bat_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">같은 몬스터지만 여러 타입일 경우 코드를 확인해 한번더 분류해
+                                    주었습니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/db_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">각종 정보를 미리 정의해서 사용 할 수 있게
+                                    하였습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/enemy_db_code.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">코드번호를 인덱스로 사용하여 데이터를
+                                    설정하였습니다.</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="tec-doc-img" src="assets/images/Code/ui1.png" onclick="clickImage(this)">
+                                <img class="tec-doc-img" class="mt-1" src="assets/images/Code/ui2.png"
+                                    onclick="clickImage(this)">
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">아이템 정보가 길어지게 되면 단어의 길이를 확인해 줄바꿈
+                                    하였습니다.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="row">
+                                    <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6"
+                                        src="assets/images/Code/ui2.png" onclick="clickImage(this)">
+                                    <img style="width: 50%; height: auto; object-fit: contain;" class="mt-1 col-6"
+                                        src="assets/images/Code/ui3.png" onclick="clickImage(this)">
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <span style="word-break: keep-all; font-size: 17px;">아이템에 특수 옵션이 있으면 UI길이를 길어지게
+                                    하였습니다.</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-5">
-                        <span style="word-break: keep-all; font-size: 17px;">아이템에 특수 옵션이 있으면 UI길이를 길어지게 하였습니다.</span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
         </div>
-        </div>
-    </div>
-    
-    <!-- 할로우나이트 -->
-    <div class="mt-5 mb-3">
-        <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;" src="assets/images/Hollow_Knight.jpg">
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
-            2022.01
-            <div class="project-personnel">1인 개발</div>
-        </div>
-        <div class="col-sm-12 col-lg-9">
-            <div class="con-title">
-                <span class="project-name">Hollow knight 모작</span>
-                <a class="me-1" data-bs-toggle="collapse" href="#Hollowknight" role="button" aria-expanded="false" aria-controls="Hollowknight"><img src="assets/icons/play.svg" class="logo-img"></a>
-                <a href="https://github.com/Elpoco/CPP_HollowKnight" target="_blank"><img src="assets/icons/github.svg" class="me-2 info-icon"></a>
-            </div>
-            <ul>
-                <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
-                <li>C++ Win API를 사용하여 만들었습니다.</li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="collapse show" id="Hollowknight">
-        <div class="card card-body">
-            <div class="row">
-                <div class="col-lg-12 col-sm-12">
-                    <iframe width="100%" height="600px" src="https://www.youtube.com/embed/WpeY7VANATY" title="YouTube video player" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- 할로우나이트 -->
+        <div class="mt-5 mb-3">
+            <img style="width: 100%; height: 230px; object-fit: cover; background-color: #79b9ff;"
+                src="assets/images/Hollow_Knight.jpg">
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
+                2022.01
+                <div class="project-personnel">1인 개발</div>
+            </div>
+            <div class="col-sm-12 col-lg-9">
+                <div class="con-title">
+                    <span class="project-name">Hollow knight 모작</span>
+                    <a class="me-1" data-bs-toggle="collapse" href="#Hollowknight" role="button" aria-expanded="false"
+                        aria-controls="Hollowknight"><img src="assets/icons/play.svg" class="logo-img"></a>
+                    <a href="https://github.com/Elpoco/CPP_HollowKnight" target="_blank"><img
+                            src="assets/icons/github.svg" class="me-2 info-icon"></a>
+                </div>
+                <ul>
+                    <li><span class="language-tag" onclick="clickTag(this)">C/C++</span></li>
+                    <li>C++ Win API를 사용하여 만들었습니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="collapse show" id="Hollowknight">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <iframe width="100%" height="600px" src="https://www.youtube.com/embed/WpeY7VANATY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ############ Portfolio ############ -->
-    <!-- ############ Portfolio ############ -->
-    <!-- ############ Portfolio ############ -->
+        <!-- ############ Portfolio ############ -->
+        <!-- ############ Portfolio ############ -->
+        <!-- ############ Portfolio ############ -->
 
-    <!-- ############ Project ############ -->
-    <!-- ############ Project ############ -->
-    <!-- ############ Project ############ -->
-    <div class="mt-5 text-center text-md-start title">Project</div>
+        <!-- ############ Project ############ -->
+        <!-- ############ Project ############ -->
+        <!-- ############ Project ############ -->
+        <div class="mt-5 text-center text-md-start title">Project</div>
         <!-- 보라비트 -->
         <div class="row mobile-border">
             <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -659,7 +752,8 @@
             <div class="col-sm-12 col-lg-9">
                 <div class="con-title">
                     <span class="project-name">보라비트, 메타벡스, NFEX</span>
-                    <a href="https://www.borabit.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
+                    <a href="https://www.borabit.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
+                            class="logo-img"></a>
                 </div>
                 <ul>
                     <li>
@@ -689,11 +783,15 @@
             <div class="col-sm-12 col-lg-9">
                 <div class="con-title">
                     <span class="project-name">이지펜</span>
-                    <a href="https://ezpen.co.kr/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.ezpen" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://ezpen.co.kr/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg"
+                            class="logo-img"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ezpen" class="me-1" target="_blank"><img
+                            src="assets/icons/android_logo.svg" class="logo-img"></a>
                 </div>
                 <ul>
-                    <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
+                    <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
+                            onclick="clickTag(this)">MySQL</span><span class="language-tag"
+                            onclick="clickTag(this)">JavaScript</span></li>
                     <li>사용자들이 글을 읽고 글쓰기를 하면 첨삭선생님들이 사용자들의 글을 첨삭 해주는 웹사이트 입니다.</li>
                     <!-- <a class="me-1" data-bs-toggle="collapse" href="#ezpen" role="button" aria-expanded="false" aria-controls="ezpen">[내용보기]</a> -->
                     <div class="collapse show" id="ezpen">
@@ -723,8 +821,10 @@
             <div class="col-sm-12 col-lg-9">
                 <div class="con-title">
                     <span class="project-name">마이풀</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.mypool" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                    <a href="https://url.kr/j6q4a3" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mypool" class="me-1" target="_blank"><img
+                            src="assets/icons/android_logo.svg" class="logo-img"></a>
+                    <a href="https://url.kr/j6q4a3" class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg"
+                            class="logo-img"></a>
                 </div>
                 <ul>
                     <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
@@ -772,7 +872,9 @@
                         <span class="project-name">마찾사 관리자 페이지</span>
                     </div>
                     <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
+                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
+                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
+                                onclick="clickTag(this)">JavaScript</span></li>
                         <!-- <a class="me-1" data-bs-toggle="collapse" href="#machasa_admin" role="button" aria-expanded="false" aria-controls="machasa_admin">[내용보기]</a> -->
                         <div class="collapse show" id="machasa_admin">
                             <ul>
@@ -793,7 +895,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- 마찾사 -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -803,8 +905,10 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">마찾사</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.toksol.machasa" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.toksol.machasa" class="me-1"
+                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                        <a href="https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716" class="me-2"
+                            target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                     </div>
                     <ul>
                         <li><span class="language-tag" onclick="clickTag(this)">React Native</span></li>
@@ -824,7 +928,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- 터치만파 -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -834,7 +938,8 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">터치만파</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.system.vingo" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.system.vingo" class="me-1"
+                            target="_blank"><img src="assets/icons/android_logo.svg"></a>
                     </div>
                     <ul>
                         <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
@@ -850,7 +955,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Only1Trip_admin -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -862,7 +967,9 @@
                         <span class="project-name">Only1Trip 관리자 페이지</span>
                     </div>
                     <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
+                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
+                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
+                                onclick="clickTag(this)">JavaScript</span></li>
                         <!-- <a class="me-1" data-bs-toggle="collapse" href="#Only1Trip_admin" role="button" aria-expanded="false" aria-controls="Only1Trip_admin">[내용보기]</a> -->
                         <div class="collapse show" id="Only1Trip_admin">
                             <ul>
@@ -886,7 +993,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Only1Trip -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -896,10 +1003,13 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">Only1Trip</span>
-                        <a href="https://www.only1trip.com/" class="me-1" target="_blank"><img src="assets/icons/web_logo.svg" class="logo-img"></a>
+                        <a href="https://www.only1trip.com/" class="me-1" target="_blank"><img
+                                src="assets/icons/web_logo.svg" class="logo-img"></a>
                     </div>
                     <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag" onclick="clickTag(this)">MySQL</span><span class="language-tag" onclick="clickTag(this)">JavaScript</span></li>
+                        <li><span class="language-tag" onclick="clickTag(this)">PHP</span><span class="language-tag"
+                                onclick="clickTag(this)">MySQL</span><span class="language-tag"
+                                onclick="clickTag(this)">JavaScript</span></li>
                         <li>여행자들에게 플래너가 계획을 세워주고 여행을 도와주는 사이트 입니다.</li>
                         <!-- <a class="me-1" data-bs-toggle="collapse" href="#Only1Trip" role="button" aria-expanded="false" aria-controls="Only1Trip">[내용보기]</a> -->
                         <div class="collapse show" id="Only1Trip">
@@ -915,7 +1025,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- 스마트썸 -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -925,11 +1035,14 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">스마트썸</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.toksolution.mine" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%8D%B8/id1486294292" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.toksolution.mine" class="me-1"
+                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                        <a href="https://apps.apple.com/kr/app/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%8D%B8/id1486294292"
+                            class="me-2" target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                     </div>
                     <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag" onclick="clickTag(this)">Swift</span></li>
+                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag"
+                                onclick="clickTag(this)">Swift</span></li>
                         <li>이성의 매칭을 도와주는 데이팅 앱입니다.</li>
                         <!-- <a class="me-1" data-bs-toggle="collapse" href="#smartsome" role="button" aria-expanded="false" aria-controls="smartsome">[내용보기]</a> -->
                         <div class="collapse show" id="smartsome">
@@ -945,7 +1058,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- 문톡 -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3">
@@ -957,12 +1070,16 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">문톡</span>
-                        <a href="https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000743106&scYn=Y" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
-                        <a href="https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926" class="me-2"  target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
+                        <a href="https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000743106&scYn=Y"
+                            class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                        <a href="https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926" class="me-2"
+                            target="_blank"><img src="assets/icons/apple_logo.svg" class="logo-img"></a>
                     </div>
                     <ul>
-                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag" onclick="clickTag(this)">Swift</span></li>
-                        <li>핸드폰의 연락처를 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송 또는 앱에서 문자전송이 가능한 어플입니다. <br>또 공개 채팅방 기능이 있어 앱 사용자들끼리 채팅 할 수 있습니다. (iOS는 채팅만 구현)</li>
+                        <li><span class="language-tag" onclick="clickTag(this)">Java</span><span class="language-tag"
+                                onclick="clickTag(this)">Swift</span></li>
+                        <li>핸드폰의 연락처를 연동하여 웹에서 문자를 작성하면 앱에서 수신하여 문자전송 또는 앱에서 문자전송이 가능한 어플입니다. <br>또 공개 채팅방 기능이 있어 앱
+                            사용자들끼리 채팅 할 수 있습니다. (iOS는 채팅만 구현)</li>
                         <!-- <a class="me-1" data-bs-toggle="collapse" href="#moontalk" role="button" aria-expanded="false" aria-controls="moontalk">[내용보기]</a> -->
                         <div class="collapse show" id="moontalk">
                             <ul>
@@ -979,7 +1096,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- 로아망원경 -->
             <div class="row mobile-border">
                 <div class="col-sm-12 col-lg-3 text-start text-lg-right sub-title exp-time">
@@ -989,7 +1106,8 @@
                 <div class="col-sm-12 col-lg-9">
                     <div class="con-title">
                         <span class="project-name">로아 망원경</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder" class="me-1" target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder" class="me-1"
+                            target="_blank"><img src="assets/icons/android_logo.svg" class="logo-img"></a>
                     </div>
                     <ul>
                         <li><span class="language-tag" onclick="clickTag(this)">Java</span></li>
@@ -1039,7 +1157,8 @@
                 <span style="font-weight: bold;">정지현</span>
             </div>
             <div><img src="assets/icons/phone-24px.svg" class="me-2">010-8990-4721</div>
-            <div><span class="email-link" onclick="clickEmail()"><img src="assets/icons/email-24px.svg" class="me-2">wjdwlgus96@google.com</span></div>
+            <div><span class="email-link" onclick="clickEmail()"><img src="assets/icons/email-24px.svg"
+                        class="me-2">wjdwlgus96@google.com</span></div>
             <div><img src="assets/icons/emoji_people_black_24dp.svg" class="me-2">감사합니다.</div>
         </div>
         <div class="mb-5 pb-5"></div>
@@ -1048,4 +1167,5 @@
         <!-- ############ Footer ############ -->
     </div>
 </body>
+
 </html>

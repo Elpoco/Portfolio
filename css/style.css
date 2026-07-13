@@ -2,6 +2,7 @@
     font-family: notoMedium;
     src: url('../assets/fonts/NotoSansCJKkr-Medium.otf');
 }
+
 @font-face {
     font-family: notoRegular;
     src: url('../assets/fonts/NotoSansCJKkr-Regular.otf');
@@ -35,7 +36,7 @@ a:hover {
     color: #000;
 }
 
-.print-msg{
+.print-msg {
     font-size: 20px;
 }
 
@@ -103,9 +104,11 @@ a:hover {
 
 .logo-img {
     vertical-align: text-bottom;
+    width: 30px;
+    height: 30px;
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
     .mobile-border {
         border-top: #d0cfd3 dashed 1px;
     }
@@ -124,7 +127,8 @@ a:hover {
     margin-top: 10px;
 }
 
-#title, #phone {
+#title,
+#phone {
     z-index: 100;
 }
 
@@ -139,7 +143,7 @@ a:hover {
 }
 
 .introduce-text {
-    line-height: 1.4; 
+    line-height: 1.4;
     font-size: 17px;
 }
 
@@ -148,8 +152,8 @@ a:hover {
 }
 
 .tec-doc-img {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
     object-fit: contain;
     cursor: pointer;
     margin-bottom: 5px;
@@ -162,7 +166,7 @@ a:hover {
 
 .video-time {
     color: #4b9cff;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .video-time:hover {
@@ -181,15 +185,18 @@ a:hover {
     color: inherit;
     transition: background-color 0.2s ease-in-out;
 }
+
 .link-preview-card:hover {
     background-color: #f8f9fa;
     text-decoration: none;
     color: inherit;
 }
+
 .link-preview-main {
     display: flex;
     align-items: flex-start;
 }
+
 .link-preview-image {
     width: 60px;
     height: 60px;
@@ -199,30 +206,36 @@ a:hover {
     flex-shrink: 0;
     border: 1px solid #eee;
 }
+
 .link-preview-content {
     flex-grow: 1;
 }
+
 .link-preview-title {
     font-weight: bold;
     font-size: 1.1em;
     margin-bottom: 5px;
 }
+
 .link-preview-description {
     font-size: 0.9em;
     color: #6c757d;
     margin-bottom: 8px;
 }
+
 .link-preview-domain {
     font-size: 0.9em;
     color: #8a898d;
     display: flex;
     align-items: center;
 }
+
 .link-preview-domain img {
     width: 16px;
     height: 16px;
     margin-right: 5px;
 }
+
 .project-details {
     margin-top: 10px;
 }
