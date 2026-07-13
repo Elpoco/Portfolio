@@ -198,8 +198,7 @@ function renderProjectsGrid() {
             <div class="project-card" onclick="showProject('${proj.id}')">
                 <img src="${proj.banner || 'assets/images/Library_Empty.png'}" alt="${proj.name}" class="project-poster-img" onerror="this.src='assets/images/Library_Empty.png'">
                 <div class="project-card-overlay">
-                    <div class="project-card-title">${proj.name}</div>
-                    <span class="project-card-meta">${proj.period}</span>
+                    <div class="project-card-title">${proj.name}<span class="project-card-meta">${proj.period}</span></div>
                     <div class="project-card-tech-badges">${techBadges}</div>
                 </div>
             </div>
@@ -417,7 +416,7 @@ function showCompany(companyId, shouldPushState = true) {
 
             const cardHtml = `
                 <div class="project-card" onclick="showProject('${proj.id}')" style="width: 150px; flex-shrink:0;">
-                    <img src="${proj.banner || 'assets/images/HollowKnightBanner.jpg'}" alt="${proj.name}" class="project-poster-img" onerror="this.src='assets/images/HollowKnightBanner.jpg'">
+                    <img src="${proj.banner || 'assets/images/Library_Empty.png'}" alt="${proj.name}" class="project-poster-img" onerror="this.src='assets/images/Library_Empty.png'">
                     <div class="project-card-overlay">
                         <div class="project-card-title">${proj.name}</div>
                         <span class="project-card-meta">${proj.period}</span>

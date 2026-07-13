@@ -536,7 +536,7 @@ ul {
     align-items: flex-end;
     padding: 30px;
     margin-bottom: 24px;
-    background: url('../assets/images/HollowKnightBanner.jpg') no-repeat center center;
+    background: url('../assets/images/Banner_Empty.png') no-repeat center center;
     background-size: cover;
     border: 1px solid var(--border-color);
 }
@@ -942,7 +942,7 @@ ul {
 }
 
 .project-card:hover {
-    transform: scale(1.04);
+    transform: scale(1.01);
     border-color: var(--accent-blue);
     box-shadow: 0 6px 16px rgba(102, 192, 244, 0.25);
     z-index: 10;

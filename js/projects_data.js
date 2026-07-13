@@ -27,10 +27,10 @@ const portfolioData = {
   experiences: [
     {
       id: "exp_indie",
-      company: "인디 게임 개발",
-      period: "2026.01 ~ ",
-      role: "1인 게임 개발",
-      description: "인디 게임 개발.",
+      company: "개인 프로젝트",
+      period: "2026.02 ~ ",
+      role: "유니티 클라이언트 개발",
+      description: "스팀 출시 게임 개발.",
       type: "company"
     },
     {
@@ -83,6 +83,30 @@ const portfolioData = {
     }
   ],
   projects: [
+    // {
+    //   id: "proj_tinytown",
+    //   companyId: "exp_indie",
+    //   name: "Rope Up!",
+    //   period: "2025.03 ~ 2026.05",
+    //   type: "Commercial Game",
+    //   role: "2인 개발",
+    //   tech: ["Unity", "C#"],
+    //   cardBanner: "assets/images/Banner_RopeUp.png",
+    //   banner: "assets/images/Library_RopeUp.png",
+    //   hero: "assets/images/Hero_RopeUp.png",
+    //   playLink: "https://store.steampowered.com/app/4595740/Rope_Up/?l=koreana&curator_clanid=34659241",
+    //   youtubeUrl: "https://www.youtube.com/embed/O7HDu78Jo4k",
+    //   platforms: ["Steam"],
+    //   description: "Steam에 정식 출시한 물리 기반 클라이밍 게임으로, 로프 스윙과 정교한 조작을 활용해 정상까지 도달하는 것이 목표입니다.",
+    //   details: [
+    //     "로프 물리 기반 개발",
+    //     "Unity Netcode for GameObjects(NGO)를 활용한 멀티플레이 구현",
+    //     "Steamworks API를 활용한 로비 생성 및 초대 시스템 구현"
+    //   ],
+    //   achievements: [
+    //     { title: "Steam Release", desc: "스팀 정식 런칭 및 서비스 개시" }
+    //   ]
+    // },
     {
       id: "proj_ropeup",
       companyId: "exp_indie",
@@ -120,11 +144,11 @@ const portfolioData = {
       hero: "assets/images/Hero_fxh.png",
       playLink: "https://play.google.com/store/search?q=fantasy+hunters&c=apps&hl=ko",
       platforms: ["Android"],
-      description: "하이퍼 캐주얼 RPG 게임입니다.",
+      description: "판타지 테마의 하이퍼 캐주얼 RPG 게임으로, 무기를 수집하여 장착후 전투를 하며 전리품을 판매하여 강해지는 게임입니다.",
       details: [
         "메인 캐릭터 스킬 메커니즘 개발",
         "몬스터 추가 및 스킬 패턴 구현",
-        "안드로이드 플랫폼 빌드 및 최적화 진행"
+        "인게임 연출 시스템 구현"
       ],
       achievements: [
         { title: "Google Play Launch", desc: "구글 플레이 스토어 출시 및 배포 관리" },
@@ -147,11 +171,14 @@ const portfolioData = {
       appleLink: "https://apps.apple.com/us/app/%EC%B9%B4%ED%8E%98-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%B9%B4%ED%8E%98-%EB%A7%88%EB%8B%88%EC%95%84-cafe-life/id6747019708?l=ko",
       youtubeUrl: "youtube.com/watch?v=0BbcYxbbi_o&source_ve_path=OTY3MTQ&embeds_referring_euri=https%3A%2F%2Fplay.google.com%2F",
       platforms: ["Android", "iOS"],
-      description: "글로벌 시장을 겨냥해 출시한 하이퍼 캐주얼 시뮬레이션 게임입니다.",
+      description: "카페를 운영하는 컨셉의 하이퍼 캐주얼 게임입니다.",
       details: [
-        "게임 핵심 루프 시스템 설계 (자원 채집, 조리, 판매 매커니즘)",
-        "사용자 인터페이스(UI) 연동 및 글로벌 다국어 지원",
-        "정기적인 콘텐츠 업데이트 파이프라인 구축 및 라이브 솔루션 적용"
+        "코어 루프 개발",
+        "매장 확장 및 업그레이드 시스템 개발",
+        "메인 캐릭터 스탯 시스템 개발",
+        "직원 및 손님 AI 개발",
+        "인게임 이벤트 시스템 개발",
+        "홍보 영상 기능 구현"
       ],
       achievements: [
         { title: "Global App Store", desc: "AOS/iOS 글로벌 마켓 동시 런칭 및 피처드" },
@@ -173,11 +200,15 @@ const portfolioData = {
       playLink: "https://play.google.com/store/apps/details?id=com.fireshrike.h1&hl=ko",
       appleLink: "https://apps.apple.com/us/app/my-food-street/id6736931912?l=ko",
       platforms: ["Android", "iOS"],
-      description: "다양한 길거리 음식을 조리하고 손님을 서빙하는 하이퍼 캐주얼 게임입니다.",
+      description: "각종 식재료를 구해서 다양한 음식을 조리하고 손님에게 판매하는 하이퍼 캐주얼 게임입니다.",
       details: [
-        "시뮬레이션 조리 공정 자동화 및 터치 조작 반응 최적화",
-        "매장 확장 및 업그레이드 데이터 영속성 관리",
-        "iOS 및 안드로이드 멀티플랫폼 배포 빌드"
+        "코어 루프 개발",
+        "매장 확장 및 업그레이드 시스템 개발",
+        "메인 캐릭터 스탯 시스템 개발",
+        "스킨 변경 시스템 개발",
+        "직원 및 손님 AI 개발",
+        "인게임 이벤트 시스템 개발",
+        "홍보 영상 기능 구현"
       ],
       achievements: [
         { title: "Double Launch", desc: "AOS 및 iOS 버전 통합 배포 안정적 완료" },
@@ -201,9 +232,11 @@ const portfolioData = {
       platforms: ["Android", "iOS"],
       description: "고품질 3D 그래픽의 방치형 키우기 RPG 게임입니다.",
       details: [
-        "다이내믹 3D 스킬 연출 및 투사체 궤적 계산 물리 판정 구현",
-        "다인 레이드 및 보스 던전 동기화 클라이언트 핵심 로직 구축",
-        "게임 데이터 백엔드 연동 및 세이브 데이터 무결성 검증 개발"
+        "캐릭터 스킬 개발",
+        "몬스터 추가",
+        "보스 추가 및 스킬 개발",
+        "재화 던전 추가",
+        "레이드 시스템 개발"
       ],
       achievements: [
         { title: "3D Graphics Engine", desc: "화려한 3D 이펙트와 물리 기반 연출 최적화 적용" },
@@ -226,11 +259,14 @@ const portfolioData = {
       playLink: "https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko",
       appleLink: "https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
       platforms: ["Android", "iOS"],
-      description: "모비릭스에서 글로벌 퍼블리싱한 3D 방치형 키우기 RPG입니다.",
+      description: "모비릭스에서 퍼블리싱한 3D 방치형 키우기 RPG 게임입니다.",
       details: [
-        "핵앤슬래시 스타일의 3D 캐릭터 스킬 개발 및 광역 대미지 판정 최적화",
-        "스테이지 클리어 데이터 및 재화 관리를 위한 로컬-클라우드 백엔드 연동 작업",
-        "신규 던전 모드 및 다인 레이드 핵심 메커니즘 개발"
+        "캐릭터 스킬 개발",
+        "몬스터 추가",
+        "보스 추가 및 스킬 개발",
+        "신규 던전 추가",
+        "레이드 시스템 개발",
+        "유니티 타임라인을 사용하여 보스/레이드 연출 구현"
       ],
       achievements: [
         { title: "Global Publishing Success", desc: "글로벌 퍼블리셔(Mobirix)를 통해 다운로드 수십만 돌파" },
@@ -244,7 +280,7 @@ const portfolioData = {
       name: "Dungreed 모작",
       period: "2022.03 ~ 2022.04",
       type: "Replica Game",
-      role: "1인 개발 (Solo)",
+      role: "1인 개발",
       tech: ["C/C++", "WinAPI"],
       cardBanner: "assets/images/Banner_dungreed.png",
       banner: "assets/images/Library_dungreed.png",
@@ -253,12 +289,12 @@ const portfolioData = {
       githubLink: "https://github.com/Elpoco/CPP_Dungreed",
       youtubeUrl: "https://www.youtube.com/embed/2GJa40E7roc",
       platforms: ["PC"],
-      description: "C++ Win API 및 GDI/GDI+를 사용하여 원작 로그라이크 게임 'Dungreed'를 모작한 PC 프로젝트입니다.",
+      description: "C++ Win API 및 GDI/GDI+를 사용하여 로그라이크 게임 'Dungreed'를 모작한 PC 프로젝트입니다.",
       details: [
         "GDI+를 활용한 2D 카메라 렌더링 시스템 및 화면 내 컬링 최적화 구현",
         "비선형 보간 및 타일 맵을 이용한 그리드 기반 맵 에디터(Map Tool) 개발",
         "인벤토리, 상점, 어빌리티 포인트, 장착 장비 능력치 연산 매니저 클래스 구축",
-        "미니맵 좌표 역계산 렌더링 및 입구/문 동적 경로 탐색 구현"
+        "보스 몬스터의 애니메이션 상태 기반 AI 패턴 스크립팅 구현"
       ],
       achievements: [
         { title: "WinAPI Game Engine", desc: "라이브러리 없이 자체적으로 다목적 2D 렌더링 엔진 구축" },
@@ -272,7 +308,7 @@ const portfolioData = {
       name: "Hollow Knight 모작",
       period: "2022.01",
       type: "Replica Game",
-      role: "1인 개발 (Solo)",
+      role: "1인 개발",
       tech: ["C/C++", "WinAPI"],
       cardBanner: "assets/images/Banner_hk.png",
       banner: "assets/images/Library_hk.png",
@@ -281,11 +317,10 @@ const portfolioData = {
       githubLink: "https://github.com/Elpoco/CPP_HollowKnight",
       youtubeUrl: "https://www.youtube.com/embed/WpeY7VANATY",
       platforms: ["PC"],
-      description: "C++ Win API를 사용하여 명작 메트로배니아 'Hollow Knight'를 모작한 1인 개발 프로젝트입니다.",
+      description: "C++ Win API를 사용하여 'Hollow Knight'를 모작한 1인 개발 프로젝트입니다.",
       details: [
-        "더블 버퍼링 기법을 적용해 렌더링 화면 깜빡임 현상 완벽 제거",
-        "캐릭터 중력 가속도, 점프 곡선, 대시 물리 관성 및 맵 충돌 감지 구현",
-        "보스 몬스터의 애니메이션 상태 기반 AI 패턴 스크립팅 구현"
+        "보스 몬스터의 애니메이션 상태 기반 AI 패턴 스크립팅 구현",
+        "패링 시스템의 공격 피격 타이밍 및 반격 성공 로직 구현"
       ],
       achievements: [
         { title: "Precise Physics Clone", desc: "메트로배니아 특유의 날카로운 공중 제어 및 충돌 물리 구현" },
@@ -305,10 +340,9 @@ const portfolioData = {
       hero: "assets/images/Hero_bora.png",
       playLink: "https://www.borabit.com/",
       platforms: ["Web"],
-      description: "가상화폐 거래소 '보라비트'의 백엔드 유지보수 및 운영 업무를 담당했습니다.",
+      description: "가상화폐 거래소 '보라비트'의 백엔드 유지보수 업무를 담당했습니다.",
       details: [
         "DB 내 민감한 개인 정보(비밀번호, 지갑 주소 등) 양방향/단방향 암호화",
-        "거래 체결 시스템 백엔드 트랜잭션 정상 작동 진단 및 보완 작업"
       ],
       achievements: [
         { title: "Security Upgrade", desc: "전체 회원 대상 개인정보의 강력한 암호화 마이그레이션 완료" },
@@ -328,10 +362,9 @@ const portfolioData = {
       hero: "assets/images/Hero_meta.png",
       // playLink: "https://www.borabit.com/",
       platforms: ["Web"],
-      description: "가상화폐 거래소 '메타벡스'의 백엔드 유지보수 및 운영 업무를 담당했습니다.",
+      description: "가상화폐 거래소 '메타벡스'의 백엔드 유지보수 업무를 담당했습니다.",
       details: [
         "DB 내 민감한 개인 정보(비밀번호, 지갑 주소 등) 양방향/단방향 암호화",
-        "거래 체결 시스템 백엔드 트랜잭션 정상 작동 진단 및 보완 작업"
       ],
       achievements: [
         { title: "Security Upgrade", desc: "전체 회원 대상 개인정보의 강력한 암호화 마이그레이션 완료" },
@@ -351,10 +384,9 @@ const portfolioData = {
       hero: "assets/images/Hero_Empty.png",
       // playLink: "https://www.borabit.com/",
       platforms: ["Web"],
-      description: "가상화폐 거래소 'NFEX'의 백엔드 유지보수 및 운영 업무를 담당했습니다.",
+      description: "가상화폐 거래소 'NFEX'의 백엔드 유지보수 업무를 담당했습니다.",
       details: [
         "DB 내 민감한 개인 정보(비밀번호, 지갑 주소 등) 양방향/단방향 암호화",
-        "거래 체결 시스템 백엔드 트랜잭션 정상 작동 진단 및 보완 작업"
       ],
       achievements: [
         { title: "Security Upgrade", desc: "전체 회원 대상 개인정보의 강력한 암호화 마이그레이션 완료" },
@@ -453,9 +485,8 @@ const portfolioData = {
       platforms: ["Android", "iOS"],
       description: "내 주변 위치 기반으로 마사지 매장을 매칭하고 정보를 제공해주는 서비스입니다.",
       details: [
-        "모바일 GPS 위/경도 데이터를 활용한 Haversine 공식 기반 최단 거리순 정렬 검색 쿼리 작성",
-        "지역별, 업태 테마별 제휴점 실시간 고속 다중 필터 기능 개발",
-        "결제 완료 고객 대상 후기 작성 유도 및 이벤트 보상 지급 구현"
+        "모바일 GPS 위/경도 데이터를 활용한 거리순 정렬 검색 쿼리 작성",
+        "URL Scheme을 사용해 지도 앱 연동"
       ],
       achievements: [
         { title: "LBS Master", desc: "모바일 GPS 위치 데이터를 정밀 계산해 실시간 제휴 매장 최적 정렬" },
@@ -496,7 +527,7 @@ const portfolioData = {
       banner: "assets/images/Library_Empty.png",
       hero: "assets/images/Hero_Empty.png",
       playLink: "https://play.google.com/store/apps/details?id=com.system.vingo",
-      platforms: ["Android"],
+      platforms: ["iOS"],
       description: "코로나 관련 앱으로 출석 연동하는 기능과 시간마다 자가 검진을 할 수 있는 웹앱입니다.",
       details: [
         "일정 시간마다 알림 기능을 통해 검진 유도 기능 개발",
@@ -547,7 +578,7 @@ const portfolioData = {
       details: [
         "Google Maps API를 이용해 커스텀 랜드마크 핀 배치 및 경유지 동선 드로잉 기능 구현",
         "국내외 가맹 결제를 위해 EXIMBAY API를 활용한 카드 해외 결제 시스템 구축",
-        "Google Web Speech-to-Text API 기반 음성 인식 여행지 자동 탐색 및 간편 예약 기능 개발"
+        "Google Web STT/TTS API 기반 음성 인식 여행지 자동 탐색 및 간편 예약 기능 개발"
       ],
       achievements: [
         { title: "Custom Mapping Engine", desc: "구글 맵 위에 다지점 경로 선 연결 및 실시간 거리 계산 구현" },
@@ -569,7 +600,7 @@ const portfolioData = {
       playLink: "https://play.google.com/store/apps/details?id=com.toksolution.mine",
       appleLink: "https://apps.apple.com/kr/app/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%8D%B8/id1486294292",
       platforms: ["Android", "iOS"],
-      description: "VoIP 실시간 음성 통화 기능과 매칭 알고리즘이 내장된 데이팅 하이브리드 앱입니다.",
+      description: "VoIP 실시간 음성 통화 기능과 매칭 알고리즘이 내장된 데이팅 하이브리드 웹앱입니다.",
       details: [
         "Remote Monster WebRTC SDK를 통합하여 초저지연(Sub-second) 고음질 P2P 음성 통화 기능 구현",
         "Native 기기 오디오 레코더를 제어해 본인의 음성을 녹음 및 압축 서버 업로드 모듈 개발",
@@ -596,7 +627,7 @@ const portfolioData = {
       playLink: "https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000743106&scYn=Y",
       appleLink: "https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926",
       platforms: ["Android", "iOS"],
-      description: "웹 관리 콘솔에서 발송한 단체 문자 신호를 모바일 디바이스가 수신해 디바이스 통신 요금제로 대량의 SMS를 위탁 전송하는 메일링/메시징 솔루션입니다. (iOS는 로비 채팅방만 구성)",
+      description: "웹에서 발송한 단체 문자 신호를 모바일 디바이스가 수신해 디바이스 통신 요금제로 대량의 SMS를 위탁 전송하는 메일링/메시징 솔루션입니다. (iOS는 로비 채팅방만 구성)",
       details: [
         "ContentProvider를 사용한 모바일 주소록 고속 동기화 파서 개발",
         "BroadcastReceiver를 사용해 단말기로 들어오는 문자 수신 시그널을 탈취해 실시간 DB 적재",
@@ -617,17 +648,17 @@ const portfolioData = {
       type: "Replica Game",
       role: "1인 개발 (Solo)",
       tech: ["Java"],
-      banner: "assets/images/logo_ezpen.png",
+      cardBanner: "assets/images/Banner_loa.png",
+      banner: "assets/images/Library_loa.png",
+      hero: "assets/images/Hero_loa.png",
       playLink: "https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder",
       platforms: ["Android"],
-      description: "게임 '로스트아크' 유저용 비공식 정보 공유 및 게시판 앱입니다.",
+      description: "게임 '로스트아크'의 컨텐츠 중 보물지도의 위치를 찾기가 어려워 서로 정보 공유 하기 위해 만든 앱입니다.",
       details: [
-        "Jsoup 라이브러리를 활용한 외부 게임 공식 정보 페이지 실시간 웹 파싱 및 데이터 컴포넌트 시각화",
         "dothome 웹호스팅 및 MySQL 서버 연동 기반 모바일 익명 게시판 및 댓글 스키마 구축",
         "Google AdMob SDK를 도입한 배너/전면 광고 게재 및 레이아웃 최적화"
       ],
       achievements: [
-        { title: "Web Parser Engine", desc: "API가 없는 공식 홈페이지를 크롤링하여 정밀 데이터로 역변환 매칭" },
         { title: "Ad Monetization", desc: "구글 애드몹 연동 및 수익화를 위한 UI 광고 노출 안전 루틴 구현" }
       ]
     }
