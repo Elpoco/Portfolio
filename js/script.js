@@ -149,7 +149,7 @@ function renderStorePage() {
 
         const cardHtml = `
             <div class="featured-card" onclick="showProject('${proj.id}')">
-                <img src="${proj.cardBanner || 'assets/images/Banner_Empty.png'}" alt="${proj.name}" class="featured-card-banner" onerror="this.src='assets/images/Banner_Empty.png'">
+                <img src="${proj.cardBanner || 'assets/images/empty/banner.png'}" alt="${proj.name}" class="featured-card-banner" onerror="this.src='assets/images/empty/banner.png'">
                 <div class="featured-card-body">
                     <span class="featured-card-title">${proj.name}</span>
                     <p class="featured-card-desc">${proj.description}</p>
@@ -308,6 +308,27 @@ function showProject(projectId, shouldPushState = true) {
         $mediaContainer.html(`<iframe src="${proj.youtubeUrl}" allowfullscreen></iframe>`).show();
     } else {
         $mediaContainer.hide();
+    }
+
+    // Screenshot Carousel rendering
+    const $carousel = $("#screenshot-carousel");
+    const $track = $("#screenshot-track");
+    const $indicators = $("#carousel-indicators");
+    $track.empty();
+    $indicators.empty();
+
+    if (proj.screenshots && proj.screenshots.length > 0) {
+        proj.screenshots.forEach((src, idx) => {
+            $track.append(`<img src="${src}" alt="Screenshot ${idx + 1}" class="screenshot-item" onclick="openLightbox('${src}')" onerror="this.style.display='none'">`);
+            $indicators.append(`<button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" onclick="carouselGoTo(${idx})"></button>`);
+        });
+        $carousel.show();
+
+        // Initialize carousel drag/scroll tracking (handles all events internally)
+        initCarouselDrag();
+        updateCarouselNav();
+    } else {
+        $carousel.hide();
     }
 
     // Responsibilities List rendering
@@ -628,4 +649,225 @@ function escapeHtml(string) {
             '=': '&#x3D;'
         }[s];
     });
+}
+
+// ############ Screenshot Carousel Logic ############
+
+function carouselScroll(direction) {
+    const track = document.getElementById('screenshot-track');
+    if (!track) return;
+    const scrollAmount = 300;
+    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+function carouselGoTo(index) {
+    const track = document.getElementById('screenshot-track');
+    if (!track) return;
+    const items = track.querySelectorAll('.screenshot-item');
+    if (items[index]) {
+        items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    }
+}
+
+function updateCarouselIndicators() {
+    const track = document.getElementById('screenshot-track');
+    if (!track) return;
+    const items = track.querySelectorAll('.screenshot-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    if (items.length === 0) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const centerX = trackRect.left + trackRect.width / 2;
+
+    let closestIdx = 0;
+    let closestDist = Infinity;
+    items.forEach((item, idx) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(itemCenter - centerX);
+        if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = idx;
+        }
+    });
+
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === closestIdx);
+    });
+}
+
+function updateCarouselNav() {
+    const track = document.getElementById('screenshot-track');
+    if (!track) return;
+    const prevBtn = document.getElementById('carousel-prev-btn');
+    const nextBtn = document.getElementById('carousel-next-btn');
+    if (!prevBtn || !nextBtn) return;
+
+    const atStart = track.scrollLeft <= 5;
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+
+    // prevBtn.disabled = atStart;
+    // nextBtn.disabled = atEnd;
+}
+
+// Touch / Mouse drag scrolling
+let _carouselDragCleanup = null;
+
+function initCarouselDrag() {
+    const track = document.getElementById('screenshot-track');
+    if (!track) return;
+
+    // Cleanup previous listeners if any
+    if (_carouselDragCleanup) {
+        _carouselDragCleanup();
+        _carouselDragCleanup = null;
+    }
+
+    let isDown = false;
+    let hasDragged = false;
+    let startX;
+    let scrollStart;
+
+    // function onMouseDown(e) {
+    //     isDown = true;
+    //     hasDragged = false;
+    //     startX = e.pageX - track.offsetLeft;
+    //     scrollStart = track.scrollLeft;
+    //     track.style.scrollBehavior = 'auto';
+    //     track.style.cursor = 'grabbing';
+    //     e.preventDefault();
+    // }
+
+    // function onMouseMove(e) {
+    //     if (!isDown) return;
+    //     e.preventDefault();
+    //     const x = e.pageX - track.offsetLeft;
+    //     const walk = (x - startX) * 1.5;
+    //     if (Math.abs(x - startX) > 5) {
+    //         hasDragged = true;
+    //     }
+    //     track.scrollLeft = scrollStart - walk;
+    // }
+
+    // function onMouseUp() {
+    //     if (!isDown) return;
+    //     isDown = false;
+    //     track.style.scrollBehavior = 'smooth';
+    //     track.style.cursor = 'grab';
+    // }
+
+    // function onMouseLeave() {
+    //     if (!isDown) return;
+    //     isDown = false;
+    //     track.style.scrollBehavior = 'smooth';
+    //     track.style.cursor = 'grab';
+    // }
+
+    function onClickCapture(e) {
+        if (hasDragged) {
+            e.preventDefault();
+            e.stopPropagation();
+            hasDragged = false;
+        }
+    }
+
+    // Touch support
+    // function onTouchStart(e) {
+    //     isDown = true;
+    //     hasDragged = false;
+    //     startX = e.touches[0].pageX - track.offsetLeft;
+    //     scrollStart = track.scrollLeft;
+    //     track.style.scrollBehavior = 'auto';
+    // }
+
+    // function onTouchMove(e) {
+    //     if (!isDown) return;
+    //     const x = e.touches[0].pageX - track.offsetLeft;
+    //     const walk = (x - startX) * 1.2;
+    //     if (Math.abs(x - startX) > 5) {
+    //         hasDragged = true;
+    //     }
+    //     track.scrollLeft = scrollStart - walk;
+    // }
+
+    // function onTouchEnd() {
+    //     isDown = false;
+    //     track.style.scrollBehavior = 'smooth';
+    // }
+
+    // Bind all events
+    // track.addEventListener('mousedown', onMouseDown);
+    // document.addEventListener('mousemove', onMouseMove);
+    // document.addEventListener('mouseup', onMouseUp);
+    // track.addEventListener('mouseleave', onMouseLeave);
+    track.addEventListener('click', onClickCapture, true);
+    // track.addEventListener('touchstart', onTouchStart, { passive: true });
+    // track.addEventListener('touchmove', onTouchMove, { passive: true });
+    // track.addEventListener('touchend', onTouchEnd);
+
+    // Scroll listener
+    function onScroll() {
+        updateCarouselIndicators();
+        updateCarouselNav();
+    }
+    track.addEventListener('scroll', onScroll);
+
+    // Store hasDragged reference on track for lightbox check
+    track._getHasDragged = () => hasDragged;
+    track._resetDrag = () => { hasDragged = false; };
+
+    // Cleanup function to remove all listeners
+    _carouselDragCleanup = () => {
+        track.removeEventListener('mousedown', onMouseDown);
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+        track.removeEventListener('mouseleave', onMouseLeave);
+        track.removeEventListener('click', onClickCapture, true);
+        track.removeEventListener('touchstart', onTouchStart);
+        track.removeEventListener('touchmove', onTouchMove);
+        track.removeEventListener('touchend', onTouchEnd);
+        track.removeEventListener('scroll', onScroll);
+    };
+}
+
+// Fullscreen Lightbox
+function openLightbox(src) {
+    // Check if it was a drag, not a click
+    const track = document.getElementById('screenshot-track');
+    if (track && track._getHasDragged && track._getHasDragged()) {
+        if (track._resetDrag) track._resetDrag();
+        return;
+    }
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'screenshot-lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close-btn" onclick="closeLightbox(event)">
+            <i class="material-icons">close</i>
+        </button>
+        <img src="${src}" alt="Screenshot fullscreen">
+    `;
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox(e);
+    });
+
+    document.body.appendChild(lightbox);
+
+    // Keyboard listener for Escape
+    const escHandler = (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox(e);
+            document.removeEventListener('keydown', escHandler);
+        }
+    };
+    document.addEventListener('keydown', escHandler);
+}
+
+function closeLightbox(e) {
+    if (e) e.stopPropagation();
+    const lightbox = document.querySelector('.screenshot-lightbox');
+    if (lightbox) {
+        lightbox.style.opacity = '0';
+        setTimeout(() => lightbox.remove(), 200);
+    }
 }
