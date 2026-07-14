@@ -226,17 +226,19 @@ const portfolioData = {
       cardBanner: "assets/images/Banner_nanospace.png",
       banner: "assets/images/Library_nanospace.png",
       hero: "assets/images/Hero_nanospace.png",
-      youtubeUrl: "https://www.youtube.com/embed/825-y9oi3D4?si=rRnFJMZ3l0H2ZR-z",
+      youtubeUrl: "https://www.youtube.com/embed/ZWSOQbO8h9Q?si=hWSv0j7JXxLb3TN8",
       playLink: "https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko",
       appleLink: "https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
       platforms: ["Android", "iOS"],
-      description: "고품질 3D 그래픽의 방치형 키우기 RPG 게임입니다.",
+      description: "3D 그래픽의 방치형 키우기 RPG 게임입니다.",
       details: [
         "캐릭터 스킬 개발",
+        "무기 스왑 기능 개발",
         "몬스터 추가",
         "보스 추가 및 스킬 개발",
         "재화 던전 추가",
-        "레이드 시스템 개발"
+        "레이드 시스템 개발",
+        "유니티 타임라인을 사용하여 보스/레이드 연출 구현"
       ],
       achievements: [
         { title: "3D Graphics Engine", desc: "화려한 3D 이펙트와 물리 기반 연출 최적화 적용" },
@@ -259,7 +261,7 @@ const portfolioData = {
       playLink: "https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko",
       appleLink: "https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
       platforms: ["Android", "iOS"],
-      description: "모비릭스에서 퍼블리싱한 3D 방치형 키우기 RPG 게임입니다.",
+      description: "3D 그래픽의 방치형 키우기 RPG 게임입니다.",
       details: [
         "캐릭터 스킬 개발",
         "몬스터 추가",
