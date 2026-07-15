@@ -74,6 +74,12 @@ ul {
     list-style-position: inside;
 }
 
+
+ol,
+ul {
+    padding-left: 0px;
+}
+
 /* Custom Scrollbar Styles (Steam Look) */
 ::-webkit-scrollbar {
     width: 10px;
@@ -450,12 +456,13 @@ ul {
 }
 
 .sidebar-exp-company {
+    font-size: 14px;
     font-weight: 600;
     color: #e2e8f0;
 }
 
 .sidebar-exp-period {
-    font-size: 10.5px;
+    font-size: 11px;
     color: var(--text-muted);
     display: block;
     margin-left: 5px;
@@ -664,7 +671,7 @@ ul {
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
-    height: 310px;
+    height: 320px;
 }
 
 .featured-card:hover {
@@ -689,7 +696,7 @@ ul {
 }
 
 .featured-card-title {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 6px;
@@ -699,7 +706,7 @@ ul {
 }
 
 .featured-card-desc {
-    font-size: 12.5px;
+    font-size: 14px;
     color: var(--text-muted);
     line-height: 1.4;
     overflow: hidden;
@@ -729,8 +736,12 @@ ul {
     color: var(--accent-blue);
     padding: 1px 6px;
     border-radius: 3px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 700;
+}
+
+.featured-card-role {
+    font-size: 11px;
 }
 
 /* Stat section */
@@ -1186,10 +1197,10 @@ ul {
 }
 
 .detail-card h3 {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.8px;
-    color: #fff;
+    color: var(--accent-blue);
     margin-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 6px;
@@ -1223,10 +1234,10 @@ ul {
 }
 
 .screenshot-carousel-title {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.8px;
-    color: #fff;
+    color: var(--accent-blue);
     margin-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 6px;
@@ -1406,7 +1417,7 @@ ul {
 }
 
 .project-desc-text {
-    font-size: 13.5px;
+    font-size: 14px;
     line-height: 1.6;
     color: #c7d5e0;
     margin-bottom: 0px;
@@ -1418,7 +1429,7 @@ ul {
 }
 
 .responsibilities-list li {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px;
     padding-left: 15px;
     position: relative;
@@ -1431,6 +1442,14 @@ ul {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.responsibilities-list li li {
+    list-style: none;
+}
+
+.responsibilities-list li li::before {
+    content: none;
 }
 
 /* Spec Tables */
@@ -1501,19 +1520,19 @@ ul {
 }
 
 .achievement-title {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 300;
     color: #fff;
 }
 
 .achievement-desc {
-    font-size: 10.5px;
+    font-size: 12px;
     color: var(--text-muted);
 }
 
 /* System specifications */
 .system-reqs {
-    margin-top: 24px;
+    /* margin-top: 24px; */
 }
 
 .req-column {

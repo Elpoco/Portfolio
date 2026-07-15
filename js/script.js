@@ -338,6 +338,19 @@ function showProject(projectId, shouldPushState = true) {
         $respList.append(`<li>${item}</li>`);
     });
 
+    const $technicalSection = $("#technical-section");
+    const $technicalList = $("#detail-technical");
+    $technicalList.empty();
+    if (!proj.technical || proj.technical.length === 0) {
+        $technicalSection.hide();
+    }
+    else {
+        $technicalSection.show();
+        proj.technical.forEach(item => {
+            $technicalList.append(`<li>${item.title} <ul><li>${item.desc}</li></ul></li>`);
+        });
+    }
+
     // Side Specifications
     $("#detail-spec-period").text(proj.period);
 
@@ -360,9 +373,11 @@ function showProject(projectId, shouldPushState = true) {
     });
 
     // Achievements rendering
+    const $achSection = $("#achievements-section");
     const $achGrid = $("#detail-achievements");
     $achGrid.empty();
     if (proj.achievements && proj.achievements.length > 0) {
+        $achSection.show();
         proj.achievements.forEach(ach => {
             $achGrid.append(`
                 <div class="achievement-badge-card" title="${ach.desc}">
@@ -377,7 +392,8 @@ function showProject(projectId, shouldPushState = true) {
             `);
         });
     } else {
-        $achGrid.html(`<div class="text-muted" style="font-size:11px;">No special achievements defined.</div>`);
+        $achSection.hide();
+        // $achGrid.html(`<div class="text-muted" style="font-size:11px;">No special achievements defined.</div>`);
     }
 
     // Requirements Spec rendering
@@ -818,14 +834,14 @@ function initCarouselDrag() {
 
     // Cleanup function to remove all listeners
     _carouselDragCleanup = () => {
-        track.removeEventListener('mousedown', onMouseDown);
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-        track.removeEventListener('mouseleave', onMouseLeave);
+        // track.removeEventListener('mousedown', onMouseDown);
+        // document.removeEventListener('mousemove', onMouseMove);
+        // document.removeEventListener('mouseup', onMouseUp);
+        // track.removeEventListener('mouseleave', onMouseLeave);
         track.removeEventListener('click', onClickCapture, true);
-        track.removeEventListener('touchstart', onTouchStart);
-        track.removeEventListener('touchmove', onTouchMove);
-        track.removeEventListener('touchend', onTouchEnd);
+        // track.removeEventListener('touchstart', onTouchStart);
+        // track.removeEventListener('touchmove', onTouchMove);
+        // track.removeEventListener('touchend', onTouchEnd);
         track.removeEventListener('scroll', onScroll);
     };
 }
