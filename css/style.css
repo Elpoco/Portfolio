@@ -538,7 +538,7 @@ ul {
     position: relative;
     border-radius: 6px;
     overflow: hidden;
-    height: 340px;
+    height: 240px;
     display: flex;
     align-items: flex-end;
     padding: 30px;
@@ -560,7 +560,7 @@ ul {
 .store-hero-content {
     position: relative;
     z-index: 10;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .store-badge {
