@@ -632,9 +632,9 @@ const portfolioData = {
       type: "Web Service",
       role: "1인 개발 총괄",
       tech: ["PHP", "MySQL", "JavaScript"],
-      cardBanner: "assets/images/empty/banner.png",
-      banner: "assets/images/empty/library.png",
-      hero: "assets/images/empty/hero.png",
+      cardBanner: "assets/images/machasa/banner.png",
+      banner: "assets/images/machasa/library.png",
+      hero: "assets/images/machasa/hero.png",
       platforms: ["Web"],
       description: "마사지 매장 정보 앱 '마찾사'의 서비스 관리자 페이지 입니다.",
       details: [
@@ -655,9 +655,9 @@ const portfolioData = {
       type: "App Service",
       role: "1인 개발 총괄",
       tech: ["React Native"],
-      cardBanner: "assets/images/empty/banner.png",
-      banner: "assets/images/empty/library.png",
-      hero: "assets/images/empty/hero.png",
+      cardBanner: "assets/images/machasa/banner.png",
+      banner: "assets/images/machasa/library.png",
+      hero: "assets/images/machasa/hero.png",
       playLink: "https://play.google.com/store/apps/details?id=com.toksol.machasa",
       appleLink: "https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716",
       platforms: ["Android", "iOS"],
@@ -669,6 +669,21 @@ const portfolioData = {
       achievements: [
         // { title: "LBS Master", desc: "모바일 GPS 위치 데이터를 정밀 계산해 실시간 제휴 매장 최적 정렬" },
         // { title: "Multi-Filter Search", desc: "성능 지연 없이 실시간 태그와 복합 옵션별 검색 매칭 구현" }
+      ],
+      screenshots: [
+        "assets/images/machasa/screenshot_01.png",
+        "assets/images/machasa/screenshot_02.png",
+        "assets/images/machasa/screenshot_03.png",
+        "assets/images/machasa/screenshot_04.png",
+        "assets/images/machasa/screenshot_05.png",
+        "assets/images/machasa/screenshot_06.png",
+        "assets/images/machasa/screenshot_07.png",
+        "assets/images/machasa/screenshot_08.png",
+        "assets/images/machasa/screenshot_09.png",
+        "assets/images/machasa/screenshot_10.png",
+        "assets/images/machasa/screenshot_11.png",
+        "assets/images/machasa/screenshot_12.png",
+        "assets/images/machasa/screenshot_13.png",
       ]
     },
     {
@@ -762,6 +777,19 @@ const portfolioData = {
         // { title: "Custom Mapping Engine", desc: "구글 맵 위에 다지점 경로 선 연결 및 실시간 거리 계산 구현" },
         // { title: "Voice Search Tech", desc: "STT API를 접목해 키보드 조작 없이 말로 검색하는 예약 데모 시연 성공" },
         // { title: "Global Transaction", desc: "다국화 결제 게이트웨이 EXIMBAY의 보안 토큰 기반 API 결제 구조 정립" }
+      ],
+      screenshots: [
+        "assets/images/machasa/screenshot_01.png",
+        "assets/images/machasa/screenshot_02.png",
+        "assets/images/machasa/screenshot_03.png",
+        "assets/images/machasa/screenshot_04.png",
+        "assets/images/machasa/screenshot_05.png",
+        "assets/images/machasa/screenshot_06.png",
+        "assets/images/machasa/screenshot_07.png",
+        "assets/images/machasa/screenshot_08.png",
+        "assets/images/machasa/screenshot_09.png",
+        "assets/images/machasa/screenshot_10.png",
+        "assets/images/machasa/screenshot_11.png",
       ]
     },
     {
@@ -795,6 +823,8 @@ const portfolioData = {
         "assets/images/smartsome/screenshot_02.png",
         "assets/images/smartsome/screenshot_03.png",
         "assets/images/smartsome/screenshot_04.png",
+        "assets/images/smartsome/screenshot_05.png",
+        "assets/images/smartsome/screenshot_06.png",
       ]
     },
     {
@@ -828,6 +858,8 @@ const portfolioData = {
         "assets/images/moontalk/screenshot_02.png",
         "assets/images/moontalk/screenshot_03.png",
         "assets/images/moontalk/screenshot_04.png",
+        "assets/images/moontalk/screenshot_05.png",
+        "assets/images/moontalk/screenshot_06.png",
       ]
     },
     {
