@@ -1258,11 +1258,6 @@ ul {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding: 4px 0;
-    cursor: grab;
-}
-
-.screenshot-carousel-track:active {
-    cursor: grabbing;
 }
 
 .screenshot-carousel-track::-webkit-scrollbar {
@@ -1271,7 +1266,7 @@ ul {
 
 .screenshot-carousel-track .screenshot-item {
     flex-shrink: 0;
-    /* max-width: 320px; */
+    max-width: 85%;
     height: auto;
     max-height: 400px;
     border-radius: 6px;
@@ -1281,6 +1276,8 @@ ul {
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     background-color: #0d121a;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .screenshot-carousel-track .screenshot-item:hover {

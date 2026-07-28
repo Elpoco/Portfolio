@@ -324,8 +324,19 @@ function showProject(projectId, shouldPushState = true) {
         });
         $carousel.show();
 
+        if ($track[0]) {
+            $track[0].scrollLeft = 0;
+        }
+
         // Initialize carousel drag/scroll tracking (handles all events internally)
         initCarouselDrag();
+
+        // Recalculate nav button state once images load
+        $track.find('img').on('load error', () => {
+            updateCarouselNav();
+            updateCarouselIndicators();
+        });
+
         updateCarouselNav();
     } else {
         $carousel.hide();
@@ -672,7 +683,19 @@ function escapeHtml(string) {
 function carouselScroll(direction) {
     const track = document.getElementById('screenshot-track');
     if (!track) return;
-    const scrollAmount = 300;
+    const items = track.querySelectorAll('.screenshot-item');
+    if (items.length === 0) return;
+
+    const itemWidth = items[0].getBoundingClientRect().width;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 12;
+
+    let scrollAmount = itemWidth + gap;
+    if (itemWidth < 350) {
+        const itemsPerView = Math.max(1, Math.floor(track.clientWidth / (itemWidth + gap)));
+        scrollAmount = itemsPerView * (itemWidth + gap);
+    }
+
     track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
 
@@ -719,14 +742,21 @@ function updateCarouselNav() {
     const nextBtn = document.getElementById('carousel-next-btn');
     if (!prevBtn || !nextBtn) return;
 
-    const atStart = track.scrollLeft <= 5;
-    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+    const isScrollable = track.scrollWidth > track.clientWidth + 5;
+    if (!isScrollable) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+    }
 
-    // prevBtn.disabled = atStart;
-    // nextBtn.disabled = atEnd;
+    const atStart = track.scrollLeft <= 5;
+    const atEnd = Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth - 5;
+
+    prevBtn.disabled = atStart;
+    nextBtn.disabled = atEnd;
 }
 
-// Touch / Mouse drag scrolling
+// Carousel Scroll & Event Tracking
 let _carouselDragCleanup = null;
 
 function initCarouselDrag() {
@@ -739,122 +769,21 @@ function initCarouselDrag() {
         _carouselDragCleanup = null;
     }
 
-    let isDown = false;
-    let hasDragged = false;
-    let startX;
-    let scrollStart;
-
-    // function onMouseDown(e) {
-    //     isDown = true;
-    //     hasDragged = false;
-    //     startX = e.pageX - track.offsetLeft;
-    //     scrollStart = track.scrollLeft;
-    //     track.style.scrollBehavior = 'auto';
-    //     track.style.cursor = 'grabbing';
-    //     e.preventDefault();
-    // }
-
-    // function onMouseMove(e) {
-    //     if (!isDown) return;
-    //     e.preventDefault();
-    //     const x = e.pageX - track.offsetLeft;
-    //     const walk = (x - startX) * 1.5;
-    //     if (Math.abs(x - startX) > 5) {
-    //         hasDragged = true;
-    //     }
-    //     track.scrollLeft = scrollStart - walk;
-    // }
-
-    // function onMouseUp() {
-    //     if (!isDown) return;
-    //     isDown = false;
-    //     track.style.scrollBehavior = 'smooth';
-    //     track.style.cursor = 'grab';
-    // }
-
-    // function onMouseLeave() {
-    //     if (!isDown) return;
-    //     isDown = false;
-    //     track.style.scrollBehavior = 'smooth';
-    //     track.style.cursor = 'grab';
-    // }
-
-    function onClickCapture(e) {
-        if (hasDragged) {
-            e.preventDefault();
-            e.stopPropagation();
-            hasDragged = false;
-        }
-    }
-
-    // Touch support
-    // function onTouchStart(e) {
-    //     isDown = true;
-    //     hasDragged = false;
-    //     startX = e.touches[0].pageX - track.offsetLeft;
-    //     scrollStart = track.scrollLeft;
-    //     track.style.scrollBehavior = 'auto';
-    // }
-
-    // function onTouchMove(e) {
-    //     if (!isDown) return;
-    //     const x = e.touches[0].pageX - track.offsetLeft;
-    //     const walk = (x - startX) * 1.2;
-    //     if (Math.abs(x - startX) > 5) {
-    //         hasDragged = true;
-    //     }
-    //     track.scrollLeft = scrollStart - walk;
-    // }
-
-    // function onTouchEnd() {
-    //     isDown = false;
-    //     track.style.scrollBehavior = 'smooth';
-    // }
-
-    // Bind all events
-    // track.addEventListener('mousedown', onMouseDown);
-    // document.addEventListener('mousemove', onMouseMove);
-    // document.addEventListener('mouseup', onMouseUp);
-    // track.addEventListener('mouseleave', onMouseLeave);
-    track.addEventListener('click', onClickCapture, true);
-    // track.addEventListener('touchstart', onTouchStart, { passive: true });
-    // track.addEventListener('touchmove', onTouchMove, { passive: true });
-    // track.addEventListener('touchend', onTouchEnd);
-
-    // Scroll listener
+    // Scroll listener for indicators and navigation buttons
     function onScroll() {
         updateCarouselIndicators();
         updateCarouselNav();
     }
     track.addEventListener('scroll', onScroll);
 
-    // Store hasDragged reference on track for lightbox check
-    track._getHasDragged = () => hasDragged;
-    track._resetDrag = () => { hasDragged = false; };
-
-    // Cleanup function to remove all listeners
+    // Cleanup function
     _carouselDragCleanup = () => {
-        // track.removeEventListener('mousedown', onMouseDown);
-        // document.removeEventListener('mousemove', onMouseMove);
-        // document.removeEventListener('mouseup', onMouseUp);
-        // track.removeEventListener('mouseleave', onMouseLeave);
-        track.removeEventListener('click', onClickCapture, true);
-        // track.removeEventListener('touchstart', onTouchStart);
-        // track.removeEventListener('touchmove', onTouchMove);
-        // track.removeEventListener('touchend', onTouchEnd);
         track.removeEventListener('scroll', onScroll);
     };
 }
 
 // Fullscreen Lightbox
 function openLightbox(src) {
-    // Check if it was a drag, not a click
-    const track = document.getElementById('screenshot-track');
-    if (track && track._getHasDragged && track._getHasDragged()) {
-        if (track._resetDrag) track._resetDrag();
-        return;
-    }
-
     const lightbox = document.createElement('div');
     lightbox.className = 'screenshot-lightbox';
     lightbox.innerHTML = `
