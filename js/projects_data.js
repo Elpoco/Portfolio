@@ -120,7 +120,7 @@ const portfolioData = {
       id: "proj_ropeup",
       companyId: "exp_indie",
       name: "Rope Up!",
-      period: "2025.03 ~ 2026.05",
+      period: "2026.03 ~ 2026.05",
       type: "Commercial Game",
       role: "2인 개발",
       tech: ["Unity", "C#", "Unity Netcode", "Steamworks"],
