@@ -92,30 +92,31 @@ const portfolioData = {
     }
   ],
   projects: [
-    // {
-    //   id: "proj_tinytown",
-    //   companyId: "exp_indie",
-    //   name: "Rope Up!",
-    //   period: "2025.03 ~ 2026.05",
-    //   type: "Commercial Game",
-    //   role: "2인 개발",
-    //   tech: ["Unity", "C#"],
-    //   cardBanner: "assets/images/Banner_RopeUp.png",
-    //   banner: "assets/images/Library_RopeUp.png",
-    //   hero: "assets/images/Hero_RopeUp.png",
-    //   playLink: "https://store.steampowered.com/app/4595740/Rope_Up/?l=koreana&curator_clanid=34659241",
-    //   youtubeUrl: "https://www.youtube.com/embed/O7HDu78Jo4k",
-    //   platforms: ["Steam"],
-    //   description: "Steam에 정식 출시한 물리 기반 클라이밍 게임으로, 로프 스윙과 정교한 조작을 활용해 정상까지 도달하는 것이 목표입니다.",
-    //   details: [
-    //     "로프 물리 기반 개발",
-    //     "Unity Netcode for GameObjects(NGO)를 활용한 멀티플레이 구현",
-    //     "Steamworks API를 활용한 로비 생성 및 초대 시스템 구현"
-    //   ],
-    //   achievements: [
-    //     { title: "Steam Release", desc: "스팀 정식 런칭 및 서비스 개시" }
-    //   ]
-    // },
+    {
+      id: "proj_tinytown",
+      companyId: "exp_indie",
+      name: "Tiny Village",
+      period: "2026.06 ~ ",
+      type: "Idle Simulation Game",
+      role: "1인 개발",
+      tech: ["Unity", "C#"],
+      cardBanner: "assets/images/empty/banner.png",
+      banner: "assets/images/empty/library.png",
+      hero: "assets/images/empty/hero.png",
+      // playLink: "https://store.steampowered.com/app/4595740/Rope_Up/?l=koreana&curator_clanid=34659241",
+      // youtubeUrl: "https://www.youtube.com/embed/O7HDu78Jo4k",
+      platforms: ["Steam"],
+      description: "2D 타일맵 기반의 인크리멘탈 게임 입니다. 자원을 수집하고 마을을 발전 시켜 나가는 게임 입니다.",
+      details: [
+        "건설 시스템을 통한 마을 발전 구현",
+        "계절 시스템과 낮밤 시스템 구현",
+        "주민들의 생활 시스템과 만족도 구현",
+        "자원 채집 시스템 구현",
+      ],
+      // achievements: [
+      //   { title: "Steam Release", desc: "스팀 정식 런칭 및 서비스 개시" }
+      // ]
+    },
     {
       id: "proj_ropeup",
       companyId: "exp_indie",
