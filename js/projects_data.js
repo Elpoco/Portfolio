@@ -1,4 +1,5 @@
 const portfolioData = {
+  featuredCount: 9, // Store 페이지(주요 프로젝트)에 표시할 프로젝트 개수
   profile: {
     name: "정지현 (Jeong Ji-hyeon)",
     nickname: "Elpoco",
