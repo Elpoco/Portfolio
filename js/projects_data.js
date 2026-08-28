@@ -96,7 +96,7 @@ const portfolioData = {
       id: "proj_tinyvillage",
       companyId: "exp_indie",
       name: "Tiny Village",
-      period: "2026.06 ~ ",
+      period: "2026.06 ~ 2026.09",
       type: "Idle Simulation Game",
       role: "1인 개발",
       tech: ["Unity", "C#"],
@@ -113,9 +113,9 @@ const portfolioData = {
         "주민들의 생활 시스템과 만족도 구현",
         "자원 채집 시스템 구현",
       ],
-      // achievements: [
-      //   { title: "Steam Release", desc: "스팀 정식 런칭 및 서비스 개시" }
-      // ]
+      achievements: [
+        { title: "Steam Demo Release", desc: "스팀 데모 출시 및 피드백 수렴" }
+      ]
     },
     {
       id: "proj_ropeup",
