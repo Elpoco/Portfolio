@@ -40,6 +40,8 @@
     --border-color: #2a475e;
     --online-green: #57cbde;
     /* In-game teal/green */
+    --offline-gray: #8f98a0;
+    /* Offline gray */
 }
 
 /* General Reset & Layout */
@@ -269,6 +271,11 @@ ul {
     border-radius: 4px;
     border: 2px solid var(--online-green);
     object-fit: cover;
+    transition: border-color 0.3s ease;
+}
+
+.profile-avatar.offline {
+    border-color: var(--offline-gray);
 }
 
 .online-indicator {
@@ -280,6 +287,11 @@ ul {
     background-color: var(--online-green);
     border-radius: 50%;
     border: 2px solid #171a21;
+    transition: background-color 0.3s ease;
+}
+
+.online-indicator.offline {
+    background-color: var(--offline-gray);
 }
 
 .profile-info {
@@ -310,6 +322,11 @@ ul {
 
 .status-text {
     color: var(--online-green);
+    transition: color 0.3s ease;
+}
+
+.status-text.offline {
+    color: var(--offline-gray);
 }
 
 /* ############ Steam App Body ############ */

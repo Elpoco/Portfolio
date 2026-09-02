@@ -19,26 +19,57 @@ $(function () {
     const currentYear = new Date().getFullYear();
     $(".dynamic-age").text(currentYear - birthYear);
 
-    // 2. Initialize Sidebar Lists
+    // 2. Update Online / Offline Status based on current time (09:00 - 20:00: Online, else Offline)
+    updateOnlineStatus();
+    setInterval(updateOnlineStatus, 60000);
+
+    // 3. Initialize Sidebar Lists
     renderSidebar();
 
-    // 3. Render Store Page Content
+    // 4. Render Store Page Content
     renderStorePage();
 
-    // 4. Render Project Grid
+    // 5. Render Project Grid
     renderProjectsGrid();
 
-    // 5. Initialize Navigation Click Events
+    // 6. Initialize Navigation Click Events
     setupEvents();
 
-    // 6. Push Initial State to History
+    // 7. Push Initial State to History
     pushState({ type: 'tab', target: 'store' });
 
-    // 7. Auto Open Chat with Welcome Message on delay
+    // 8. Auto Open Chat with Welcome Message on delay
     setTimeout(() => {
         $("#friends-chat-window").removeClass("chat-minimized");
     }, 1500);
 });
+
+// ############ Online / Offline Status Logic ############
+function updateOnlineStatus() {
+    const now = new Date();
+    const hours = now.getHours();
+
+    // 오전 9시(09:00)부터 오후 8시(20:00 미만)까지 온라인, 나머지는 오프라인
+    const isOnline = hours >= 9 && hours < 20;
+
+    const $indicator = $(".online-indicator");
+    const $avatar = $(".profile-avatar");
+    const $statusText = $("#user-status-text");
+
+    if (isOnline) {
+        $indicator.removeClass("offline").addClass("online");
+        $avatar.removeClass("offline").addClass("online");
+        if ($statusText.length) {
+            $statusText.removeClass("offline").addClass("online").text("Online");
+        }
+    } else {
+        $indicator.removeClass("online").addClass("offline");
+        $avatar.removeClass("online").addClass("offline");
+        if ($statusText.length) {
+            $statusText.removeClass("online").addClass("offline").text("Offline");
+        }
+    }
+}
 
 // ############ Navigation History Logic ############
 function pushState(state) {
