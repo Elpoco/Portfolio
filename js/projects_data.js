@@ -49,7 +49,7 @@ const portfolioData = {
       company: "파이어슈라이크게임즈",
       period: "2022.06 ~ 2026.01",
       role: "Unity 클라이언트 및 백엔드 개발",
-      description: "3D 방치형 RPG와 하이퍼 캐주얼 게임을 개발했습니다.\n콘텐츠 단위로 클라이언트와 백엔드를 함께 개발했으며, 아트팀과 협업하여 이펙트, 애니메이션 연출을 게임에 적용했습니다.",
+      description: "모바일 3D 방치형 게임과 하이퍼 캐주얼 게임을 개발했습니다.\n콘텐츠 단위로 클라이언트와 백엔드를 함께 개발했으며, 아트팀과 협업하여 이펙트, 애니메이션 연출을 게임에 적용했습니다.",
       type: "company"
     },
     {
@@ -346,8 +346,8 @@ const portfolioData = {
       banner: "assets/images/nanospace/library.png",
       hero: "assets/images/nanospace/hero.png",
       youtubeUrl: "https://www.youtube.com/embed/ZWSOQbO8h9Q?si=hWSv0j7JXxLb3TN8",
-      playLink: "https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko",
-      appleLink: "https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
+      playLink: "--https://play.google.com/store/apps/details?id=com.galileo.r3&hl=ko",
+      appleLink: "--https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
       platforms: ["Android", "iOS"],
       description: "캐릭터를 성장시키며 다양한 던전과 레이드를 공략하는 3D 방치형 키우기 게임입니다.",
       details: [
@@ -400,8 +400,8 @@ const portfolioData = {
       banner: "assets/images/stellarknight/library.png",
       hero: "assets/images/stellarknight/hero.png",
       youtubeUrl: "https://www.youtube.com/embed/_YLaQ-rlPFg?si=x-W0tebeOHbUJzMB",
-      playLink: "https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko",
-      appleLink: "https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
+      playLink: "--https://play.google.com/store/apps/details?id=com.mobirix.mbsk&hl=ko",
+      appleLink: "--https://apps.apple.com/kr/app/%EB%B3%84%EB%B9%9B%EA%B8%B0%EC%82%AC-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1661086445",
       platforms: ["Android", "iOS"],
       description: "캐릭터를 성장시키며 다양한 던전과 레이드를 공략하는 3D 방치형 키우기 게임입니다.",
       details: [
@@ -449,7 +449,7 @@ const portfolioData = {
       companyId: "exp_kyungil",
       name: "Dungreed 모작",
       period: "2022.03 ~ 2022.04",
-      type: "Replica Game",
+      type: "모작",
       role: "1인 개발",
       tech: ["C/C++", "WinAPI"],
       cardBanner: "assets/images/dungreed/banner.png",
@@ -487,7 +487,7 @@ const portfolioData = {
       companyId: "exp_kyungil",
       name: "Hollow Knight 모작",
       period: "2022.01",
-      type: "Replica Game",
+      type: "모작",
       role: "1인 개발",
       tech: ["C/C++", "WinAPI"],
       cardBanner: "assets/images/hollowknight/banner.png",
@@ -595,7 +595,7 @@ const portfolioData = {
       banner: "assets/images/ezpen/library.png",
       hero: "assets/images/ezpen/hero.png",
       playLink: "https://ezpen.co.kr/",
-      platforms: ["Web", "Android"],
+      platforms: ["Web"],
       description: "사용자가 작성한 논술/글쓰기 원고를 첨삭 선생님과 매칭 후 첨삭 받을 수 있는 서비스입니다.",
       details: [
         "아임포트(I'mport) 연동을 통한 월 정기 구독 및 건당 결제 시스템 설계",
@@ -620,7 +620,7 @@ const portfolioData = {
       banner: "assets/images/mypool/library.png",
       hero: "assets/images/mypool/hero.png",
       playLink: "https://play.google.com/store/apps/details?id=com.mypool",
-      appleLink: "https://url.kr/j6q4a3",
+      appleLink: "https://apps.apple.com/kr/app/마이풀-외국어-무제한-학습/id1547568215",
       platforms: ["Android", "iOS"],
       description: "영어, 중국어, 토익 인강 시청 및 문제를 풀 수 있는 구독형 어학 학습 어플입니다.",
       details: [
@@ -668,8 +668,8 @@ const portfolioData = {
       cardBanner: "assets/images/machasa/banner.png",
       banner: "assets/images/machasa/library.png",
       hero: "assets/images/machasa/hero.png",
-      playLink: "https://play.google.com/store/apps/details?id=com.toksol.machasa",
-      appleLink: "https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716",
+      playLink: "--https://play.google.com/store/apps/details?id=com.toksol.machasa",
+      appleLink: "--https://apps.apple.com/kr/app/%EB%A7%88%EC%B0%BE%EC%82%AC/id1558385716",
       platforms: ["Android", "iOS"],
       description: "내 주변 위치 기반으로 마사지 매장을 매칭하고 정보를 제공해주는 서비스입니다.",
       details: [
@@ -707,7 +707,7 @@ const portfolioData = {
       cardBanner: "assets/images/empty/banner.png",
       banner: "assets/images/empty/library.png",
       hero: "assets/images/empty/hero.png",
-      playLink: "https://play.google.com/store/apps/details?id=com.system.vingo",
+      playLink: "--https://play.google.com/store/apps/details?id=com.system.vingo",
       platforms: ["Android"],
       description: "차량 부품의 바코드를 카메라로 스캔하여 부품 규격과 정보를 보여주는 산업용 유틸리티 웹앱입니다.",
       details: [
@@ -729,7 +729,7 @@ const portfolioData = {
       cardBanner: "assets/images/empty/banner.png",
       banner: "assets/images/empty/library.png",
       hero: "assets/images/empty/hero.png",
-      playLink: "https://play.google.com/store/apps/details?id=com.system.vingo",
+      playLink: "--https://play.google.com/store/apps/details?id=com.system.vingo",
       platforms: ["iOS"],
       description: "코로나 관련 앱으로 대학교 출석 연동하는 기능과 시간마다 자가 검진을 할 수 있는 웹앱입니다.",
       details: [
@@ -770,12 +770,12 @@ const portfolioData = {
       name: "Only1Trip",
       period: "2020.02 ~ 2020.04",
       type: "Web/App Service",
-      role: "1인 개발 총괄",
+      role: "개발 총괄",
       tech: ["PHP", "MySQL", "JavaScript"],
       cardBanner: "assets/images/only1trip/banner.png",
       banner: "assets/images/only1trip/library.png",
       hero: "assets/images/only1trip/hero.png",
-      playLink: "https://www.only1trip.com/",
+      playLink: "--https://www.only1trip.com/",
       platforms: ["Web"],
       description: "사용자가 등록한 맞춤형 요구에 따라 전문 여행 플래너가 코스를 제시하는 중개 매칭 사이트입니다.",
       details: [
@@ -789,17 +789,17 @@ const portfolioData = {
         // { title: "Global Transaction", desc: "다국화 결제 게이트웨이 EXIMBAY의 보안 토큰 기반 API 결제 구조 정립" }
       ],
       screenshots: [
-        "assets/images/machasa/screenshot_01.png",
-        "assets/images/machasa/screenshot_02.png",
-        "assets/images/machasa/screenshot_03.png",
-        "assets/images/machasa/screenshot_04.png",
-        "assets/images/machasa/screenshot_05.png",
-        "assets/images/machasa/screenshot_06.png",
-        "assets/images/machasa/screenshot_07.png",
-        "assets/images/machasa/screenshot_08.png",
-        "assets/images/machasa/screenshot_09.png",
-        "assets/images/machasa/screenshot_10.png",
-        "assets/images/machasa/screenshot_11.png",
+        "assets/images/only1trip/screenshot_01.png",
+        "assets/images/only1trip/screenshot_02.png",
+        "assets/images/only1trip/screenshot_03.png",
+        "assets/images/only1trip/screenshot_04.png",
+        "assets/images/only1trip/screenshot_05.png",
+        "assets/images/only1trip/screenshot_06.png",
+        "assets/images/only1trip/screenshot_07.png",
+        "assets/images/only1trip/screenshot_08.png",
+        "assets/images/only1trip/screenshot_09.png",
+        "assets/images/only1trip/screenshot_10.png",
+        "assets/images/only1trip/screenshot_11.png",
       ]
     },
     {
@@ -808,7 +808,7 @@ const portfolioData = {
       name: "스마트썸",
       period: "2019.11 ~ 2020.01",
       type: "Web/App Service",
-      role: "앱 개발 총괄",
+      role: "앱 개발",
       tech: ["Java", "Swift"],
       cardBanner: "assets/images/smartsome/banner.png",
       banner: "assets/images/smartsome/library.png",
@@ -843,13 +843,13 @@ const portfolioData = {
       name: "문톡 (Moon Talk)",
       period: "2019.08 ~ 2019.10",
       type: "Web/App Service",
-      role: "앱 개발 총괄",
+      role: "앱 개발",
       tech: ["Java", "Swift"],
       cardBanner: "assets/images/moontalk/banner.png",
       banner: "assets/images/moontalk/library.png",
       hero: "assets/images/moontalk/hero.png",
       playLink: "https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000743106&scYn=Y",
-      appleLink: "https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926",
+      appleLink: "--https://apps.apple.com/kr/app/%EB%AC%B8%ED%86%A1/id1488438926",
       platforms: ["Android", "iOS"],
       description: "웹에서 발송한 단체 문자 신호를 모바일 디바이스가 수신해 디바이스 통신 요금제로 대량의 SMS를 위탁 전송하는 메시징 앱입니다. (iOS는 로비 채팅방만 구성)",
       details: [
@@ -877,18 +877,18 @@ const portfolioData = {
       companyId: "exp_mirae",
       name: "로아 망원경",
       period: "2019.02 ~ 2019.03",
-      type: "Replica Game",
+      type: "App Service",
       role: "1인 개발",
       tech: ["Java"],
       cardBanner: "assets/images/loa/banner.png",
       banner: "assets/images/loa/library.png",
       hero: "assets/images/loa/hero.png",
-      playLink: "https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder",
+      playLink: "--https://play.google.com/store/apps/details?id=com.elpoco.p_mapfinder",
       platforms: ["Android"],
       description: "게임 '로스트아크'의 컨텐츠 중 보물지도의 위치를 찾기가 어려워 서로 정보 공유 하기 위해 만든 앱입니다.",
       details: [
-        "dothome 웹호스팅 및 MySQL 서버 연동 기반 모바일 익명 게시판 및 댓글 스키마 구축",
-        "Google AdMob SDK를 도입한 배너/전면 광고 게재 및 레이아웃 최적화"
+        "dothome 웹호스팅 및 MySQL 서버 연동 기반 모바일 익명 게시판 및 댓글 구현",
+        "Google AdMob SDK를 도입한 배너/전면 광고 게재"
       ],
       achievements: [
         // { title: "Ad Monetization", desc: "구글 애드몹 연동 및 수익화를 위한 UI 광고 노출 안전 루틴 구현" }
@@ -896,3 +896,23 @@ const portfolioData = {
     }
   ]
 };
+
+/**
+ * Global URL validator: Checks if a link is valid and active.
+ * Links starting with '--' (e.g. '--https://...') are treated as disabled/expired.
+ */
+function isValidLink(url) {
+  return typeof url === 'string' && url.trim().length > 0 && !url.trim().startsWith('--');
+}
+
+// Auto-sanitize disabled links in portfolioData (sets fields starting with '--' to null)
+if (typeof portfolioData !== 'undefined' && portfolioData.projects) {
+  portfolioData.projects.forEach(p => {
+    ['playLink', 'appleLink', 'githubLink', 'youtubeUrl'].forEach(key => {
+      if (p[key] && !isValidLink(p[key])) {
+        p[key] = null;
+      }
+    });
+  });
+}
+

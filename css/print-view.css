@@ -524,7 +524,8 @@ a:hover {
 .proj-platform-icon-img {
     width: 20px;
     height: 20px;
-    opacity: 0.85;
+    filter: brightness(0) opacity(0.85);
+    transition: opacity 0.2s;
 }
 
 .proj-links-row {
@@ -532,34 +533,55 @@ a:hover {
     align-items: center;
     gap: 8px;
     margin-top: 4px;
+    flex-wrap: wrap;
 }
 
 .proj-link-btn {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.76rem;
+    gap: 6px;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
-    background: #f8fafc;
-    color: var(--text-accent);
-    border: 1px solid var(--border-color);
-    transition: all 0.2s;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--primary-blue);
+    color: #ffffff !important;
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 2px 5px rgba(2, 132, 199, 0.25);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none !important;
+    cursor: pointer;
+}
+
+.proj-link-btn .material-icons {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.proj-link-btn img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+    vertical-align: middle;
+    transition: transform 0.2s;
 }
 
 .proj-link-btn:hover {
-    background: var(--primary-blue);
+    background: var(--primary-blue-hover);
+    border-color: var(--primary-blue-hover);
     color: #ffffff !important;
-    border-color: var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);
+    transform: translateY(-1.5px);
 }
 
-.proj-link-btn .material-icons,
-.proj-link-btn img {
-    font-size: 14px;
-    width: 14px;
-    height: 14px;
+.proj-link-btn:hover img {
+    transform: scale(1.1);
+}
+
+.proj-link-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.2);
 }
 
 /* Tech Stack Badges */

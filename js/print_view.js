@@ -169,29 +169,25 @@ function renderChronologicalProjects() {
             }).join('');
         }
 
-        // Project Links
+        // Project Links (Store / Code links only; videos are displayed below screenshots)
         let linksHtml = '';
-        if (proj.playLink) {
-            let label = "Store / Play";
-            let icon = "play_arrow";
+        if (isValidLink(proj.playLink) && !proj.playLink.includes("youtube") && !proj.playLink.includes("youtu.be")) {
+            let label = "Web";
+            let iconImg = "web_logo.svg";
             if (proj.playLink.includes("steampowered.com")) {
                 label = "Steam Store";
+                iconImg = "steam_logo.svg";
             } else if (proj.playLink.includes("google.com")) {
                 label = "Google Play";
-            } else if (proj.playLink.includes("youtube") || proj.playLink.includes("youtu.be")) {
-                label = "YouTube Demo";
-                icon = "smart_display";
+                iconImg = "android_logo.svg";
             }
-            linksHtml += `<a href="${proj.playLink}" target="_blank" class="proj-link-btn"><i class="material-icons">${icon}</i> ${label}</a>`;
+            linksHtml += `<a href="${proj.playLink}" target="_blank" class="proj-link-btn"><img src="assets/icons/${iconImg}" alt="${label}"> ${label}</a>`;
         }
-        if (proj.appleLink) {
+        if (isValidLink(proj.appleLink)) {
             linksHtml += `<a href="${proj.appleLink}" target="_blank" class="proj-link-btn"><img src="assets/icons/apple_logo.svg" alt="App Store"> App Store</a>`;
         }
-        if (proj.githubLink) {
+        if (isValidLink(proj.githubLink)) {
             linksHtml += `<a href="${proj.githubLink}" target="_blank" class="proj-link-btn"><img src="assets/icons/github.svg" alt="GitHub"> GitHub</a>`;
-        }
-        if (proj.youtubeUrl && !proj.playLink?.includes("youtu")) {
-            linksHtml += `<a href="${proj.youtubeUrl.replace('/embed/', '/watch?v=')}" target="_blank" class="proj-link-btn"><i class="material-icons">smart_display</i> Video</a>`;
         }
 
         // Tech stack pills
@@ -262,7 +258,7 @@ function renderChronologicalProjects() {
         // Screenshots (Display up to 4 key screenshots, auto-adapting to both PC and mobile!)
         let screenshotsHtml = '';
         if (proj.screenshots && proj.screenshots.length > 0) {
-            const displayScreenshots = proj.screenshots.slice(0, 4);
+            const displayScreenshots = proj.screenshots;
             const thumbItems = displayScreenshots.map(src => `
                 <div class="screenshot-thumb-wrap">
                     <img src="${src}" class="screenshot-thumb-img" alt="${proj.name} 스크린샷" loading="lazy">
@@ -272,7 +268,7 @@ function renderChronologicalProjects() {
             screenshotsHtml = `
                 <div class="proj-screenshots-block">
                     <div class="block-title">
-                        <i class="material-icons">photo_library</i> 게임 플레이 스크린샷
+                        <i class="material-icons">photo_library</i> 스크린샷
                     </div>
                     <div class="screenshots-grid">${thumbItems}</div>
                 </div>
@@ -281,14 +277,14 @@ function renderChronologicalProjects() {
 
         // YouTube Video Block (Directly below screenshots)
         let videoHtml = '';
-        const rawVideoUrl = proj.youtubeUrl || (proj.playLink && (proj.playLink.includes('youtu.be') || proj.playLink.includes('youtube.com')) ? proj.playLink : null);
+        const rawVideoUrl = (isValidLink(proj.youtubeUrl) ? proj.youtubeUrl : null) || (isValidLink(proj.playLink) && (proj.playLink.includes('youtu.be') || proj.playLink.includes('youtube.com')) ? proj.playLink : null);
         if (rawVideoUrl) {
             const ytInfo = getYouTubeEmbedAndWatchUrls(rawVideoUrl);
             if (ytInfo) {
                 videoHtml = `
                     <div class="proj-video-block">
                         <div class="block-title">
-                            <i class="material-icons" style="color: #dc2626;">smart_display</i> 게임 시연 영상 (Gameplay Demo)
+                            <i class="material-icons" style="color: #dc2626;">smart_display</i> 영상
                         </div>
                         <div class="proj-video-container">
                             <iframe src="${ytInfo.embedUrl}" title="${proj.name} 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
@@ -318,7 +314,7 @@ function renderChronologicalProjects() {
                     </div>
                     <div class="proj-meta-right">
                         <div class="proj-period-badge">${proj.period}</div>
-                        <div class="proj-platform-icons">${platformIconsHtml}</div>
+                        
                         ${linksHtml ? `<div class="proj-links-row">${linksHtml}</div>` : ''}
                     </div>
                 </header>

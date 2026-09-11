@@ -317,14 +317,14 @@ function showProject(projectId, shouldPushState = true) {
     $("#detail-description").text(proj.description);
 
     // Play Button Config
-    if (proj.playLink) {
+    if (isValidLink(proj.playLink)) {
         $("#detail-play-btn").attr("href", proj.playLink).show();
     } else {
         $("#detail-play-btn").hide();
     }
 
     // GitHub Button Config
-    if (proj.githubLink) {
+    if (isValidLink(proj.githubLink)) {
         $("#detail-github-btn").attr("href", proj.githubLink).show();
     } else {
         $("#detail-github-btn").hide();
@@ -336,7 +336,7 @@ function showProject(projectId, shouldPushState = true) {
     // Media Youtube Player setup
     const $mediaContainer = $("#detail-media-container");
     $mediaContainer.empty();
-    if (proj.youtubeUrl) {
+    if (isValidLink(proj.youtubeUrl)) {
         $mediaContainer.html(`<iframe src="${proj.youtubeUrl}" allowfullscreen></iframe>`).show();
     } else {
         $mediaContainer.hide();
