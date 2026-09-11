@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정지현 포트폴리오 - 전체 상세 & PDF 인쇄</title>
+    <meta name="description" content="클라이언트 게임 개발자 정지현의 전체 프로젝트 상세 및 PDF 인쇄용 원페이지 포트폴리오입니다.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/print-view.css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/projects_data.js"></script>
+    <script src="js/print_view.js"></script>
+</head>
+
+<body>
+    <!-- Steam 모드로 돌아가는 뒤로가기 버튼 (<) (Web Only - Hidden on Print) -->
+    <a href="index.html" class="btn-back-steam no-print" title="Steam 모드로 돌아가기" aria-label="Steam 모드로 돌아가기">
+        <i class="material-icons">chevron_left</i>
+    </a>
+
+    <!-- Main Portfolio Document Container -->
+    <main class="portfolio-document">
+
+        <!-- 1. Profile Section -->
+        <header class="profile-section" id="profile">
+            <div class="profile-avatar-wrapper">
+                <img src="assets/images/jjh2.jpg" alt="정지현 프로필 사진" class="profile-avatar-img" id="profile-avatar">
+            </div>
+
+            <div class="profile-main-info">
+                <h1 id="profile-name">정지현 (Jeong Ji-hyeon)</h1>
+                <p class="profile-title-role">Client Game Developer & Software Engineer</p>
+                <p class="profile-quote">
+                    "게임의 재미와 사용자 경험을 중요하게 생각하며, 안정적이고 확장 가능한 시스템을 구현하기 위해 항상 더 나은 구조와 방법을 고민합니다."
+                </p>
+
+                <div class="profile-contact-grid">
+                    <div class="contact-item">
+                        <i class="material-icons">cake</i>
+                        <strong>생년월일:</strong> <span id="profile-birth-age">1996.11.25</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons">phone</i>
+                        <strong>연락처:</strong> <span id="profile-phone">010-8990-4721</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons">email</i>
+                        <strong>이메일:</strong> <a href="mailto:wjdwlgus96@gmail.com" id="profile-email">wjdwlgus96@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons">place</i>
+                        <strong>거주지:</strong> <span id="profile-address">서울 성동구 성수동</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons">code</i>
+                        <strong>GitHub:</strong> <a href="https://github.com/Elpoco" target="_blank" id="profile-github">github.com/Elpoco</a>
+                    </div>
+                    <div class="contact-item" id="profile-blog-item">
+                        <i class="material-icons">rss_feed</i>
+                        <strong>Blog:</strong> <a href="https://elpoco.tistory.com" target="_blank" id="profile-blog">elpoco.tistory.com</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. Experience & Education Section -->
+        <section class="section-container" id="experience">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="material-icons">work_history</i>
+                    경력 및 교육 사항 (Work Experience & Education)
+                </h2>
+                <span class="section-count-badge" id="exp-count-badge"></span>
+            </div>
+
+            <div class="experience-timeline" id="experience-timeline-container">
+                <!-- Rendered dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- 3. Technical Skills Section -->
+        <section class="section-container" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="material-icons">inventory_2</i>
+                    보유 기술 스택 (Technical Inventory)
+                </h2>
+            </div>
+
+            <div class="skills-container" id="skills-inventory-container">
+                <!-- Rendered dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- 4. Projects Section (Chronological: Newest to Oldest) -->
+        <section class="section-container" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="material-icons">rocket_launch</i>
+                    전체 프로젝트 상세 (Projects - Chronological)
+                </h2>
+                <span class="section-count-badge" id="projects-total-count"></span>
+            </div>
+
+            <div class="projects-chronological-list" id="projects-chronological-container">
+                <!-- Rendered dynamically by JS (Sorted chronologically newest first) -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="print-footer">
+            <p>© <span id="current-year">2026</span> Jeong Ji-hyeon. All rights reserved. | Game Client Developer Portfolio</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

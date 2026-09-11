@@ -116,6 +116,13 @@ const portfolioData = {
       ],
       achievements: [
         { title: "Steam Demo Release", desc: "스팀 데모 출시 및 피드백 수렴" }
+      ],
+      screenshots: [
+        "assets/images/tinyvillage/screenshot_01.png",
+        "assets/images/tinyvillage/screenshot_02.png",
+        "assets/images/tinyvillage/screenshot_03.png",
+        "assets/images/tinyvillage/screenshot_04.png",
+        "assets/images/tinyvillage/screenshot_05.png",
       ]
     },
     {

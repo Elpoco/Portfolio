@@ -2113,3 +2113,33 @@ ul {
         margin-bottom: 15px;
     }
 }
+
+/* PDF / All-in-One View Link Button */
+.btn-pdf-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none !important;
+    margin-right: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-pdf-view:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.5);
+    color: #ffffff !important;
+}
+
+.btn-pdf-view .material-icons {
+    font-size: 16px;
+}
