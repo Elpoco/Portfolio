@@ -47,7 +47,7 @@ const portfolioData = {
     {
       id: "exp_fireshrike",
       company: "파이어슈라이크게임즈",
-      period: "2022.06 ~ 2026.01",
+      period: "2022.06 ~ 2026.02",
       role: "Unity 클라이언트 및 백엔드 개발",
       description: "모바일 3D 방치형 게임과 하이퍼 캐주얼 게임을 개발했습니다.\n콘텐츠 단위로 클라이언트와 백엔드를 함께 개발했으며, 아트팀과 협업하여 이펙트, 애니메이션 연출을 게임에 적용했습니다.",
       type: "company"
@@ -63,7 +63,7 @@ const portfolioData = {
     {
       id: "exp_banco",
       company: "뱅코",
-      period: "2021.06 ~ 2021.08",
+      period: "2021.06 ~ 2021.10",
       role: "백엔드 개발",
       description: "가상화폐 거래소 관련 웹 백엔드 유지보수 및 기능 개발을 했습니다.",
       type: "company"
@@ -71,7 +71,7 @@ const portfolioData = {
     {
       id: "exp_toksolution",
       company: "톡솔루션",
-      period: "2019.08 ~ 2021.04",
+      period: "2019.08 ~ 2021.05",
       role: "앱 / 웹, 백엔드 개발",
       description: "Java 안드로이드 앱 개발을 시작으로 Swift를 사용해 iOS 앱 개발 후 웹과 백엔드 개발, 하이브리드 앱까지 개발을 했습니다.",
       type: "company"
@@ -79,7 +79,7 @@ const portfolioData = {
     {
       id: "exp_wego",
       company: "위고 컴퍼니",
-      period: "2019.05 ~ 2019.07",
+      period: "2019.05 ~ 2019.08",
       role: "안드로이드 앱 개발",
       description: "가상화폐의 주변 기기 관련 앱 개발을 했습니다.",
       type: "company"
@@ -87,7 +87,7 @@ const portfolioData = {
     {
       id: "exp_mirae",
       company: "미래능력 개발 교육원",
-      period: "2018.09 ~ 2019.06",
+      period: "2018.09 ~ 2019.05",
       role: "안드로이드 앱 프로그래밍 교육 수료",
       description: "자바, 안드로이드 SDK, 모바일 앱 개발 과정 수료 했습니다.",
       type: "education"
