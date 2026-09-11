@@ -10,7 +10,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Styles -->
@@ -39,8 +41,26 @@
             </div>
 
             <div class="profile-main-info">
-                <h1 id="profile-name">정지현 (Jeong Ji-hyeon)</h1>
-                <p class="profile-title-role">Client Game Developer & Software Engineer</p>
+                <div class="profile-header-top">
+                    <div class="profile-title-group">
+                        <h1 id="profile-name">정지현 (Jeong Ji-hyeon)</h1>
+                        <p class="profile-title-role">Client Game Developer & Software Engineer</p>
+                    </div>
+
+                    <!-- Web Portfolio Link Badge (Print / PDF Only) -->
+                    <a href="https://elpoco.github.io/Portfolio/" target="_blank"
+                        class="print-portfolio-badge print-only" id="profile-web-badge" title="웹 포트폴리오 바로가기">
+                        <div class="badge-icon">
+                            <i class="material-icons">language</i>
+                        </div>
+                        <div class="badge-content">
+                            <span class="badge-sub">웹 포트폴리오</span>
+                            <span class="badge-url" id="profile-web-url">https://elpoco.github.io/Portfolio/</span>
+                        </div>
+                        <i class="material-icons badge-arrow">open_in_new</i>
+                    </a>
+                </div>
+
                 <p class="profile-quote">
                     "게임의 재미와 사용자 경험을 중요하게 생각하며, 안정적이고 확장 가능한 시스템을 구현하기 위해 항상 더 나은 구조와 방법을 고민합니다."
                 </p>
@@ -56,20 +76,23 @@
                     </div>
                     <div class="contact-item">
                         <i class="material-icons">email</i>
-                        <strong>이메일:</strong> <a href="mailto:wjdwlgus96@gmail.com" id="profile-email">wjdwlgus96@gmail.com</a>
+                        <strong>이메일:</strong> <a href="mailto:wjdwlgus96@gmail.com"
+                            id="profile-email">wjdwlgus96@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="material-icons">place</i>
                         <strong>거주지:</strong> <span id="profile-address">서울 성동구 성수동</span>
                     </div>
-                    <div class="contact-item">
+                    <!-- <div class="contact-item">
                         <i class="material-icons">code</i>
-                        <strong>GitHub:</strong> <a href="https://github.com/Elpoco" target="_blank" id="profile-github">github.com/Elpoco</a>
-                    </div>
-                    <div class="contact-item" id="profile-blog-item">
+                        <strong>GitHub:</strong> <a href="https://github.com/Elpoco" target="_blank"
+                            id="profile-github">github.com/Elpoco</a>
+                    </div> -->
+                    <!-- <div class="contact-item" id="profile-blog-item">
                         <i class="material-icons">rss_feed</i>
-                        <strong>Blog:</strong> <a href="https://elpoco.tistory.com" target="_blank" id="profile-blog">elpoco.tistory.com</a>
-                    </div>
+                        <strong>Blog:</strong> <a href="https://elpoco.tistory.com" target="_blank"
+                            id="profile-blog">elpoco.tistory.com</a>
+                    </div> -->
                 </div>
             </div>
         </header>
@@ -120,7 +143,8 @@
 
         <!-- Footer -->
         <footer class="print-footer">
-            <p>© <span id="current-year">2026</span> Jeong Ji-hyeon. All rights reserved. | Game Client Developer Portfolio</p>
+            <p>© <span id="current-year">2026</span> Jeong Ji-hyeon. All rights reserved. | Game Client Developer
+                Portfolio</p>
         </footer>
 
     </main>

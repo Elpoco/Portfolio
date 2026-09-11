@@ -143,6 +143,18 @@ a:hover {
     object-fit: cover;
 }
 
+.profile-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.profile-title-group {
+    flex: 1;
+}
+
 .profile-main-info h1 {
     font-size: 2.1rem;
     color: var(--text-primary);
@@ -155,6 +167,76 @@ a:hover {
     font-weight: 600;
     color: var(--text-accent);
     margin-bottom: 12px;
+}
+
+/* Print Portfolio Link Badge */
+.print-portfolio-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: var(--radius-md);
+    color: var(--primary-blue);
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.print-portfolio-badge:hover {
+    background: #e0f2fe;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue-hover);
+}
+
+.print-portfolio-badge .badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: var(--primary-blue);
+    color: #ffffff;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.print-portfolio-badge .badge-icon .material-icons {
+    font-size: 20px;
+}
+
+.print-portfolio-badge .badge-content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.print-portfolio-badge .badge-sub {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    letter-spacing: -0.01em;
+}
+
+.print-portfolio-badge .badge-url {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0c4a6e;
+    font-family: 'Outfit', -apple-system, sans-serif;
+    text-decoration: underline;
+}
+
+.print-portfolio-badge .badge-arrow {
+    font-size: 18px;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+}
+
+/* Hidden on Screen by Default (Print/PDF Only) */
+.print-only {
+    display: none !important;
 }
 
 .profile-quote {
@@ -743,6 +825,82 @@ a:hover {
         font-size: 1.6rem !important;
     }
 
+    .profile-header-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .profile-title-group {
+        flex: 1 !important;
+    }
+
+    /* Show Print-only items during printing */
+    .print-only {
+        display: flex !important;
+    }
+
+    .print-portfolio-badge {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 6px 12px !important;
+        background-color: #f0f9ff !important;
+        border: 1.5px solid #0284c7 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        color: #0369a1 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        flex-shrink: 0 !important;
+    }
+
+    .print-portfolio-badge .badge-icon {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+        border-radius: 5px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .print-portfolio-badge .badge-icon .material-icons {
+        font-size: 17px !important;
+    }
+
+    .print-portfolio-badge .badge-content {
+        display: flex !important;
+        flex-direction: column !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+
+    .print-portfolio-badge .badge-sub {
+        font-size: 7pt !important;
+        font-weight: 700 !important;
+        color: #0284c7 !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    .print-portfolio-badge .badge-url {
+        font-size: 8pt !important;
+        font-weight: 600 !important;
+        color: #0c4a6e !important;
+        font-family: 'Outfit', -apple-system, sans-serif !important;
+        text-decoration: underline !important;
+    }
+
+    .print-portfolio-badge .badge-arrow {
+        font-size: 15px !important;
+        color: #0284c7 !important;
+        flex-shrink: 0 !important;
+    }
+
     .profile-contact-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -825,6 +983,12 @@ a:hover {
 
     .profile-avatar-wrapper {
         margin: 0 auto;
+    }
+
+    .profile-header-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
 
     .profile-quote {

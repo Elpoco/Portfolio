@@ -44,6 +44,11 @@ function renderProfile(age) {
     } else {
         $("#profile-blog-item").hide();
     }
+
+    if (p.portfolioUrl) {
+        $("#profile-web-badge").attr("href", p.portfolioUrl);
+        $("#profile-web-url").text(p.portfolioUrl);
+    }
 }
 
 /**

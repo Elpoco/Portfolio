@@ -1774,10 +1774,13 @@ ul {
 }
 
 .info-icon-small {
-    font-size: 16px !important;
+    font-size: 18px !important;
     vertical-align: middle;
-    color: var(--text-muted);
-    margin-right: 6px;
+    color: var(--accent-blue);
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ==========================================================================
