@@ -727,16 +727,27 @@ a:hover {
         margin-bottom: 16px !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+        grid-template-columns: auto 1fr !important;
+        text-align: left !important;
+        gap: 20px !important;
     }
 
     .profile-avatar-wrapper {
         width: 90px !important;
         height: 90px !important;
         box-shadow: none !important;
+        margin: 0 !important;
     }
 
     .profile-main-info h1 {
         font-size: 1.6rem !important;
+    }
+
+    .profile-contact-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px 14px !important;
+        font-size: 8.5pt !important;
     }
 
     .experience-card,
@@ -788,8 +799,8 @@ a:hover {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive (Web Screen Only - do not apply to print) */
+@media screen and (max-width: 768px) {
     .btn-back-steam {
         top: 14px;
         left: 14px;
