@@ -106,7 +106,7 @@ const portfolioData = {
       banner: "assets/images/tinyvillage/library.png",
       hero: "assets/images/tinyvillage/hero.png",
       playLink: "https://store.steampowered.com/app/4743040/Tiny_Village/",
-      youtubeUrl: "https://www.youtube.com/embed/ybSm8BSrOAw",
+      youtubeUrl: "https://www.youtube.com/embed/zJQGXy6nouo?si=C1mJawCNNr6aGFmd",
       platforms: ["Steam"],
       description: "2D 타일맵 기반의 인크리멘탈 게임 입니다. 자원을 수집하고 마을을 발전 시켜 나가는 게임 입니다.",
       details: [
