@@ -12,16 +12,16 @@
     --bg-badge: #f1f5f9;
     --border-color: #e2e8f0;
     --border-subtle: #edf2f7;
-    
+
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
     --text-accent: #0284c7;
-    
+
     --primary-blue: #0284c7;
     --primary-blue-hover: #0369a1;
     --accent-gold: #b45309;
-    
+
     --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -48,7 +48,11 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, .font-heading {
+h1,
+h2,
+h3,
+h4,
+.font-heading {
     font-family: 'Outfit', 'Noto Sans KR', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -764,6 +768,7 @@ a:hover {
 
 .proj-video-link-hint {
     margin-top: 8px;
+    display: none;
 }
 
 .proj-video-url-link {
@@ -804,7 +809,9 @@ a:hover {
 }
 
 @media print {
-    html, body {
+
+    html,
+    body {
         background-color: #ffffff !important;
         color: #0f172a !important;
         font-size: 10pt !important;
@@ -1047,4 +1054,3 @@ a:hover {
         max-width: 100%;
     }
 }
-
