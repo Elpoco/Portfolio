@@ -11,7 +11,7 @@ const portfolioData = {
     phone: "010-8990-4721",
     github: "https://github.com/Elpoco",
     blog: "https://elpoco.tistory.com",
-    portfolioUrl: "https://elpoco.github.io/Portfolio/",
+    portfolioUrl: "https://elpoco.github.io/Portfolio/print.html",
     address: "서울 성동구 성수동",
     birth: "1996.11.25"
   },
