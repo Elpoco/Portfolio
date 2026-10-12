@@ -52,7 +52,7 @@ function renderProfile(age) {
 }
 
 /**
- * 2. Render Experiences & Education
+ * 2. Render Experiences & Education (Vertical Timeline with Dots & Inline Date Badges)
  */
 function renderExperiences() {
     const $container = $("#experience-timeline-container");
@@ -61,24 +61,100 @@ function renderExperiences() {
     if (!portfolioData.experiences || portfolioData.experiences.length === 0) return;
 
     portfolioData.experiences.forEach(exp => {
-        const typeLabel = exp.type === 'company' ? '경력 (Company)' : '교육 (Education)';
+        const isEducation = exp.type === 'education';
+        const typeLabel = isEducation ? '교육' : '경력';
+        const typeClass = isEducation ? 'education' : 'company';
+        const typeIcon = isEducation ? 'school' : 'business_center';
+
+        // Format period and duration
+        const formattedPeriod = formatExpPeriod(exp.period);
+        const duration = calculateDuration(exp.period);
+
         const cardHtml = `
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div class="exp-company-name">
-                        <span>${exp.company}</span>
-                        <span class="exp-type-tag" style="display:none;">${typeLabel}</span>
+            <div class="experience-item">
+                <div class="exp-timeline-dot"></div>
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-group">
+                            <span class="exp-company-name">${exp.company}</span>
+                            <span class="exp-type-tag ${typeClass}">
+                                <i class="material-icons">${typeIcon}</i>
+                                ${typeLabel}
+                            </span>
+                        </div>
+                        <div class="exp-period-badge">
+                            <i class="material-icons">event</i>
+                            <span class="exp-period-text">${formattedPeriod}</span>
+                            ${duration ? `<span class="exp-period-duration">${duration}</span>` : ''}
+                        </div>
                     </div>
-                    <span class="exp-period">${exp.period}</span>
+                    <div class="exp-role">
+                        <i class="material-icons">badge</i>
+                        <span>${exp.role}</span>
+                    </div>
+                    <p class="exp-desc">${exp.description}</p>
                 </div>
-                <div class="exp-role">${exp.role}</div>
-                <p class="exp-desc">${exp.description}</p>
             </div>
         `;
         $container.append(cardHtml);
     });
 
     $("#exp-count-badge").text(`${portfolioData.experiences.length} 건`);
+}
+
+/**
+ * Helper: Format period string (e.g. "2026.02 ~ " -> "2026.02 ~ 현재")
+ */
+function formatExpPeriod(period) {
+    if (!period) return "";
+    let trimmed = period.trim();
+    if (trimmed.endsWith("~")) {
+        return `${trimmed} 현재`;
+    }
+    return trimmed;
+}
+
+/**
+ * Helper: Calculate tenure/duration (e.g. "3년 9개월", "8개월")
+ */
+function calculateDuration(period) {
+    if (!period) return "";
+    const hasTilde = period.includes("~");
+    const parts = period.split("~").map(p => p.trim());
+    if (!parts[0]) return "";
+
+    const startMatch = parts[0].match(/(\d{4})\.(\d{2})/);
+    if (!startMatch) return "";
+    const startYear = parseInt(startMatch[1], 10);
+    const startMonth = parseInt(startMatch[2], 10);
+
+    let endYear, endMonth;
+    if (!hasTilde) {
+        endYear = startYear;
+        endMonth = startMonth;
+    } else if (!parts[1] || parts[1] === "" || parts[1] === "현재") {
+        const now = new Date();
+        endYear = now.getFullYear();
+        endMonth = now.getMonth() + 1;
+    } else {
+        const endMatch = parts[1].match(/(\d{4})\.(\d{2})/);
+        if (!endMatch) return "";
+        endYear = parseInt(endMatch[1], 10);
+        endMonth = parseInt(endMatch[2], 10);
+    }
+
+    const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+    if (totalMonths <= 0) return "";
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    if (years > 0 && months > 0) {
+        return `${years}년 ${months}개월`;
+    } else if (years > 0) {
+        return `${years}년`;
+    } else {
+        return `${months}개월`;
+    }
 }
 
 /**
@@ -299,6 +375,9 @@ function renderChronologicalProjects() {
             }
         }
 
+        // Project Duration
+        const projDuration = calculateDuration(proj.period);
+
         const projectCardHtml = `
             <article class="project-item-card" id="proj-card-${proj.id}">
                 <header class="proj-card-header">
@@ -308,15 +387,18 @@ function renderChronologicalProjects() {
                         </h3>
                         <div class="proj-tags-line">
                             ${companyName ? `<span class="proj-company-context"><i class="material-icons" style="font-size:14px;vertical-align:middle;">apartment</i> ${companyName}</span>` : ''}
-                            <span class="badge-proj-type">${proj.type || 'Project'}</span>
-                            <span class="badge-proj-role">${proj.role || '개발'}</span>
+                            <span class="badge-proj-period">
+                                <i class="material-icons">event</i>
+                                <span class="proj-period-text">${proj.period}</span>
+                                ${projDuration ? `<span class="proj-period-duration">${projDuration}</span>` : ''}
+                            </span>
                         </div>
                     </div>
+                    ${linksHtml ? `
                     <div class="proj-meta-right">
-                        <div class="proj-period-badge">${proj.period}</div>
-                        
-                        ${linksHtml ? `<div class="proj-links-row">${linksHtml}</div>` : ''}
+                        <div class="proj-links-row">${linksHtml}</div>
                     </div>
+                    ` : ''}
                 </header>
 
                 <div class="proj-tech-stack">${techPillsHtml}</div>

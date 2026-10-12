@@ -317,12 +317,57 @@ a:hover {
 }
 
 /* ==========================================================================
-   WORK EXPERIENCE & EDUCATION
+   WORK EXPERIENCE & EDUCATION (Vertical Timeline Style)
    ========================================================================== */
 .experience-timeline {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+    padding-left: 32px;
+}
+
+/* Continuous vertical timeline track line */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.experience-item {
+    position: relative;
+}
+
+/* Timeline bullet / dot */
+.exp-timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3.5px solid var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    z-index: 2;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Top item (Current / latest) dot highlight */
+.experience-item:first-child .exp-timeline-dot {
+    background: var(--primary-blue);
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.35);
+}
+
+.experience-item:hover .exp-timeline-dot {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 5px rgba(2, 132, 199, 0.25);
 }
 
 .experience-card {
@@ -331,38 +376,106 @@ a:hover {
     border-radius: var(--radius-md);
     padding: 18px 22px;
     box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+    border-color: #cbd5e1;
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .exp-header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 8px;
+}
+
+.exp-company-group {
+    display: flex;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    flex-wrap: wrap;
 }
 
 .exp-company-name {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    line-height: 1.3;
 }
 
-.exp-period {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem;
+.exp-type-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-accent);
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: -0.01em;
+}
+
+.exp-type-tag i {
+    font-size: 13px;
+}
+
+.exp-type-tag.company {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+
+.exp-type-tag.education {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+.exp-period-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0284c7;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.exp-period-badge i {
+    font-size: 15px;
+    color: #0284c7;
+}
+
+.exp-period-duration {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #0369a1;
+    background: #e0f2fe;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 2px;
 }
 
 .exp-role {
     font-weight: 600;
     font-size: 0.92rem;
-    color: #1e293b;
-    margin-bottom: 6px;
+    color: #334155;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exp-role i {
+    font-size: 16px;
+    color: #64748b;
 }
 
 .exp-desc {
@@ -444,7 +557,7 @@ a:hover {
 .proj-card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 14px;
@@ -456,6 +569,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
 }
 
 .proj-main-title {
@@ -501,22 +615,41 @@ a:hover {
     border-radius: 4px;
 }
 
-.proj-meta-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
+.badge-proj-period {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f0f9ff;
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: -0.01em;
 }
 
-.proj-period-badge {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 0.92rem;
-    color: var(--text-accent);
-    background: #f8fafc;
-    border: 1px solid var(--border-color);
-    padding: 3px 10px;
-    border-radius: 6px;
+.badge-proj-period i {
+    font-size: 13px;
+    color: #0284c7;
+}
+
+.proj-period-duration {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #0369a1;
+    background: #e0f2fe;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
+}
+
+.proj-meta-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
 }
 
 .proj-platform-icons {
@@ -536,7 +669,6 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 4px;
     flex-wrap: wrap;
 }
 
@@ -937,12 +1069,55 @@ a:hover {
         font-size: 8.5pt !important;
     }
 
+    .experience-item,
     .experience-card,
     .skills-container,
     .project-item-card {
         box-shadow: none !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+    }
+
+    .experience-timeline {
+        padding-left: 26px !important;
+    }
+
+    .experience-timeline::before {
+        left: 7px !important;
+        background: #cbd5e1 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .exp-timeline-dot {
+        left: -26px !important;
+        width: 15px !important;
+        height: 15px !important;
+        top: 18px !important;
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .experience-card {
+        transform: none !important;
+        padding: 14px 18px !important;
+    }
+
+    .exp-period-badge,
+    .badge-proj-period {
+        background: #f0f9ff !important;
+        border: 1px solid #bae6fd !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .exp-period-duration,
+    .proj-period-duration {
+        background: #e0f2fe !important;
+        color: #0369a1 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .project-item-card {
@@ -1052,5 +1227,23 @@ a:hover {
 
     .proj-video-container {
         max-width: 100%;
+    }
+
+    .experience-timeline {
+        padding-left: 26px;
+    }
+
+    .experience-timeline::before {
+        left: 7px;
+    }
+
+    .exp-timeline-dot {
+        left: -26px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .exp-header {
+        gap: 6px 10px;
     }
 }
