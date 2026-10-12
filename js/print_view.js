@@ -279,57 +279,14 @@ function renderChronologicalProjects() {
             detailsHtml = `
                 <div class="proj-detail-block">
                     <div class="block-title">
-                        <i class="material-icons">task_alt</i> 주요 개발 내용 (Key Developments)
+                        <i class="material-icons">task_alt</i> 주요 개발 내용
                     </div>
                     <ul class="details-bullet-list">${items}</ul>
                 </div>
             `;
         }
 
-        // Technical Challenges & Solutions
-        let technicalHtml = '';
-        if (proj.technical && proj.technical.length > 0) {
-            const techBoxes = proj.technical.map(item => `
-                <div class="technical-box-item">
-                    <div class="tech-box-title">
-                        <i class="material-icons">construction</i> ${item.title}
-                    </div>
-                    <div class="tech-box-desc">${item.desc}</div>
-                </div>
-            `).join('');
 
-            technicalHtml = `
-                <div class="proj-detail-block">
-                    <div class="block-title">
-                        <i class="material-icons">psychology</i> 기술적 문제 해결 및 아키텍처 (Technical Challenges)
-                    </div>
-                    <div class="technical-box-list">${techBoxes}</div>
-                </div>
-            `;
-        }
-
-        // Achievements
-        let achievementsHtml = '';
-        if (proj.achievements && proj.achievements.length > 0) {
-            const achItems = proj.achievements.map(ach => `
-                <div class="achievement-compact-item">
-                    <i class="material-icons">emoji_events</i>
-                    <span class="ach-compact-title">${ach.title}</span>
-                    <span class="ach-compact-desc">• ${ach.desc}</span>
-                </div>
-            `).join('');
-
-            achievementsHtml = `
-                <div class="proj-detail-block">
-                    <div class="block-title">
-                        <i class="material-icons">stars</i> 프로젝트 성과 (Achievements)
-                    </div>
-                    <div class="achievements-row">${achItems}</div>
-                </div>
-            `;
-        }
-
-        achievementsHtml = '';
 
         // Screenshots (Display up to 4 key screenshots, auto-adapting to both PC and mobile!)
         let screenshotsHtml = '';
@@ -362,17 +319,29 @@ function renderChronologicalProjects() {
                         <div class="block-title">
                             <i class="material-icons" style="color: #dc2626;">smart_display</i> 영상
                         </div>
-                        <div class="proj-video-container">
+                        <!-- Web Screen Only: Interactive Embedded Video Player -->
+                        <div class="proj-video-container no-print">
                             <iframe src="${ytInfo.embedUrl}" title="${proj.name} 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                         </div>
-                        <div class="proj-video-link-hint">
-                            <a href="${ytInfo.watchUrl}" target="_blank" class="proj-video-url-link">
-                                <i class="material-icons">open_in_new</i> YouTube에서 바로보기: ${ytInfo.watchUrl}
-                            </a>
+                        <!-- Print / PDF Only: Simple Clean Text Link -->
+                        <div class="print-video-link-wrap print-only">
+                            <i class="material-icons" style="font-size: 15px; vertical-align: middle; color: #64748b;">link</i>
+                            <span class="print-video-label">시연 영상:</span>
+                            <a href="${ytInfo.watchUrl}" target="_blank" class="print-video-simple-link">${ytInfo.watchUrl}</a>
                         </div>
                     </div>
                 `;
             }
+        }
+
+        // Hero Banner Image (Displayed at the very top of each project before title)
+        let heroImageHtml = '';
+        if (proj.hero && !proj.hero.includes('/empty/')) {
+            heroImageHtml = `
+                <div class="proj-hero-banner-wrap">
+                    <img src="${proj.hero}" alt="${proj.name} Hero 이미지" class="proj-hero-banner-img" onerror="this.parentElement.style.display='none'">
+                </div>
+            `;
         }
 
         // Project Duration
@@ -380,6 +349,7 @@ function renderChronologicalProjects() {
 
         const projectCardHtml = `
             <article class="project-item-card" id="proj-card-${proj.id}">
+                ${heroImageHtml}
                 <header class="proj-card-header">
                     <div class="proj-title-group">
                         <h3 class="proj-main-title">
@@ -405,11 +375,7 @@ function renderChronologicalProjects() {
 
                 <div class="proj-description">${proj.description}</div>
 
-                <div class="proj-content-blocks">
-                    ${detailsHtml}
-                    ${technicalHtml}
-                    ${achievementsHtml}
-                </div>
+                ${detailsHtml ? `<div class="proj-content-blocks">${detailsHtml}</div>` : ''}
 
                 ${screenshotsHtml}
                 ${videoHtml}

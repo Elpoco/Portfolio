@@ -232,10 +232,31 @@ a:hover {
     text-decoration: underline;
 }
 
-.print-portfolio-badge .badge-arrow {
-    font-size: 18px;
+/* Print Video Simple Link (Print / PDF Only) */
+.print-video-link-wrap {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+.print-video-label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.print-video-simple-link {
     color: var(--primary-blue);
-    flex-shrink: 0;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.print-video-simple-link:hover {
+    color: var(--primary-blue-hover);
 }
 
 /* Hidden on Screen by Default (Print/PDF Only) */
@@ -551,6 +572,31 @@ a:hover {
     box-shadow: var(--card-shadow);
     page-break-inside: avoid;
     break-inside: avoid;
+}
+
+/* Project Hero Banner Image (Displayed before project title) */
+.proj-hero-banner-wrap {
+    width: 100%;
+    aspect-ratio: 1920 / 620;
+    max-height: 220px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 18px;
+    background-color: #f1f5f9;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.proj-hero-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.proj-hero-banner-wrap:hover .proj-hero-banner-img {
+    transform: scale(1.02);
 }
 
 /* Project Header */
@@ -1125,6 +1171,22 @@ a:hover {
         margin-bottom: 10px !important;
     }
 
+    .proj-hero-banner-wrap {
+        max-height: 140px !important;
+        margin-bottom: 12px !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .proj-hero-banner-img {
+        max-height: 140px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
     .screenshots-grid {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -1150,14 +1212,30 @@ a:hover {
     }
 
     .proj-video-container {
-        max-width: 320px !important;
-        aspect-ratio: 16 / 9 !important;
-        box-shadow: none !important;
+        display: none !important;
     }
 
-    .proj-video-url-link {
-        color: #0369a1 !important;
-        font-size: 0.78rem !important;
+    .print-video-link-wrap {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-top: 4px !important;
+        font-size: 8.5pt !important;
+        color: #334155 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .print-video-label {
+        font-weight: 600 !important;
+        color: #0f172a !important;
+    }
+
+    .print-video-simple-link {
+        color: #0284c7 !important;
+        font-family: 'Outfit', -apple-system, sans-serif !important;
+        font-weight: 500 !important;
+        text-decoration: underline !important;
     }
 }
 
@@ -1205,6 +1283,11 @@ a:hover {
     .profile-contact-grid {
         grid-template-columns: 1fr;
         text-align: left;
+    }
+
+    .proj-hero-banner-wrap {
+        max-height: 160px;
+        margin-bottom: 14px;
     }
 
     .proj-card-header {
