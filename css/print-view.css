@@ -265,13 +265,16 @@ a:hover {
 }
 
 .profile-quote {
-    font-size: 0.92rem;
-    color: #475569;
-    line-height: 1.6;
+    font-size: 0.94rem;
+    color: #1e293b;
+    line-height: 1.65;
     margin-bottom: 16px;
-    padding-left: 12px;
-    border-left: 3px solid var(--primary-blue);
-    font-style: italic;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-left: 3.5px solid var(--primary-blue);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: normal;
+    word-break: keep-all;
 }
 
 .profile-contact-grid {
@@ -1106,6 +1109,17 @@ a:hover {
         font-size: 15px !important;
         color: #0284c7 !important;
         flex-shrink: 0 !important;
+    }
+
+    .profile-quote {
+        font-size: 8.8pt !important;
+        line-height: 1.45 !important;
+        margin-bottom: 10px !important;
+        padding: 6px 10px !important;
+        background: #f8fafc !important;
+        border-left: 3px solid #0284c7 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .profile-contact-grid {

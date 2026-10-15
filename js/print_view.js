@@ -32,6 +32,9 @@ function renderProfile(age) {
 
     $("#profile-name").text(p.name);
     $("#profile-avatar").attr("src", p.avatar || "assets/images/jjh2.jpg");
+    if (p.summary) {
+        $("#profile-tech-summary").text(p.summary);
+    }
     $("#profile-birth-age").text(`${p.birth} (${age}세)`);
     $("#profile-phone").text(p.phone);
     $("#profile-email").text(p.email).attr("href", `mailto:${p.email}`);
