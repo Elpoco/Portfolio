@@ -21,6 +21,10 @@ $(function () {
 
     // 5. Render Chronological Projects
     renderChronologicalProjects();
+
+    // 6. Render Left Sidebar Quick Navigation (TOC)
+    renderQuickNav();
+    initQuickNavEvents();
 });
 
 /**
@@ -74,7 +78,7 @@ function renderExperiences() {
         const duration = calculateDuration(exp.period);
 
         const cardHtml = `
-            <div class="experience-item">
+            <div class="experience-item" id="exp-item-${exp.id}">
                 <div class="exp-timeline-dot"></div>
                 <div class="experience-card">
                     <div class="exp-header">
@@ -416,5 +420,339 @@ function getYouTubeEmbedAndWatchUrls(url) {
         watchUrl: url
     };
 }
+
+/**
+ * 5. Render Left Sidebar Quick Navigation (TOC)
+ */
+function renderQuickNav() {
+    const $nav = $("#quick-nav-content");
+    $nav.empty();
+
+    // 1. 프로필 링크
+    let navHtml = `
+        <div class="quick-nav-group">
+            <a href="#profile" class="quick-nav-link" data-target="profile">
+                <i class="material-icons">person</i>
+                <span>프로필</span>
+            </a>
+        </div>
+    `;
+
+    // 2. 경력 링크 (단일 메뉴)
+    navHtml += `
+        <div class="quick-nav-group">
+            <a href="#experience" class="quick-nav-link" data-target="experience">
+                <i class="material-icons">work_history</i>
+                <span>경력</span>
+            </a>
+        </div>
+    `;
+
+    // 3. 보유 기술 스택 링크
+    navHtml += `
+        <div class="quick-nav-group">
+            <a href="#skills" class="quick-nav-link" data-target="skills">
+                <i class="material-icons">inventory_2</i>
+                <span>보유 기술 스택</span>
+            </a>
+        </div>
+    `;
+
+    // 4. 프로젝트 링크 & 하위 목록
+    if (portfolioData.projects && portfolioData.projects.length > 0) {
+        // 정렬된 프로젝트 목록 (최신순)
+        const sortedProjects = [...portfolioData.projects].sort((a, b) => {
+            const dateA = parsePeriodStartDate(a.period);
+            const dateB = parsePeriodStartDate(b.period);
+            return dateB - dateA;
+        });
+
+        const projItemsHtml = sortedProjects.map(proj => {
+            const exp = portfolioData.experiences ? portfolioData.experiences.find(e => e.id === proj.companyId) : null;
+            const companyName = exp ? exp.company : (proj.companyId || "");
+            const tooltipTitle = companyName ? `[${companyName}] ${proj.name}` : proj.name;
+            return `
+                <li class="quick-nav-subitem">
+                    <a href="#proj-card-${proj.id}" class="quick-nav-sublink" data-target="proj-card-${proj.id}" title="${tooltipTitle}">
+                        ${proj.name}
+                    </a>
+                </li>
+            `;
+        }).join('');
+
+        navHtml += `
+            <div class="quick-nav-group" data-group="projects">
+                <a href="#projects" class="quick-nav-link parent-link" data-target="projects">
+                    <i class="material-icons">rocket_launch</i>
+                    <span>프로젝트</span>
+                </a>
+                <ul class="quick-nav-sublist">
+                    ${projItemsHtml}
+                </ul>
+            </div>
+        `;
+    }
+
+    $nav.html(navHtml);
+}
+
+/**
+ * 6. Quick Navigation Interactions (Smooth Scroll, ScrollSpy, Drawer Toggle)
+ */
+function closeTocDrawer() {
+    $("#quick-nav-sidebar").removeClass("open");
+    $("#toc-backdrop").removeClass("show");
+}
+
+function initQuickNavEvents() {
+    // 1. Mobile Drawer Toggle Button
+    $("#btn-toc-toggle").on("click", function () {
+        $("#quick-nav-sidebar").toggleClass("open");
+        $("#toc-backdrop").toggleClass("show");
+    });
+
+    // 2. Close Drawer on close button or backdrop click
+    $("#quick-nav-close, #toc-backdrop").on("click", function () {
+        closeTocDrawer();
+    });
+
+    // 3. Escape key closes drawer
+    $(document).on("keydown", function (e) {
+        if (e.key === "Escape" || e.keyCode === 27) {
+            closeTocDrawer();
+        }
+    });
+
+    // 3.5 Isolate mouse wheel scrolling inside TOC (prevent main document from scrolling together)
+    const sidebarEl = document.getElementById("quick-nav-sidebar");
+    if (sidebarEl) {
+        sidebarEl.addEventListener("wheel", function (e) {
+            const content = document.getElementById("quick-nav-content");
+            if (content) {
+                content.scrollTop += e.deltaY;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+        }, { passive: false });
+    }
+
+    // Click lock state to prevent scroll animation from overriding user's deliberate click
+    let isClickLocked = false;
+    let clickLockTimer = null;
+
+    // 4. Smooth Anchor Scrolling with Click Priority Lock
+    $(document).on("click", ".quick-nav-link, .quick-nav-sublink", function (e) {
+        const href = $(this).attr("href");
+        if (!href || !href.startsWith("#")) return;
+
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+            e.preventDefault();
+            closeTocDrawer();
+
+            // Set active class immediately on the clicked item
+            currentActiveId = href;
+            $(".quick-nav-link, .quick-nav-sublink").removeClass("active");
+            $(".quick-nav-group").removeClass("has-active");
+            $(this).addClass("active");
+            const $parentGroup = $(this).closest(".quick-nav-group");
+            if ($parentGroup.length) {
+                $parentGroup.addClass("has-active");
+            }
+
+            // Lock ScrollSpy while smooth scrolling to clicked destination
+            isClickLocked = true;
+            if (clickLockTimer) clearTimeout(clickLockTimer);
+            clickLockTimer = setTimeout(function () {
+                isClickLocked = false;
+            }, 850);
+
+            const offset = 24;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+
+            if (history.pushState) {
+                history.pushState(null, null, href);
+            }
+
+            // Immediately scroll TOC container to center clicked item comfortably
+            scrollTocIntoView(this);
+        }
+    });
+
+    // 5. ScrollSpy (Highlight current active link while scrolling & auto-scroll TOC)
+    let scrollSpyTimer = null;
+    let targets = [];
+    let currentActiveId = null;
+
+    function collectTargets() {
+        targets = [];
+        $(".quick-nav-link, .quick-nav-sublink").each(function () {
+            const href = $(this).attr("href");
+            if (href && href.startsWith("#")) {
+                const el = document.querySelector(href);
+                if (el) {
+                    const isParent = $(this).hasClass("parent-link");
+                    // For parent section links (e.g. #experience, #projects),
+                    // measure only their header so they don't engulf all children cards!
+                    const targetEl = isParent ? (el.querySelector(".section-header") || el) : el;
+                    targets.push({
+                        id: href,
+                        el: targetEl,
+                        isParent: isParent,
+                        $link: $(this)
+                    });
+                }
+            }
+        });
+    }
+
+    /**
+     * Keep the active TOC link comfortably visible/centered within the TOC container
+     */
+    function scrollTocIntoView(linkEl) {
+        if (!linkEl) return;
+        const container = document.getElementById("quick-nav-content");
+        if (!container) return;
+
+        // Calculate link's position relative to the scrollable content of container
+        const containerRect = container.getBoundingClientRect();
+        const linkRect = linkEl.getBoundingClientRect();
+
+        const relativeTop = linkRect.top - containerRect.top + container.scrollTop;
+        const containerHeight = container.clientHeight;
+        const linkHeight = linkRect.height;
+
+        // Center the active item in the TOC viewport
+        const targetScrollTop = relativeTop - (containerHeight / 2) + (linkHeight / 2);
+        const maxScroll = container.scrollHeight - containerHeight;
+        const boundedScrollTop = Math.max(0, Math.min(maxScroll, targetScrollTop));
+
+        container.scrollTo({
+            top: boundedScrollTop,
+            behavior: "smooth"
+        });
+    }
+
+    /**
+     * Top-Proximity & Coverage based Viewport ScrollSpy
+     * Guarantees fair matching for compact items (e.g. 위고컴퍼니, 미래능력개발원) and respects deliberate user clicks.
+     */
+    function updateScrollSpy() {
+        if (isClickLocked) return;
+
+        if (targets.length === 0) {
+            collectTargets();
+        }
+        if (targets.length === 0) return;
+
+        const vHeight = window.innerHeight;
+
+        let bestItem = null;
+        let highestScore = -Infinity;
+
+        // Check each candidate target
+        for (let i = 0; i < targets.length; i++) {
+            const item = targets[i];
+            const rect = item.el.getBoundingClientRect();
+
+            // 1. Strict Visibility: Element MUST have visible area inside viewport
+            // If top is below viewport or bottom is above viewport, it is completely offscreen!
+            if (rect.bottom <= 20 || rect.top >= vHeight - 20) {
+                continue;
+            }
+
+            // Visible intersection height inside viewport
+            const visibleTop = Math.max(0, rect.top);
+            const visibleBottom = Math.min(vHeight, rect.bottom);
+            const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+            if (visibleHeight < 20) {
+                continue;
+            }
+
+            // 2. Score Calculation:
+            // High priority given to items whose header/top is currently in the primary reading zone (top: 20px ~ 160px)
+            let score = 0;
+
+            if (rect.top >= -20 && rect.top <= 160) {
+                // Highest priority: item sits right at the reading anchor at top of viewport
+                score += 6000 - Math.abs(rect.top - 24) * 12;
+            } else if (rect.top < -20 && rect.bottom > 160) {
+                // Long item started above viewport and continues downward through reading anchor
+                score += 3500;
+            } else if (rect.top > 160 && rect.top <= vHeight * 0.5) {
+                // Item is ascending in the upper half of screen
+                score += 1800 - (rect.top - 160) * 2;
+            }
+
+            // (B) Coverage ratio: compact cards fully in view get fair full coverage bonus
+            const itemHeight = Math.max(1, rect.height);
+            const coverageRatio = Math.min(1, visibleHeight / itemHeight);
+            score += coverageRatio * 1000;
+
+            // (C) Sub-item priority over broad section headers
+            if (!item.isParent) {
+                score += 250;
+            }
+
+            if (score > highestScore) {
+                highestScore = score;
+                bestItem = item;
+            }
+        }
+
+        // Special case: At the very bottom of the page, if no element scored, keep last item
+        if (!bestItem && (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 60)) {
+            bestItem = targets[targets.length - 1];
+        }
+
+        if (bestItem) {
+            if (currentActiveId !== bestItem.id) {
+                currentActiveId = bestItem.id;
+
+                $(".quick-nav-link, .quick-nav-sublink").removeClass("active");
+                $(".quick-nav-group").removeClass("has-active");
+
+                bestItem.$link.addClass("active");
+                const $parentGroup = bestItem.$link.closest(".quick-nav-group");
+                if ($parentGroup.length) {
+                    $parentGroup.addClass("has-active");
+                }
+
+                // Automatically keep the active TOC item in view
+                scrollTocIntoView(bestItem.$link[0]);
+            }
+        } else {
+            // When nothing from our target list is in viewport, clear active states
+            if (currentActiveId !== null) {
+                currentActiveId = null;
+                $(".quick-nav-link, .quick-nav-sublink").removeClass("active");
+                $(".quick-nav-group").removeClass("has-active");
+            }
+        }
+    }
+
+    $(window).on("scroll resize", function () {
+        if (!scrollSpyTimer) {
+            scrollSpyTimer = requestAnimationFrame(function () {
+                updateScrollSpy();
+                scrollSpyTimer = null;
+            });
+        }
+    });
+
+    // Initial check after content is rendered
+    setTimeout(function () {
+        collectTargets();
+        updateScrollSpy();
+    }, 250);
+}
+
 
 

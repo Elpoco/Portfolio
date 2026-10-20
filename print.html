@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/print-view.css?v=10">
+    <link rel="stylesheet" href="css/print-view.css?v=13">
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/projects_data.js?v=3"></script>
-    <script src="js/print_view.js?v=10"></script>
+    <script src="js/print_view.js?v=17"></script>
 </head>
 
 <body>
@@ -30,6 +30,28 @@
     <a href="index.html" class="btn-back-steam no-print" title="돌아가기" aria-label="돌아가기">
         <i class="material-icons">chevron_left</i>
     </a>
+
+    <!-- 목차 토글 버튼 (화면 너비가 좁을 때 활성화, Web Only - Hidden on Print) -->
+    <button class="btn-toc-toggle no-print" id="btn-toc-toggle" title="목차 열기" aria-label="목차 열기">
+        <i class="material-icons">format_list_bulleted</i>
+    </button>
+    <div class="toc-backdrop no-print" id="toc-backdrop"></div>
+
+    <!-- 좌측 빠른 이동 목차 사이드바 (Web Only - Hidden on Print) -->
+    <aside class="quick-nav-sidebar no-print" id="quick-nav-sidebar" aria-label="포트폴리오 목차">
+        <!-- <div class="quick-nav-header">
+            <div class="quick-nav-title">
+                <i class="material-icons">toc</i>
+                <span>목차</span>
+            </div>
+            <button class="quick-nav-close" id="quick-nav-close" title="목차 닫기" aria-label="목차 닫기">
+                <i class="material-icons">close</i>
+            </button>
+        </div> -->
+        <nav class="quick-nav-content" id="quick-nav-content">
+            <!-- JS(print_view.js)에 의해 동적으로 경력/프로젝트 계층 목록이 렌더링됩니다 -->
+        </nav>
+    </aside>
 
     <!-- Main Portfolio Document Container -->
     <main class="portfolio-document">
@@ -47,7 +69,8 @@
                         <!-- <p class="profile-title-role">Client Game Developer & Software Engineer</p> -->
                     </div>
 
-                    <!-- Web Portfolio Link Badge (Print / PDF Only) -->
+                    <!-- Web Portfolio Link Badge (Print / PDF Only) - 임시 비활성화 요청으로 숨김 처리 -->
+                    <!--
                     <a href="https://elpoco.github.io/Portfolio/print.html" target="_blank"
                         class="print-portfolio-badge print-only" id="profile-web-badge" title="웹 포트폴리오 바로가기">
                         <div class="badge-icon">
@@ -60,6 +83,7 @@
                         </div>
                         <i class="material-icons badge-arrow">open_in_new</i>
                     </a>
+                    -->
                 </div>
 
                 <p class="profile-quote" id="profile-tech-summary">

@@ -106,6 +106,279 @@ a:hover {
 }
 
 /* ==========================================================================
+   FLOATING TOC & SIDEBAR NAVIGATION (Web Only)
+   ========================================================================== */
+
+/* 1. Mobile & Medium Screen Toggle Button */
+.btn-toc-toggle {
+    position: fixed;
+    top: 78px;
+    left: 24px;
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: none; /* Wide screen default: hidden */
+    align-items: center;
+    justify-content: center;
+    color: #1e293b;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-toc-toggle:hover {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border-color: var(--primary-blue);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+}
+
+.btn-toc-toggle .material-icons {
+    font-size: 22px;
+}
+
+/* 2. Backdrop for drawer mode */
+.toc-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 1010;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.toc-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 3. Quick Navigation Sidebar */
+.quick-nav-sidebar {
+    position: fixed;
+    top: 80px;
+    left: 16px;
+    width: 216px;
+    height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    z-index: 990;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+}
+
+/* Wide screen (>=1480px): Center aligned with document */
+@media screen and (min-width: 1480px) {
+    .quick-nav-sidebar {
+        left: calc(50% - 500px - 236px);
+        width: 220px;
+    }
+}
+
+/* Medium Desktop (1200px ~ 1479px): Sidebar on left (16px), document pushed right */
+@media screen and (min-width: 1200px) and (max-width: 1479px) {
+    .portfolio-document {
+        margin-left: 248px !important;
+        margin-right: auto !important;
+        max-width: calc(100% - 268px) !important;
+    }
+}
+
+.quick-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-shrink: 0;
+}
+
+.quick-nav-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+.quick-nav-title .material-icons {
+    font-size: 19px;
+    color: var(--primary-blue);
+}
+
+.quick-nav-close {
+    display: none; /* Shown only in drawer mode */
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s, background 0.15s;
+}
+
+.quick-nav-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+.quick-nav-close .material-icons {
+    font-size: 20px;
+}
+
+.quick-nav-content {
+    flex: 1 1 0%;
+    min-height: 0;
+    padding: 12px 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Custom Scrollbar for TOC */
+.quick-nav-content::-webkit-scrollbar {
+    width: 4px;
+}
+.quick-nav-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.quick-nav-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+.quick-nav-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Group & Links */
+.quick-nav-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none !important;
+    transition: all 0.15s ease;
+}
+
+.quick-nav-link .material-icons {
+    font-size: 17px;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+}
+
+.quick-nav-link:hover {
+    background: #f1f5f9;
+    color: var(--primary-blue);
+}
+
+.quick-nav-link:hover .material-icons {
+    color: var(--primary-blue);
+}
+
+.quick-nav-link.active {
+    background: #e0f2fe;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.quick-nav-link.active .material-icons {
+    color: var(--primary-blue);
+}
+
+/* Sublist */
+.quick-nav-sublist {
+    list-style: none;
+    margin: 3px 0 6px 14px;
+    padding-left: 10px;
+    border-left: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.quick-nav-subitem {
+    position: relative;
+}
+
+.quick-nav-sublink {
+    display: block;
+    padding: 4px 8px;
+    font-size: 0.77rem;
+    color: var(--text-muted);
+    text-decoration: none !important;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.15s ease;
+}
+
+.quick-nav-sublink:hover {
+    color: var(--primary-blue);
+    background: #f8fafc;
+}
+
+.quick-nav-sublink.active {
+    color: var(--primary-blue);
+    font-weight: 700;
+    background: #f0f9ff;
+    border-left: 2px solid var(--primary-blue);
+    margin-left: -12px;
+    padding-left: 10px;
+}
+
+/* Parent highlight when subitem is active */
+.quick-nav-group.has-active > .quick-nav-link {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.quick-nav-group.has-active > .quick-nav-link .material-icons {
+    color: var(--primary-blue);
+}
+
+/* Smooth anchor offsets */
+.section-container,
+.experience-item,
+.project-item-card,
+.profile-section {
+    scroll-margin-top: 24px;
+}
+
+/* ==========================================================================
    DOCUMENT MAIN WRAPPER
    ========================================================================== */
 .portfolio-document {
@@ -1003,7 +1276,11 @@ a:hover {
 
     .btn-back-steam,
     .no-print,
-    .proj-links-row {
+    .proj-links-row,
+    .quick-nav-sidebar,
+    .btn-toc-toggle,
+    .toc-backdrop,
+    .print-portfolio-badge {
         display: none !important;
     }
 
@@ -1052,19 +1329,9 @@ a:hover {
         display: flex !important;
     }
 
+    /* 웹 포트폴리오 연결 배지: 임시 비활성화 요청으로 인쇄 시 출력되지 않도록 처리 */
     .print-portfolio-badge {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        padding: 6px 12px !important;
-        background-color: #f0f9ff !important;
-        border: 1.5px solid #0284c7 !important;
-        border-radius: 8px !important;
-        text-decoration: none !important;
-        color: #0369a1 !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        flex-shrink: 0 !important;
+        display: none !important;
     }
 
     .print-portfolio-badge .badge-icon {
@@ -1253,6 +1520,32 @@ a:hover {
     }
 }
 
+/* Drawer mode on screens narrower than 1200px to avoid overlapping content */
+@media screen and (max-width: 1199px) {
+    .btn-toc-toggle {
+        display: flex;
+    }
+
+    .quick-nav-sidebar {
+        left: 16px;
+        top: 16px;
+        height: calc(100vh - 32px);
+        max-height: calc(100vh - 32px);
+        width: 280px;
+        transform: translateX(calc(-100% - 30px));
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+        z-index: 1020;
+    }
+
+    .quick-nav-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .quick-nav-close {
+        display: flex;
+    }
+}
+
 /* Responsive (Web Screen Only - do not apply to print) */
 @media screen and (max-width: 768px) {
     .btn-back-steam {
@@ -1264,6 +1557,22 @@ a:hover {
 
     .btn-back-steam .material-icons {
         font-size: 24px;
+    }
+
+    .btn-toc-toggle {
+        top: 60px;
+        left: 14px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .btn-toc-toggle .material-icons {
+        font-size: 20px;
+    }
+
+    .quick-nav-sidebar {
+        width: calc(100vw - 32px);
+        max-width: 290px;
     }
 
     .portfolio-document {
