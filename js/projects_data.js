@@ -1,5 +1,5 @@
 const portfolioData = {
-  featuredCount: 9, // Store 페이지(주요 프로젝트)에 표시할 프로젝트 개수
+  featuredCount: 10, // Store 페이지(주요 프로젝트)에 표시할 프로젝트 개수
   profile: {
     name: "정지현",
     nickname: "Elpoco",
@@ -14,7 +14,7 @@ const portfolioData = {
     portfolioUrl: "https://elpoco.github.io/Portfolio/print.html",
     address: "서울 성동구 성수동",
     birth: "1996.11.25",
-    summary: "상용 모바일 3D RPG 및 Steam 인디 게임을 정식 런칭한 4년 차 Unity 클라이언트 프로그래머입니다."
+    summary: "모바일 게임 및 Steam 인디 게임을 정식 런칭한 4년 차 Unity 클라이언트 프로그래머입니다."
   },
   skills: [
     { name: "Unity", category: "Game" },
@@ -109,7 +109,7 @@ const portfolioData = {
       playLink: "https://store.steampowered.com/app/4743040/Tiny_Village/",
       youtubeUrl: "https://www.youtube.com/embed/zJQGXy6nouo?si=C1mJawCNNr6aGFmd",
       platforms: ["Steam"],
-      description: "2D 타일맵 기반 인크리멘탈 게임 (Steam 데모 출시).",
+      description: "로그라이크 요소와 유행하고있는 인크리멘탈을 결합한 게임.",
       details: [
         "Tilemap 컴포넌트 기반 그리드 좌표계 변환 및 건물 배치 유효성 검사 로직 구현",
         "인게임 시간 축(낮/밤, 4계절) 계절별 맵 타일/환경 전환 연동",
