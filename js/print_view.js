@@ -84,19 +84,18 @@ function renderExperiences() {
                     <div class="exp-header">
                         <div class="exp-company-group">
                             <span class="exp-company-name">${exp.company}</span>
-                            <span class="exp-type-tag ${typeClass}">
+                            <span class="exp-type-tag ${typeClass}" style="display: none;">
                                 <i class="material-icons">${typeIcon}</i>
                                 ${typeLabel}
                             </span>
                         </div>
                         <div class="exp-period-badge">
-                            <i class="material-icons">event</i>
+                            <i class="material-icons" style="display: none;">event</i>
                             <span class="exp-period-text">${formattedPeriod}</span>
                             ${duration ? `<span class="exp-period-duration">${duration}</span>` : ''}
                         </div>
                     </div>
                     <div class="exp-role">
-                        <i class="material-icons">badge</i>
                         <span>${exp.role}</span>
                     </div>
                     <p class="exp-desc">${exp.description}</p>
@@ -286,7 +285,7 @@ function renderChronologicalProjects() {
             detailsHtml = `
                 <div class="proj-detail-block">
                     <div class="block-title">
-                        <i class="material-icons">task_alt</i> 주요 개발 내용
+                         주요 개발 내용
                     </div>
                     <ul class="details-bullet-list">${items}</ul>
                 </div>
@@ -308,7 +307,7 @@ function renderChronologicalProjects() {
             screenshotsHtml = `
                 <div class="proj-screenshots-block">
                     <div class="block-title">
-                        <i class="material-icons">photo_library</i> 스크린샷
+                        스크린샷
                     </div>
                     <div class="screenshots-grid">${thumbItems}</div>
                 </div>
@@ -324,7 +323,7 @@ function renderChronologicalProjects() {
                 videoHtml = `
                     <div class="proj-video-block">
                         <div class="block-title">
-                            <i class="material-icons" style="color: #dc2626;">smart_display</i> 영상
+                            영상
                         </div>
                         <!-- Web Screen Only: Interactive Embedded Video Player -->
                         <div class="proj-video-container no-print">
@@ -363,9 +362,8 @@ function renderChronologicalProjects() {
                             <span>${proj.name}</span>
                         </h3>
                         <div class="proj-tags-line">
-                            ${companyName ? `<span class="proj-company-context"><i class="material-icons" style="font-size:14px;vertical-align:middle;">apartment</i> ${companyName}</span>` : ''}
+                            ${companyName ? `<span class="proj-company-context">${companyName}</span>` : ''}
                             <span class="badge-proj-period">
-                                <i class="material-icons">event</i>
                                 <span class="proj-period-text">${proj.period}</span>
                                 ${projDuration ? `<span class="proj-period-duration">${projDuration}</span>` : ''}
                             </span>
@@ -432,7 +430,6 @@ function renderQuickNav() {
     let navHtml = `
         <div class="quick-nav-group">
             <a href="#profile" class="quick-nav-link" data-target="profile">
-                <i class="material-icons">person</i>
                 <span>프로필</span>
             </a>
         </div>
@@ -442,7 +439,6 @@ function renderQuickNav() {
     navHtml += `
         <div class="quick-nav-group">
             <a href="#experience" class="quick-nav-link" data-target="experience">
-                <i class="material-icons">work_history</i>
                 <span>경력</span>
             </a>
         </div>
@@ -452,7 +448,6 @@ function renderQuickNav() {
     navHtml += `
         <div class="quick-nav-group">
             <a href="#skills" class="quick-nav-link" data-target="skills">
-                <i class="material-icons">inventory_2</i>
                 <span>보유 기술 스택</span>
             </a>
         </div>
@@ -483,7 +478,6 @@ function renderQuickNav() {
         navHtml += `
             <div class="quick-nav-group" data-group="projects">
                 <a href="#projects" class="quick-nav-link parent-link" data-target="projects">
-                    <i class="material-icons">rocket_launch</i>
                     <span>프로젝트</span>
                 </a>
                 <ul class="quick-nav-sublist">
